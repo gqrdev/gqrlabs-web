@@ -1,0 +1,17 @@
+// =========================================================
+// Base: Functions
+// =========================================================
+
+@use "./variables" as variables;
+
+@function brand-color-primary($variant, $alpha) {
+	$base: variables.$blue-primary;
+
+	@if $variant == light {
+		$base: lighten($base, 15%);
+	} @else if $variant == dark {
+		$base: darken($base, 10%);
+	}
+
+	@return rgba($base, $alpha);
+}

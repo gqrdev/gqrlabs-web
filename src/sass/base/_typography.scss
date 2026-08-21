@@ -1,0 +1,23 @@
+// =========================================================
+// Base: Typography
+// =========================================================
+
+@use "./variables";
+@use "./mixins";
+
+/* Body */
+body {
+	@include mixins.g-normal;
+}
+
+/* Links */
+a {
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		@include mixins.mq("lg") {
+			text-decoration: none;
+		}
+	}
+}

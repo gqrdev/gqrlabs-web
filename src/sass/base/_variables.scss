@@ -1,0 +1,62 @@
+// =========================================================
+// Base: Variables
+// =========================================================
+
+/* Colors */
+$blue-primary: #003778;
+$blue-light: #06498f;
+$blue-soft: #4674a8;
+
+$blue-glow: rgba(0, 55, 120, 0.32);
+
+$black: #0b0d10;
+$black-soft: #101419;
+$black-card: #14191f;
+
+$white: #f5f7fa;
+
+$gray: #7e8792;
+$gray-light: #aeb5bd;
+$gray-dark: #292f36;
+
+$border: #242a31;
+
+body {
+    background-color: $black;
+}
+
+/* Typography */
+$heading-font: "Orbitron", sans-serif;
+$body-font: "Inter", sans-serif;
+
+$bigger-font-size: 2.5rem;
+$h1-font-size: 2rem;
+$h2-font-size: 1.5rem;
+$h3-font-size: 1.25rem;
+$normal-font-size: 1rem;
+$small-font-size: 0.875rem;
+$smaller-font-size: 0.75rem;
+
+$heading-line-height: 1.2;
+$body-line-height: 1.6;
+$small-line-height: 1.4;
+
+$heading-letter-spacing: -0.02em;
+
+/* Breakpoints */
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-laptop: 1024px;
+$bp-desktop: 1280px;
+
+$breakpoints: (
+    sm: $bp-mobile,
+    md: $bp-tablet,
+    lg: $bp-laptop,
+    xl: $bp-desktop
+);
+
+/* General Layout */
+$page-bottom-margin: 30px;
+$general-padding: 20px;
+$max-width: 1200px;

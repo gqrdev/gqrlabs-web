@@ -1,0 +1,129 @@
+// =========================================================
+// Base: Mixins
+// =========================================================
+
+@use "sass:map";
+@use "./variables" as variables;
+
+@mixin mq($breakpoint) {
+	$value: map.get(variables.$breakpoints, $breakpoint);
+
+	@if $value {
+		@media (min-width: $value) {
+			@content;
+		}
+	} @else {
+		@warn "El breakpoint `#{$breakpoint}` no esta definido.";
+	}
+}
+
+/* Title */
+@mixin heading-font($extrabold: false) {
+	margin-bottom: 0.4rem;
+	line-height: variables.$heading-line-height;
+	font-family: variables.$heading-font;
+
+	@if $extrabold {
+		font-weight: 700;
+	} @else {
+		font-weight: 400;
+	}
+
+	color: variables.$white;
+	letter-spacing: variables.$heading-letter-spacing;
+}
+
+@mixin g-bigger-title {
+	@include heading-font(true);
+	font-size: variables.$bigger-font-size;
+}
+
+@mixin g-title-1 {
+	@include heading-font(true);
+	font-size: variables.$h1-font-size;
+}
+
+@mixin g-title-2 {
+	@include heading-font(true);
+	font-weight: 500;
+	font-size: variables.$h2-font-size;
+}
+
+@mixin g-title-3 {
+	@include heading-font;
+	font-weight: 500;
+	font-size: variables.$h3-font-size;
+}
+
+@mixin g-title-4 {
+	@include heading-font;
+	font-weight: 500;
+	font-size: variables.$normal-font-size;
+}
+
+@mixin g-title-5 {
+	@include heading-font;
+	font-size: variables.$small-font-size;
+}
+
+@mixin g-title-6 {
+	@include heading-font;
+	font-size: variables.$smaller-font-size;
+}
+
+/* Body text */
+@mixin body-font($extrabold: false) {
+    line-height: variables.$body-line-height;
+	font-family: variables.$body-font;
+	
+    @if $extrabold {
+		font-weight: 700;
+	} @else {
+		font-weight: 400;
+	}
+
+    color: variables.$white;
+}
+
+@mixin g-biggest {
+	@include body-font(true);
+	font-size: variables.$h1-font-size;
+}
+
+@mixin g-bigger {
+	@include body-font(true);
+	font-size: variables.$h2-font-size;
+}
+
+@mixin g-big {
+	@include body-font(true);
+	font-size: variables.$h3-font-size;
+}
+
+@mixin g-normal {
+	@include body-font;
+	font-size: variables.$normal-font-size;
+}
+
+@mixin g-small {
+	@include body-font;
+	font-size: variables.$small-font-size;
+}
+
+@mixin g-smaller {
+	@include body-font;
+	font-size: variables.$smaller-font-size;
+}
+
+/* Spacing */
+@mixin page-bottom-margin {
+	margin-bottom: variables.$page-bottom-margin;
+}
+
+@mixin general-padding {
+	padding: variables.$general-padding;
+}
+
+@mixin max-width {
+	max-width: variables.$max-width;
+}
