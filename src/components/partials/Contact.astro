@@ -1,0 +1,81 @@
+---
+import "../../sass/components/partials/_contact.scss";
+---
+
+<section class="section contact" id="contact">
+	<div class="contact-background">
+		<svg
+			viewBox="0 0 1440 700"
+			preserveAspectRatio="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<defs>
+				<linearGradient
+					id="contactGradientLeft"
+					x1="0%"
+					y1="100%"
+					x2="100%"
+					y2="0%"
+				>
+					<stop offset="0%" stop-color="#003778" stop-opacity=".28"></stop>
+
+					<stop offset="70%" stop-color="#003778" stop-opacity="0"></stop>
+				</linearGradient>
+
+				<linearGradient
+					id="contactGradientRight"
+					x1="100%"
+					y1="100%"
+					x2="0%"
+					y2="0%"
+				>
+					<stop offset="0%" stop-color="#003778" stop-opacity=".28"></stop>
+
+					<stop offset="70%" stop-color="#003778" stop-opacity="0"></stop>
+				</linearGradient>
+			</defs>
+
+			<rect width="1440" height="700" fill="#0b1118"></rect>
+
+			<path d="M0 700 L350 0 L550 0 L200 700 Z" fill="url(#contactGradientLeft)"
+			></path>
+
+			<path
+				d="M180 700 L530 0 L620 0 L270 700 Z"
+				fill="url(#contactGradientLeft)"></path>
+
+			<path
+				d="M1440 700 L1090 0 L900 0 L1250 700 Z"
+				fill="url(#contactGradientRight)"></path>
+
+			<path
+				d="M1260 700 L910 0 L690 0 L1040 700 Z"
+				fill="url(#contactGradientRight)"></path>
+
+			<path d="M0 580 H1440" stroke="#003778" stroke-opacity=".12"></path>
+
+			<path d="M0 581 H1440" stroke="#ffffff" stroke-opacity=".025"></path>
+		</svg>
+	</div>
+
+	<div class="container contact-inner">
+		<div class="section-label">Contact / 04</div>
+
+		<h2>
+			Contact
+			<br />
+
+			<span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </span>
+		</h2>
+
+		<p class="contact-text">
+			Si estás empezando algo nuevo, rediseñando lo que ya existe o simplemente
+			querés conversar sobre una idea, escribime.
+		</p>
+
+		<a href="mailto:facundo@gqrlabs.com" class="button contact-button">
+			facundo@gqrlabs.com
+			<span>↗</span>
+		</a>
+	</div>
+</section>
