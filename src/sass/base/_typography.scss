@@ -16,7 +16,7 @@ a {
 	color: inherit;
 
 	&:hover {
-		@include mixins.mq("lg") {
+		@include mixins.mq(lg) {
 			text-decoration: none;
 		}
 	}

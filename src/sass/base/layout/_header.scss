@@ -1,0 +1,65 @@
+// =========================================================
+// Layout: Header
+// =========================================================
+
+@use "../variables" as variable;
+@use "../mixins" as mixin;
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	width: 100%;
+	padding: variable.$general-padding;
+	background-color: variable.$black-card;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&__logo {
+		@include mixin.g-title-3;
+
+		display: flex;
+		align-items: center;
+		gap: 10px;
+
+		color: variable.$white;
+		text-decoration: none;
+
+		&-mark {
+			width: 11px;
+			height: 11px;
+
+			flex-shrink: 0;
+
+			background-color: variable.$blue-primary;
+			border-radius: 2px;
+
+			box-shadow: 0 0 25px variable.$blue-glow;
+		}
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+
+		color: variable.$gray;
+		font-family: variable.$body-font;
+		text-transform: uppercase;
+		@include mixin.g-normal;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+
+			transition: color 0.25s ease;
+
+			&:hover {
+				color: variable.$white;
+			}
+		}
+	}
+}
