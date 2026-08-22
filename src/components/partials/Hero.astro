@@ -1,0 +1,196 @@
+---
+import "../../sass/components/partials/_hero.scss";
+---
+
+<section class="hero">
+	<div class="hero-background" aria-hidden="true">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 1440 700"
+			preserveAspectRatio="none"
+		>
+			<defs>
+				<!-- MASK -->
+				<mask id="heroMask">
+					<rect width="1440" height="700" fill="#ffffff"></rect>
+				</mask>
+
+				<!-- LEFT -->
+				<linearGradient
+					id="heroGradientLeft"
+					x1="0%"
+					y1="100%"
+					x2="100%"
+					y2="0%"
+				>
+					<stop offset="0%" stop-color="#003778" stop-opacity=".34"></stop>
+
+					<stop offset="62%" stop-color="#003778" stop-opacity=".08"></stop>
+
+					<stop offset="100%" stop-color="#003778" stop-opacity="0"></stop>
+				</linearGradient>
+
+				<!-- RIGHT -->
+				<linearGradient
+					id="heroGradientRight"
+					x1="100%"
+					y1="100%"
+					x2="0%"
+					y2="0%"
+				>
+					<stop offset="0%" stop-color="#003778" stop-opacity=".34"></stop>
+
+					<stop offset="62%" stop-color="#003778" stop-opacity=".08"></stop>
+
+					<stop offset="100%" stop-color="#003778" stop-opacity="0"></stop>
+				</linearGradient>
+
+				<!-- CENTRAL GLOW -->
+				<radialGradient id="heroGlow" cx="50%" cy="50%" r="55%">
+					<stop offset="0%" stop-color="#003778" stop-opacity=".16"></stop>
+
+					<stop offset="100%" stop-color="#003778" stop-opacity="0"></stop>
+				</radialGradient>
+
+				<!-- BOTTOM FADE -->
+				<linearGradient id="heroFade" x1="0" y1="0" x2="0" y2="1">
+					<stop offset="0%" stop-color="#0e1620" stop-opacity=".2"></stop>
+
+					<stop offset="100%" stop-color="#0b0d10" stop-opacity=".85"></stop>
+				</linearGradient>
+
+				<!-- GRID -->
+				<pattern
+					id="heroGrid"
+					width="80"
+					height="80"
+					patternUnits="userSpaceOnUse"
+				>
+					<path
+						d="M80 0 L0 0 0 80"
+						fill="none"
+						stroke="#ffffff"
+						stroke-opacity=".025"
+						stroke-width="1"></path>
+				</pattern>
+			</defs>
+
+			<g mask="url(#heroMask)" fill="none">
+				<!-- BASE -->
+				<rect width="1440" height="700" fill="#0b1118"></rect>
+
+				<!-- CENTRAL GLOW -->
+				<rect width="1440" height="700" fill="url(#heroGlow)"></rect>
+
+				<!-- LEFT DIAGONALS -->
+				<path d="M0 700 L350 0 L560 0 L210 700 Z" fill="url(#heroGradientLeft)"
+				></path>
+
+				<path
+					d="M175 700 L525 0 L610 0 L260 700 Z"
+					fill="url(#heroGradientLeft)"></path>
+
+				<path
+					d="M390 700 L740 0 L1030 0 L680 700 Z"
+					fill="url(#heroGradientLeft)"></path>
+
+				<path
+					d="M620 700 L970 0 L1140 0 L790 700 Z"
+					fill="url(#heroGradientLeft)"></path>
+
+				<!-- RIGHT DIAGONALS -->
+				<path
+					d="M1440 700 L1090 0 L920 0 L1270 700 Z"
+					fill="url(#heroGradientRight)"></path>
+
+				<path
+					d="M1260 700 L910 0 L690 0 L1040 700 Z"
+					fill="url(#heroGradientRight)"></path>
+
+				<path
+					d="M1040 700 L690 0 L450 0 L800 700 Z"
+					fill="url(#heroGradientRight)"></path>
+
+				<path
+					d="M820 700 L470 0 L290 0 L640 700 Z"
+					fill="url(#heroGradientRight)"></path>
+
+				<!-- SIDE TRIANGLES -->
+				<path d="M0 700 L180 700 L0 520 Z" fill="url(#heroGradientRight)"
+				></path>
+
+				<path d="M1440 700 L1260 700 L1440 520 Z" fill="url(#heroGradientLeft)"
+				></path>
+
+				<!-- GRID -->
+				<rect width="1440" height="700" fill="url(#heroGrid)"></rect>
+
+				<!-- STRUCTURAL LINES -->
+				<path
+					d="M0 610 H1440"
+					stroke="#003778"
+					stroke-opacity=".12"
+					stroke-width="1"></path>
+
+				<path
+					d="M0 611 H1440"
+					stroke="#ffffff"
+					stroke-opacity=".025"
+					stroke-width="1"></path>
+
+				<path
+					d="M260 700 L610 0"
+					stroke="#003778"
+					stroke-opacity=".13"
+					stroke-width="1"></path>
+
+				<path
+					d="M790 700 L1140 0"
+					stroke="#003778"
+					stroke-opacity=".10"
+					stroke-width="1"></path>
+
+				<!-- GEOMETRIC BLOCKS -->
+				<path d="M0 0 H250 L0 500 Z" fill="#003778" fill-opacity=".035"></path>
+
+				<path d="M1440 0 H1190 L1440 500 Z" fill="#003778" fill-opacity=".035"
+				></path>
+			</g>
+
+			<!-- BOTTOM FADE -->
+			<rect width="1440" height="700" fill="url(#heroFade)" opacity=".55"
+			></rect>
+		</svg>
+	</div>
+
+	<!-- HERO CONTENT -->
+	<div class="hero-content">
+		<div class="eyebrow">Desarrollo de Software y Mentoría</div>
+
+		<h1>
+			Lorem ipsum
+			<span class="accent"> Lorem ipsum </span>
+			Lorem ipsum.
+		</h1>
+
+		<p class="description">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nunc, eget aliquam nisl nunc vel nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nunc, eget aliquam nisl nunc vel nisl.
+		</p>
+
+		<div class="hero-actions">
+			<a href="#contact" class="button">Hablemos<span>↗</span></a>
+			<a href="#projects" class="secondary-link">Ver proyectos</a>
+		</div>
+	</div>
+
+	<!-- HERO FOOTER -->
+	<div class="hero-bottom">
+		<span class="location"> Montevideo · Uruguay </span>
+
+		<span class="scroll">
+			Scroll
+
+			<span class="scroll-line"></span>
+		</span>
+	</div>
+</section>

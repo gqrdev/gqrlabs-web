@@ -5,7 +5,7 @@
 @use "../variables" as variable;
 @use "../mixins" as mixin;
 
-footer {
+.footer {
 	padding: variable.$general-padding;
 	margin-bottom: variable.$page-bottom-margin;
 	display: flex;

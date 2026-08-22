@@ -1,0 +1,259 @@
+// =========================================================
+// Hero
+// =========================================================
+
+@use "../../base/variables" as variable;
+@use "../../base/mixins" as mixin;
+
+.hero {
+	position: relative;
+	min-height: variable.$hero-min-height;
+	overflow: hidden;
+	padding: variable.$hero-padding-top variable.$general-padding
+		variable.$hero-padding-bottom;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: variable.$black;
+}
+
+/* SVG Background */
+.hero-background {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	pointer-events: none;
+	opacity: 1;
+}
+
+.hero-background svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+/* Hero overlay */
+.hero::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	pointer-events: none;
+	background: linear-gradient(
+		180deg,
+		rgba(11, 13, 16, variable.$hero-overlay-top-opacity) 0%,
+		rgba(11, 13, 16, variable.$hero-overlay-middle-opacity) 45%,
+		rgba(11, 13, 16, variable.$hero-overlay-bottom-opacity) 100%
+	);
+}
+
+/* Hero content */
+.hero-content {
+	position: relative;
+	z-index: 3;
+	max-width: variable.$hero-content-max-width;
+}
+
+/* Eyebrow */
+.eyebrow {
+	display: flex;
+	align-items: center;
+	gap: variable.$hero-eyebrow-gap;
+	margin-bottom: variable.$hero-eyebrow-margin-bottom;
+	color: variable.$gray-light;
+	@include mixin.g-smaller;
+	font-weight: 500;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+
+.eyebrow::before {
+	content: "";
+	width: variable.$hero-eyebrow-line-width;
+	height: 1px;
+	background-color: variable.$blue-primary;
+}
+
+.hero h1 {
+	@include mixin.max-width;
+	@include mixin.g-bigger-title;
+	font-weight: 500;
+	letter-spacing: -0.055em;
+	text-transform: uppercase;
+}
+
+.hero h1 .accent {
+	color: variable.$blue-primary;
+	text-shadow: 0 0 variable.$hero-accent-glow-size variable.$blue-glow;
+}
+
+/* Description */
+.description {
+	max-width: variable.$hero-description-max-width;
+	margin-top: variable.$hero-description-margin-top;
+	color: variable.$gray-light;
+	@include mixin.g-small;
+}
+
+/* Hero Actions */
+.hero-actions {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: variable.$hero-actions-gap;
+	margin-top: variable.$hero-actions-margin-top;
+}
+
+/* Primary Button */
+.button {
+	display: inline-flex;
+	align-items: center;
+	gap: variable.$hero-button-gap;
+	padding: variable.$hero-button-padding-y variable.$hero-button-padding-x;
+	background-color: variable.$blue-primary;
+	color: variable.$white;
+	@include mixin.g-smaller;
+	font-weight: 600;
+	letter-spacing: variable.$hero-button-letter-spacing;
+	text-transform: uppercase;
+	transition:
+		transform 0.25s ease,
+		background-color 0.25s ease,
+		box-shadow 0.25s ease;
+}
+
+.button:hover {
+	transform: translateY(variable.$hero-button-hover-y);
+	background-color: variable.$blue-light;
+	box-shadow: 0 variable.$hero-button-hover-shadow-y
+		variable.$hero-button-hover-shadow-blur
+		rgba(0, 55, 120, variable.$hero-button-hover-shadow-opacity);
+}
+
+.secondary-link {
+	color: variable.$gray;
+	@include mixin.g-smaller;
+	font-weight: 500;
+	letter-spacing: variable.$hero-secondary-letter-spacing;
+	text-transform: uppercase;
+	transition: color 0.25s ease;
+}
+
+.secondary-link:hover {
+	color: variable.$white;
+}
+
+.hero-bottom {
+	position: relative;
+	z-index: 3;
+	padding-top: variable.$hero-bottom-padding-top;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.location,
+.scroll {
+	color: variable.$gray;
+	@include mixin.g-smaller;
+	font-weight: 500;
+	letter-spacing: variable.$hero-meta-letter-spacing;
+	text-transform: uppercase;
+}
+
+.scroll {
+	display: flex;
+	align-items: center;
+	gap: variable.$hero-scroll-gap;
+}
+
+.scroll-line {
+	width: variable.$hero-scroll-line-width;
+	height: 1px;
+	background-color: variable.$blue-primary;
+}
+
+@include mixin.mq(sm) {
+	.hero {
+		padding-top: variable.$hero-sm-padding-top;
+	}
+
+	.hero-actions {
+		flex-direction: row;
+
+		align-items: center;
+	}
+}
+
+@include mixin.mq(md) {
+	.hero {
+		min-height: 100vh;
+
+		padding: variable.$hero-md-padding-top variable.$general-padding
+			variable.$hero-md-padding-bottom;
+	}
+
+	.hero h1 {
+		font-size: clamp(4rem, 9vw, 6.5rem);
+	}
+
+	.description {
+		margin-top: variable.$hero-md-description-margin-top;
+
+		@include mixin.g-normal;
+	}
+
+	.hero-actions {
+		margin-top: variable.$hero-md-actions-margin-top;
+	}
+}
+
+// =========================================================
+// Responsive — 1024px
+// =========================================================
+
+@include mixin.mq(lg) {
+	.hero {
+		padding: variable.$hero-lg-padding-top variable.$hero-lg-padding-horizontal
+			variable.$hero-lg-padding-bottom;
+	}
+
+	.eyebrow {
+		margin-bottom: variable.$hero-lg-eyebrow-margin-bottom;
+	}
+
+	.eyebrow::before {
+		width: variable.$hero-lg-eyebrow-line-width;
+	}
+
+	.hero h1 {
+		font-size: clamp(5rem, 7.5vw, 8.2rem);
+	}
+
+	.description {
+		margin-top: variable.$hero-lg-description-margin-top;
+
+		font-size: 1.125rem;
+	}
+
+	.hero-actions {
+		margin-top: variable.$hero-lg-actions-margin-top;
+	}
+}
+
+// =========================================================
+// Responsive — 1280px
+// =========================================================
+
+@include mixin.mq(xl) {
+	.hero {
+		padding-inline: variable.$hero-xl-padding-horizontal;
+	}
+
+	.hero h1 {
+		max-width: variable.$hero-xl-title-max-width;
+	}
+}
