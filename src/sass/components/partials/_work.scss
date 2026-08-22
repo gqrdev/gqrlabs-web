@@ -1,0 +1,310 @@
+// =========================================================
+// Work
+// =========================================================
+
+@use "../../base/variables" as variable;
+@use "../../base/mixins" as mixin;
+
+.work {
+	border-top: 1px solid var(--border);
+
+	background: var(--black-soft);
+}
+
+.work-header {
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: flex-start;
+
+	gap: 25px;
+
+	margin-bottom: 50px;
+}
+
+.work-title {
+	max-width: 750px;
+
+	font-family: var(--font-display);
+
+	font-size: clamp(2rem, 10vw, 4rem);
+
+	font-weight: 500;
+
+	line-height: 1.12;
+
+	letter-spacing: -0.04em;
+}
+
+.work-count {
+	color: #626972;
+
+	font-size: 9px;
+
+	letter-spacing: 0.12em;
+
+	text-transform: uppercase;
+}
+
+.projects {
+	display: grid;
+
+	grid-template-columns: 1fr;
+
+	gap: 0;
+}
+
+.project {
+	display: block;
+}
+
+/* =====================================================
+   PROJECT IMAGE 01
+====================================================== */
+
+.project-image {
+	position: relative;
+
+	overflow: hidden;
+
+	aspect-ratio: 16 / 10;
+
+	background: linear-gradient(135deg, #0d1721, #142a40);
+}
+
+.project-image::before {
+	content: "";
+
+	position: absolute;
+
+	inset: 0;
+
+	background:
+		linear-gradient(
+			135deg,
+			transparent 25%,
+			rgba(0, 55, 120, 0.85) 25%,
+			rgba(0, 55, 120, 0.85) 45%,
+			transparent 45%
+		),
+		linear-gradient(
+			90deg,
+			transparent 70%,
+			rgba(255, 255, 255, 0.035) 70%,
+			rgba(255, 255, 255, 0.035) 71%,
+			transparent 71%
+		);
+
+	transition: transform 0.5s ease;
+}
+
+.project-image::after {
+	content: "PROJECT 01";
+
+	position: absolute;
+
+	left: 20px;
+
+	bottom: 18px;
+
+	color: rgba(255, 255, 255, 0.45);
+
+	font-family: var(--font-display);
+
+	font-size: 8px;
+
+	letter-spacing: 0.12em;
+}
+
+/* =====================================================
+   PROJECT IMAGE 02
+====================================================== */
+
+.project:nth-child(2) .project-image {
+	background: linear-gradient(135deg, #10151c, #092b4d);
+}
+
+.project:nth-child(2) .project-image::before {
+	background:
+		linear-gradient(
+			45deg,
+			transparent 30%,
+			rgba(0, 55, 120, 0.9) 30%,
+			rgba(0, 55, 120, 0.9) 60%,
+			transparent 60%
+		),
+		repeating-linear-gradient(
+			90deg,
+			transparent 0,
+			transparent 50px,
+			rgba(255, 255, 255, 0.035) 51px,
+			transparent 52px
+		);
+}
+
+.project:nth-child(2) .project-image::after {
+	content: "PROJECT 02";
+}
+
+/* =====================================================
+   PROJECT IMAGE 03
+====================================================== */
+
+.project:nth-child(3) .project-image {
+	background: linear-gradient(135deg, #0c1015, #1a2028);
+}
+
+.project:nth-child(3) .project-image::before {
+	background:
+		repeating-linear-gradient(
+			90deg,
+			transparent 0,
+			transparent 60px,
+			rgba(0, 55, 120, 0.55) 61px,
+			transparent 62px
+		),
+		linear-gradient(
+			0deg,
+			transparent 45%,
+			rgba(0, 55, 120, 0.35) 45%,
+			rgba(0, 55, 120, 0.35) 46%,
+			transparent 46%
+		);
+}
+
+.project:nth-child(3) .project-image::after {
+	content: "PROJECT 03";
+}
+
+/* =====================================================
+   PROJECT IMAGE 04
+====================================================== */
+
+.project:nth-child(4) .project-image {
+	background: linear-gradient(135deg, #071523, #111920);
+}
+
+.project:nth-child(4) .project-image::before {
+	background: linear-gradient(
+		135deg,
+		transparent 35%,
+		rgba(0, 55, 120, 0.85) 35%,
+		rgba(0, 55, 120, 0.85) 65%,
+		transparent 65%
+	);
+}
+
+.project:nth-child(4) .project-image::after {
+	content: "PROJECT 04";
+}
+
+/* =====================================================
+   PROJECT HOVER
+====================================================== */
+
+.project:hover .project-image::before {
+	transform: scale(1.06);
+}
+
+/* =====================================================
+   PROJECT INFO
+====================================================== */
+
+.project-info {
+	display: flex;
+
+	align-items: flex-start;
+
+	justify-content: space-between;
+
+	padding: 18px 0 35px;
+}
+
+.project-name {
+	font-family: var(--font-display);
+
+	font-size: 14px;
+
+	font-weight: 500;
+
+	text-transform: uppercase;
+}
+
+.project-type {
+	margin-top: 7px;
+
+	color: var(--gray);
+
+	font-size: 11px;
+}
+
+.project-year {
+	color: #626972;
+
+	font-size: 9px;
+}
+
+/* =====================================================
+   WORK — 768px
+====================================================== */
+
+@media (min-width: 768px) {
+	.work-header {
+		flex-direction: row;
+
+		align-items: flex-end;
+
+		justify-content: space-between;
+	}
+
+	.projects {
+		grid-template-columns: repeat(2, 1fr);
+
+		gap: 24px;
+	}
+}
+
+/* =====================================================
+   WORK — 1024px
+====================================================== */
+
+@media (min-width: 1024px) {
+	.work-header {
+		margin-bottom: 70px;
+	}
+
+	.work-title {
+		font-size: clamp(3rem, 4vw, 4.5rem);
+	}
+
+	.project-image::after {
+		left: 25px;
+
+		bottom: 22px;
+
+		font-size: 10px;
+	}
+
+	.project-info {
+		padding: 22px 0 40px;
+	}
+
+	.project-name {
+		font-size: 16px;
+	}
+
+	.project-type {
+		font-size: 12px;
+	}
+}
+
+/* =====================================================
+   WORK — 1440px
+====================================================== */
+
+@media (min-width: 1440px) {
+	.projects {
+		gap: 30px;
+	}
+}
