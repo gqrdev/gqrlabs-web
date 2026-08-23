@@ -80,8 +80,7 @@
 .hero h1 {
 	@include mixin.max-width;
 	@include mixin.g-bigger-title;
-	font-weight: 500;
-	letter-spacing: -0.055em;
+	margin-bottom: unset;
 	text-transform: uppercase;
 }
 
