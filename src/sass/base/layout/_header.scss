@@ -12,6 +12,8 @@
 	z-index: 20;
 	width: 100%;
 	padding: variable.$general-padding;
+	padding-top: variable.$padding-top-header;
+	padding-bottom: variable.$padding-bottom-header;
 	background-color: variable.$black-card;
 
 	display: flex;
@@ -20,6 +22,8 @@
 
 	&__logo {
 		@include mixin.g-title-3;
+		margin-bottom: unset;
+		line-height: unset;
 
 		display: flex;
 		align-items: center;
@@ -31,12 +35,9 @@
 		&-mark {
 			width: 11px;
 			height: 11px;
-
 			flex-shrink: 0;
-
 			background-color: variable.$blue-primary;
 			border-radius: 2px;
-
 			box-shadow: 0 0 25px variable.$blue-glow;
 		}
 	}

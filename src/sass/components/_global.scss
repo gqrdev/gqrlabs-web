@@ -1,0 +1,33 @@
+// =========================================================
+// Global
+// =========================================================
+
+@use "../base/variables" as variable;
+
+.container {
+	width: calc(100% - (#{variable.$general-padding} * 2));
+	max-width: #{variable.$max-width};
+	margin-inline: auto;
+}
+
+.section {
+	position: relative;
+	z-index: 2;
+	padding-block: #{variable.$section-padding};
+}
+
+.section-label {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 32px;
+	color: #{variable.$blue-soft};
+	text-transform: uppercase;
+}
+
+.section-label::before {
+	content: "";
+	width: 30px;
+	height: 1px;
+	background: #{variable.$blue-soft};
+}
