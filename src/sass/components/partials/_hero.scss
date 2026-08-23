@@ -79,7 +79,7 @@
 
 .hero h1 {
 	@include mixin.max-width;
-	@include mixin.g-bigger-title;
+	@include mixin.g-title-1;
 	margin-bottom: unset;
 	text-transform: uppercase;
 }
