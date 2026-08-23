@@ -11,18 +11,32 @@
 	left: 0;
 	z-index: 20;
 	width: 100%;
-
-	padding: variable.$padding-top-header variable.$general-padding
-		variable.$padding-bottom-header variable.$general-padding;
-
 	background-color: variable.$black-card;
 
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	@include mixin.mq(lg) {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__container {
+		margin: 0 auto;
+		padding: variable.$padding-top-header variable.$general-padding
+			variable.$padding-bottom-header variable.$general-padding;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include mixin.mq(lg) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			max-width: variable.$max-width-header;
+		}
+	}
 
 	/* Logo */
-
 	&__logo {
 		@include mixin.g-title-3;
 
@@ -38,13 +52,12 @@
 	}
 
 	/* Toggle */
-
 	&__toggle {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		width: 32px;
-		height: 24px;
+		height: 20px;
 		padding: 0;
 		border: 0;
 		background: transparent;
@@ -89,14 +102,34 @@
 			display: block;
 			width: 100%;
 			padding: 8px 0;
-
 			color: inherit;
 			text-decoration: none;
-
 			transition: color 0.25s ease;
+
+			position: relative;
+			padding-bottom: 4px;
 
 			&:hover {
 				color: variable.$white;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 1px;
+				background-color: variable.$blue-soft;
+
+				transform: scaleX(0);
+				transform-origin: center;
+				transition: transform 0.2s ease;
+			}
+
+			&:hover::after {
+				transform: scaleX(1);
+				transform-origin: center;
 			}
 		}
 
@@ -111,7 +144,7 @@
 	&__toggle[aria-expanded="true"] {
 		span {
 			&:nth-child(1) {
-				transform: translateY(11px) rotate(45deg);
+				transform: translateY(7px) rotate(45deg);
 			}
 
 			&:nth-child(2) {
@@ -131,18 +164,13 @@
 
 		&__nav {
 			position: static;
-
 			width: auto;
-
 			padding: 0;
-
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-			gap: 16px;
-
+			gap: 30px;
 			background-color: transparent;
-
 			opacity: 1;
 			visibility: visible;
 			transform: none;
