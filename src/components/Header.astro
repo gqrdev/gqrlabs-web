@@ -1,17 +1,54 @@
 ---
 import "../sass/base/layout/_header.scss";
+
+import {Image} from "astro:assets";
+import Logo from "../../public/icons/logo-gqrlabs.png";
 ---
 
 <header class="header">
 	<a href="#" class="header__logo">
-		<span class="header__logo-mark"></span>
+		<Image src={Logo} width={45} height={45} alt="GQR Labs" />
 		GQR Labs
 	</a>
 
-	<!-- <nav class="header__nav">
+	<button
+		class="header__toggle"
+		type="button"
+		aria-label="Abrir menú"
+		aria-expanded="false"
+	>
+		<span></span>
+		<span></span>
+		<span></span>
+	</button>
+
+	<nav class="header__nav">
 		<a href="#services">Servicios</a>
 		<a href="#projects">Proyectos</a>
 		<a href="#mentorship">Mentoría</a>
 		<a href="#contact">Contacto</a>
-	</nav> -->
+	</nav>
 </header>
+
+<script>
+	const toggle = document.querySelector(".header__toggle");
+	const nav = document.querySelector(".header__nav");
+
+	if (toggle && nav) {
+		toggle.addEventListener("click", () => {
+			const isOpen = nav.classList.toggle("is-open");
+
+			toggle.setAttribute("aria-expanded", String(isOpen));
+			toggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+		});
+
+		// Close the menu when a link is clicked
+		nav.querySelectorAll("a").forEach((link) => {
+			link.addEventListener("click", () => {
+				nav.classList.remove("is-open");
+				toggle.setAttribute("aria-expanded", "false");
+				toggle.setAttribute("aria-label", "Abrir menú");
+			});
+		});
+	}
+</script>
