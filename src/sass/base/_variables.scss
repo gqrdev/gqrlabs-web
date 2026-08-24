@@ -61,72 +61,10 @@ $max-width: 1200px;
 $max-width-header: 1024px;
 $section-padding: 90px;
 
+/* Hero - padding */
+$padding-top-hero: 40px;
+$padding-bottom-hero: 30px;
+
 /* Header */
 $padding-top-header: 20px;
 $padding-bottom-header: 20px;
-
-
-// =========================================================
-// Hero
-// =========================================================
-
-$hero-min-height: 100svh;
-
-$hero-padding-top: 125px;
-$hero-padding-bottom: 30px;
-
-$hero-content-max-width: 1150px;
-
-$hero-eyebrow-margin-bottom: 28px;
-$hero-eyebrow-gap: 12px;
-$hero-eyebrow-line-width: 28px;
-$hero-lg-eyebrow-line-width: 35px;
-
-$hero-description-margin-top: 30px;
-$hero-description-max-width: 600px;
-
-$hero-actions-margin-top: 34px;
-$hero-actions-gap: 20px;
-
-$hero-bottom-padding-top: 60px;
-
-$hero-button-padding-y: 15px;
-$hero-button-padding-x: 20px;
-$hero-button-gap: 20px;
-$hero-button-letter-spacing: 0.08em;
-
-$hero-secondary-letter-spacing: 0.12em;
-
-$hero-meta-letter-spacing: 0.14em;
-
-$hero-scroll-line-width: 35px;
-$hero-scroll-gap: 10px;
-
-$hero-overlay-top-opacity: 0.05;
-$hero-overlay-middle-opacity: 0.05;
-$hero-overlay-bottom-opacity: 0.75;
-
-$hero-accent-glow-size: 40px;
-
-$hero-button-hover-y: -3px;
-$hero-button-hover-shadow-y: 15px;
-$hero-button-hover-shadow-blur: 40px;
-$hero-button-hover-shadow-opacity: 0.25;
-
-/* Hero */
-$hero-sm-padding-top: 130px;
-
-$hero-md-padding-top: 150px;
-$hero-md-padding-bottom: 45px;
-$hero-md-description-margin-top: 38px;
-$hero-md-actions-margin-top: 40px;
-
-$hero-lg-padding-top: 165px;
-$hero-lg-padding-horizontal: 56px;
-$hero-lg-padding-bottom: 60px;
-$hero-lg-eyebrow-margin-bottom: 38px;
-$hero-lg-description-margin-top: 42px;
-$hero-lg-actions-margin-top: 44px;
-
-$hero-xl-padding-horizontal: 72px;
-$hero-xl-title-max-width: 1200px;

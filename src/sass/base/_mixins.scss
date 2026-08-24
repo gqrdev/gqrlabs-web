@@ -3,10 +3,11 @@
 // =========================================================
 
 @use "sass:map";
-@use "./variables" as variables;
+@use "./variables" as variable;
 
+/* Media Queries */
 @mixin mq($breakpoint) {
-	$value: map.get(variables.$breakpoints, $breakpoint);
+	$value: map.get(variable.$breakpoints, $breakpoint);
 
 	@if $value {
 		@media (min-width: $value) {
@@ -17,112 +18,164 @@
 	}
 }
 
-/* Title */
+/* Headings */
 @mixin heading-font($extrabold: false) {
-	margin-bottom: 0.4rem;
-	line-height: variables.$heading-line-height;
-	font-family: variables.$heading-font;
+    line-height: variable.$heading-line-height;
+    font-family: variable.$heading-font;
+    color: variable.$white;
 
-	@if $extrabold {
-		font-weight: 700;
-	} @else {
-		font-weight: 400;
-	}
-
-	color: variables.$white;
+    @if $extrabold {
+        font-weight: 700;
+    } @else {
+        font-weight: 400;
+    }
 }
 
 @mixin g-bigger-title {
-	@include heading-font(true);
-	font-size: variables.$bigger-font-size;
+    @include heading-font(true);
+    font-size: variable.$bigger-font-size;
+    margin-bottom: 0.6em;
 }
 
 @mixin g-title-1 {
-	@include heading-font(true);
-	font-size: variables.$h1-font-size;
+    @include heading-font(true);
+    font-size: variable.$h1-font-size;
+    margin-bottom: 0.6em;
 }
 
 @mixin g-title-2 {
-	@include heading-font(true);
-	font-weight: 500;
-	font-size: variables.$h2-font-size;
+    @include heading-font(true);
+    font-weight: 500;
+    font-size: variable.$h2-font-size;
+    margin-bottom: 0.5em;
 }
 
 @mixin g-title-3 {
-	@include heading-font;
-	font-weight: 500;
-	font-size: variables.$h3-font-size;
+    @include heading-font;
+    font-weight: 500;
+    font-size: variable.$h3-font-size;
+    margin-bottom: 0.5em;
 }
 
 @mixin g-title-4 {
-	@include heading-font;
-	font-weight: 500;
-	font-size: variables.$normal-font-size;
+    @include heading-font;
+    font-weight: 500;
+    font-size: variable.$normal-font-size;
+    margin-bottom: 0.4em;
 }
 
 @mixin g-title-5 {
-	@include heading-font;
-	font-size: variables.$small-font-size;
+    @include heading-font;
+    font-size: variable.$small-font-size;
+    margin-bottom: 0.4em;
 }
 
 @mixin g-title-6 {
-	@include heading-font;
-	font-size: variables.$smaller-font-size;
+    @include heading-font;
+    font-size: variable.$smaller-font-size;
+    margin-bottom: 0.4em;
 }
 
-/* Body text */
+/* Body Text Mixins */
 @mixin body-font($extrabold: false) {
-    line-height: variables.$body-line-height;
-	font-family: variables.$body-font;
-	
-    @if $extrabold {
-		font-weight: 700;
-	} @else {
-		font-weight: 400;
-	}
+    line-height: variable.$body-line-height;
+    font-family: variable.$body-font;
+    color: variable.$white;
+    margin-bottom: 1rem;
 
-    color: variables.$white;
+    @if $extrabold {
+        font-weight: 700;
+    } @else {
+        font-weight: 400;
+    }
 }
 
 @mixin g-biggest {
-	@include body-font(true);
-	font-size: variables.$h1-font-size;
+    @include body-font(true);
+    font-size: variable.$h1-font-size;
+    margin-bottom: 1.5rem; 
 }
 
 @mixin g-bigger {
-	@include body-font(true);
-	font-size: variables.$h2-font-size;
+    @include body-font(true);
+    font-size: variable.$h2-font-size;
+    margin-bottom: 1.25rem;
 }
 
 @mixin g-big {
-	@include body-font(true);
-	font-size: variables.$h3-font-size;
+    @include body-font(true);
+    font-size: variable.$h3-font-size;
+    margin-bottom: 1.125rem;
 }
 
 @mixin g-normal {
-	@include body-font;
-	font-size: variables.$normal-font-size;
+    @include body-font;
+    font-size: variable.$normal-font-size;
 }
 
 @mixin g-small {
-	@include body-font;
-	font-size: variables.$small-font-size;
+    @include body-font;
+    font-size: variable.$small-font-size;
 }
 
 @mixin g-smaller {
-	@include body-font;
-	font-size: variables.$smaller-font-size;
+    @include body-font;
+    font-size: variable.$smaller-font-size;
 }
 
 /* Spacing */
 @mixin page-bottom-margin {
-	margin-bottom: variables.$page-bottom-margin;
+	margin-bottom: variable.$page-bottom-margin;
 }
 
 @mixin general-padding {
-	padding: variables.$general-padding;
+	padding: variable.$general-padding;
 }
 
 @mixin max-width {
-	max-width: variables.$max-width;
+	max-width: variable.$max-width;
+}
+
+/* Buttons */
+@mixin button-variant(
+	$bg-color: variable.$blue-primary,
+	$text-color: variable.$white,
+	$is-outline: false
+) {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 20px;
+	@include g-small;
+	transition:
+		transform 0.25s ease,
+		background-color 0.25s ease,
+		color 0.25s ease,
+		box-shadow 0.25s ease,
+		border-color 0.25s ease;
+	cursor: pointer;
+
+	@if $is-outline {
+		background-color: transparent;
+		color: $text-color;
+		border: 1px solid $bg-color;
+
+		&:hover {
+			transform: translateY(-2px);
+			background-color: $bg-color;
+			color: variable.$white;
+			box-shadow: 0 10px 10px variable.$blue-glow;
+		}
+	} @else {
+		background-color: $bg-color;
+		color: $text-color;
+		border: 1px solid transparent;
+
+		&:hover {
+			transform: translateY(-3px);
+			background-color: variable.$blue-light;
+			color: variable.$white;
+			box-shadow: 0 15px 40px variable.$blue-glow;
+		}
+	}
 }

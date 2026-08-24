@@ -7,252 +7,168 @@
 
 .hero {
 	position: relative;
-	min-height: variable.$hero-min-height;
+	min-height: 90dvh;
 	overflow: hidden;
-	padding: variable.$hero-padding-top variable.$general-padding
-		variable.$hero-padding-bottom;
+	padding: variable.$padding-top-hero variable.$general-padding variable.$padding-bottom-hero;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	background-color: variable.$black;
-}
 
-/* SVG Background */
-.hero-background {
-	position: absolute;
-	inset: 0;
-	z-index: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	pointer-events: none;
-	opacity: 1;
-}
-
-.hero-background svg {
-	display: block;
-	width: 100%;
-	height: 100%;
-}
-
-/* Hero overlay */
-.hero::after {
-	content: "";
-	position: absolute;
-	inset: 0;
-	z-index: 1;
-	pointer-events: none;
-	background: linear-gradient(
-		180deg,
-		rgba(11, 13, 16, variable.$hero-overlay-top-opacity) 0%,
-		rgba(11, 13, 16, variable.$hero-overlay-middle-opacity) 45%,
-		rgba(11, 13, 16, variable.$hero-overlay-bottom-opacity) 100%
-	);
-}
-
-/* Hero content */
-.hero-content {
-	position: relative;
-	z-index: 3;
-	max-width: variable.$hero-content-max-width;
-}
-
-/* Eyebrow */
-.eyebrow {
-	display: flex;
-	align-items: center;
-	gap: variable.$hero-eyebrow-gap;
-	margin-bottom: variable.$hero-eyebrow-margin-bottom;
-	color: variable.$gray-light;
-	@include mixin.g-smaller;
-	font-weight: 500;
-	letter-spacing: 0.15em;
-	text-transform: uppercase;
-}
-
-.eyebrow::before {
-	content: "";
-	width: variable.$hero-eyebrow-line-width;
-	height: 1px;
-	background-color: variable.$blue-primary;
-}
-
-.hero h1 {
-	@include mixin.max-width;
-	@include mixin.g-title-1;
-	margin-bottom: unset;
-	text-transform: uppercase;
-}
-
-.hero h1 .accent {
-	color: variable.$blue-primary;
-	text-shadow: 0 0 variable.$hero-accent-glow-size variable.$blue-glow;
-}
-
-/* Description */
-.description {
-	max-width: variable.$hero-description-max-width;
-	margin-top: variable.$hero-description-margin-top;
-	color: variable.$gray-light;
-	@include mixin.g-small;
-}
-
-/* Hero Actions */
-.hero-actions {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: variable.$hero-actions-gap;
-	margin-top: variable.$hero-actions-margin-top;
-}
-
-/* Primary Button */
-.button {
-	display: inline-flex;
-	align-items: center;
-	gap: variable.$hero-button-gap;
-	padding: variable.$hero-button-padding-y variable.$hero-button-padding-x;
-	background-color: variable.$blue-primary;
-	color: variable.$white;
-	@include mixin.g-smaller;
-	font-weight: 600;
-	letter-spacing: variable.$hero-button-letter-spacing;
-	text-transform: uppercase;
-	transition:
-		transform 0.25s ease,
-		background-color 0.25s ease,
-		box-shadow 0.25s ease;
-}
-
-.button:hover {
-	transform: translateY(variable.$hero-button-hover-y);
-	background-color: variable.$blue-light;
-	box-shadow: 0 variable.$hero-button-hover-shadow-y
-		variable.$hero-button-hover-shadow-blur
-		rgba(0, 55, 120, variable.$hero-button-hover-shadow-opacity);
-}
-
-.secondary-link {
-	color: variable.$gray;
-	@include mixin.g-smaller;
-	font-weight: 500;
-	letter-spacing: variable.$hero-secondary-letter-spacing;
-	text-transform: uppercase;
-	transition: color 0.25s ease;
-}
-
-.secondary-link:hover {
-	color: variable.$white;
-}
-
-.hero-bottom {
-	position: relative;
-	z-index: 3;
-	padding-top: variable.$hero-bottom-padding-top;
-	display: flex;
-	align-items: flex-end;
-	justify-content: space-between;
-}
-
-.location,
-.scroll {
-	color: variable.$gray;
-	@include mixin.g-smaller;
-	font-weight: 500;
-	letter-spacing: variable.$hero-meta-letter-spacing;
-	text-transform: uppercase;
-}
-
-.scroll {
-	display: flex;
-	align-items: center;
-	gap: variable.$hero-scroll-gap;
-}
-
-.scroll-line {
-	width: variable.$hero-scroll-line-width;
-	height: 1px;
-	background-color: variable.$blue-primary;
-}
-
-@include mixin.mq(sm) {
-	.hero {
-		padding-top: variable.$hero-sm-padding-top;
+	@include mixin.mq(sm) {
+		padding-top: 130px;
 	}
 
-	.hero-actions {
-		flex-direction: row;
-
-		align-items: center;
-	}
-}
-
-@include mixin.mq(md) {
-	.hero {
+	@include mixin.mq(md) {
 		min-height: 100vh;
-
-		padding: variable.$hero-md-padding-top variable.$general-padding
-			variable.$hero-md-padding-bottom;
+		padding: 150px variable.$general-padding 45px;
 	}
 
-	.hero h1 {
-		font-size: clamp(4rem, 9vw, 6.5rem);
+	@include mixin.mq(lg) {
+		padding: 165px 56px 60px;
 	}
 
-	.description {
-		margin-top: variable.$hero-md-description-margin-top;
-
-		@include mixin.g-normal;
+	@include mixin.mq(xl) {
+		padding-inline: 72px;
 	}
 
-	.hero-actions {
-		margin-top: variable.$hero-md-actions-margin-top;
-	}
-}
+	/* Background */
+	&__background {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		pointer-events: none;
+		opacity: 1;
 
-// =========================================================
-// Responsive — 1024px
-// =========================================================
-
-@include mixin.mq(lg) {
-	.hero {
-		padding: variable.$hero-lg-padding-top variable.$hero-lg-padding-horizontal
-			variable.$hero-lg-padding-bottom;
-	}
-
-	.eyebrow {
-		margin-bottom: variable.$hero-lg-eyebrow-margin-bottom;
-	}
-
-	.eyebrow::before {
-		width: variable.$hero-lg-eyebrow-line-width;
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
 	}
 
-	.hero h1 {
-		font-size: clamp(5rem, 7.5vw, 8.2rem);
+	/* Overlay / After */
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		pointer-events: none;
+		background: linear-gradient(
+			180deg,
+			rgba(11, 13, 16, 0.05) 0%,
+			rgba(11, 13, 16, 0.05) 45%,
+			rgba(11, 13, 16, 0.75) 100%
+		);
 	}
 
-	.description {
-		margin-top: variable.$hero-lg-description-margin-top;
-
-		font-size: 1.125rem;
+	/* Content */
+	&__content {
+		position: relative;
+		z-index: 3;
+		max-width: 1150px;
 	}
 
-	.hero-actions {
-		margin-top: variable.$hero-lg-actions-margin-top;
+	/* Eyebrow */
+	&__eyebrow {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: 28px;
+		color: variable.$gray-light;
+		@include mixin.g-smaller;
+		font-weight: 500;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+
+		@include mixin.mq(lg) {
+			margin-bottom: 38px;
+		}
+
+		&::before {
+			content: "";
+			width: 28px;
+			height: 1px;
+			background-color: variable.$blue-primary;
+
+			@include mixin.mq(lg) {
+				width: 35px;
+			}
+		}
 	}
-}
 
-// =========================================================
-// Responsive — 1280px
-// =========================================================
+	&__title {
+		@include mixin.max-width;
+		@include mixin.g-title-1;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
 
-@include mixin.mq(xl) {
-	.hero {
-		padding-inline: variable.$hero-xl-padding-horizontal;
+		@include mixin.mq(md) {
+			font-size: clamp(4rem, 9vw, 6.5rem);
+		}
+
+		@include mixin.mq(lg) {
+			font-size: clamp(5rem, 7.5vw, 8.2rem);
+		}
+
+		@include mixin.mq(xl) {
+			max-width: 1200px;
+		}
 	}
 
-	.hero h1 {
-		max-width: variable.$hero-xl-title-max-width;
+	&__accent {
+		color: variable.$blue-primary;
+		text-shadow: 0 0 40px variable.$blue-glow;
+	}
+
+	&__description {
+		color: variable.$gray-light;
+		@include mixin.g-small;
+	}
+
+	&__actions {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+
+		@include mixin.mq(md) {
+			margin-top: 40px;
+		}
+
+		@include mixin.mq(lg) {
+			margin-top: 44px;
+		}
+	}
+
+	/* Botón principal */
+	&__button {
+		@include mixin.button-variant(
+			variable.$blue-primary,
+			variable.$white,
+			false
+		);
+		margin-bottom: unset;
+	}
+
+	/* Enlace secundario */
+	&__link {
+		&--secondary {
+			@include mixin.button-variant(
+				variable.$blue-primary,
+				variable.$white,
+				true
+			);
+
+			margin-bottom: unset;
+		}
+	}
+
+	&__button,
+	&__link {
+		text-transform: uppercase;
 	}
 }

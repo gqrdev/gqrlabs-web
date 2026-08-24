@@ -3,7 +3,7 @@ import "../../sass/components/partials/_hero.scss";
 ---
 
 <section class="hero">
-	<div class="hero-background" aria-hidden="true">
+	<div class="hero__background" aria-hidden="true">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 1440 700"
@@ -163,33 +163,27 @@ import "../../sass/components/partials/_hero.scss";
 		</svg>
 	</div>
 
-	<!-- HERO CONTENT -->
-	<div class="hero-content">
-		<div class="eyebrow">Desarrollo de Software</div>
+	<div class="hero__content">
+		<div class="hero__eyebrow">Desarrollo de Software</div>
 
-		<h1>
+		<h1 class="hero__title">
 			Desarrollo de Software
-			<span class="accent"> Lorem ipsum </span>
+			<span class="hero__accent"> Lorem ipsum </span>
 		</h1>
 
-		<p class="description">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nunc, eget aliquam nisl nunc vel nisl. Sed euismod, nunc ut aliquam tincidunt, nunc nisl aliquam nunc, eget aliquam nisl nunc vel nisl.
+		<p class="hero__description">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
+			dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet,
+			consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur
+			adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing
+			elit...
 		</p>
 
-		<div class="hero-actions">
-			<a href="#contact" class="button">Hablemos<span>↗</span></a>
-			<a href="#projects" class="secondary-link">Ver proyectos</a>
+		<div class="hero__actions">
+			<a href="#contact" class="hero__button">Hablemos<span>↗</span></a>
+			<a href="#projects" class="hero__link hero__link--secondary"
+				>Ver proyectos</a
+			>
 		</div>
-	</div>
-
-	<!-- HERO FOOTER -->
-	<div class="hero-bottom">
-		<span class="location"> Montevideo · Uruguay </span>
-
-		<span class="scroll">
-			Scroll
-
-			<span class="scroll-line"></span>
-		</span>
 	</div>
 </section>
