@@ -7,123 +7,123 @@
 
 .software {
 	background: var(--black);
-}
 
-.software-header {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	gap: 25px;
-	margin-bottom: 55px;
-}
-
-.software-title {
-	max-width: 850px;
-	font-family: var(--font-display);
-	font-size: clamp(2rem, 10vw, 4.5rem);
-	font-weight: 500;
-	line-height: 1.1;
-	letter-spacing: -0.04em;
-}
-
-.software-description {
-	max-width: 380px;
-	color: var(--gray);
-	font-size: 14px;
-	line-height: 1.7;
-}
-
-.software-list {
-	border-top: 1px solid var(--border);
-}
-
-.software {
-	display: grid;
-	grid-template-columns: 50px 1fr 25px;
-	gap: 15px;
-	align-items: center;
-	padding: 26px 0;
-	border-bottom: 1px solid var(--border);
-	transition:
-		background 0.25s ease,
-		padding 0.25s ease;
-}
-
-.software:hover {
-	background: rgba(0, 55, 120, 0.035);
-}
-
-.software-number {
-	color: var(--blue-soft);
-	font-family: var(--font-display);
-	font-size: 10px;
-}
-
-.software h3 {
-	font-family: var(--font-display);
-	font-size: 13px;
-	font-weight: 500;
-	text-transform: uppercase;
-}
-
-.software p {
-	display: none;
-	color: var(--gray);
-	font-size: 14px;
-	line-height: 1.6;
-}
-
-.software-arrow {
-	color: var(--blue);
-	font-size: 18px;
-	text-align: right;
-}
-
-@media (min-width: 768px) {
-	.software-header {
-		flex-direction: row;
-
-		align-items: flex-end;
-
-		justify-content: space-between;
+	&__container {
+		@include mixin.container;
 	}
 
-	.software-list {
-		grid-template-columns: 70px 1fr 40px;
-
-		gap: 30px;
-
-		padding: 30px 0;
+	&__pretitle {
+		@include mixin.pretitle;
 	}
 
-	.software h3 {
-		font-size: 16px;
-	}
-}
+	&__header {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 25px;
+		margin-bottom: 55px;
 
-@media (min-width: 1024px) {
-	.software-header {
-		margin-bottom: 70px;
+		@include mixin.mq(md) {
+			flex-direction: row;
+			align-items: flex-end;
+			justify-content: space-between;
+		}
+
+		@include mixin.mq(lg) {
+			margin-bottom: 70px;
+		}
 	}
 
-	.software-title {
-		font-size: clamp(3rem, 4vw, 4.5rem);
+	&__title {
+		max-width: 850px;
+		font-family: var(--font-display);
+		font-size: clamp(2rem, 10vw, 4.5rem);
+		font-weight: 500;
+		line-height: 1.1;
+		letter-spacing: -0.04em;
+
+		@include mixin.mq(lg) {
+			font-size: clamp(3rem, 4vw, 4.5rem);
+		}
 	}
 
-	.software {
-		grid-template-columns: 100px 1fr 320px 40px;
+	&__description {
+		max-width: 380px;
+		color: var(--gray);
+		font-size: 14px;
+		line-height: 1.7;
 	}
 
-	.software h3 {
+	&__list {
+		border-top: 1px solid var(--border);
+	}
+
+	&__item {
+		display: grid;
+		grid-template-columns: 50px 1fr 25px;
+		gap: 15px;
+		align-items: center;
+		padding: 26px 0;
+		border-bottom: 1px solid var(--border);
+		transition:
+			background 0.25s ease,
+			padding 0.25s ease;
+
+		&:hover {
+			background: rgba(0, 55, 120, 0.035);
+
+			@include mixin.mq(lg) {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		}
+
+		@include mixin.mq(md) {
+			grid-template-columns: 70px 1fr 40px;
+			gap: 30px;
+			padding: 30px 0;
+		}
+
+		@include mixin.mq(lg) {
+			grid-template-columns: 100px 1fr 320px 40px;
+		}
+	}
+
+	&__number {
+		color: var(--blue-soft);
+		font-family: var(--font-display);
+		font-size: 10px;
+	}
+
+	&__item-title {
+		font-family: var(--font-display);
+		font-size: 13px;
+		font-weight: 500;
+		text-transform: uppercase;
+
+		@include mixin.mq(md) {
+			font-size: 16px;
+		}
+
+		@include mixin.mq(lg) {
+			font-size: 18px;
+		}
+	}
+
+	&__item-description {
+		display: none;
+		color: var(--gray);
+		font-size: 14px;
+		line-height: 1.6;
+
+		@include mixin.mq(lg) {
+			display: block;
+		}
+	}
+
+	&__arrow {
+		color: var(--blue);
 		font-size: 18px;
-	}
-
-	.software p {
-		display: block;
-	}
-
-	.software:hover {
-		padding-left: 15px;
-		padding-right: 15px;
+		text-align: right;
 	}
 }

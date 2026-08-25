@@ -20,107 +20,107 @@
 
 /* Headings */
 @mixin heading-font($extrabold: false) {
-    line-height: variable.$heading-line-height;
-    font-family: variable.$heading-font;
-    color: variable.$white;
+	line-height: variable.$heading-line-height;
+	font-family: variable.$heading-font;
+	color: variable.$white;
 
-    @if $extrabold {
-        font-weight: 700;
-    } @else {
-        font-weight: 400;
-    }
+	@if $extrabold {
+		font-weight: 700;
+	} @else {
+		font-weight: 400;
+	}
 }
 
 @mixin g-bigger-title {
-    @include heading-font(true);
-    font-size: variable.$bigger-font-size;
-    margin-bottom: 0.6em;
+	@include heading-font(true);
+	font-size: variable.$bigger-font-size;
+	margin-bottom: 0.6em;
 }
 
 @mixin g-title-1 {
-    @include heading-font(true);
-    font-size: variable.$h1-font-size;
-    margin-bottom: 0.6em;
+	@include heading-font(true);
+	font-size: variable.$h1-font-size;
+	margin-bottom: 0.6em;
 }
 
 @mixin g-title-2 {
-    @include heading-font(true);
-    font-weight: 500;
-    font-size: variable.$h2-font-size;
-    margin-bottom: 0.5em;
+	@include heading-font(true);
+	font-weight: 500;
+	font-size: variable.$h2-font-size;
+	margin-bottom: 0.5em;
 }
 
 @mixin g-title-3 {
-    @include heading-font;
-    font-weight: 500;
-    font-size: variable.$h3-font-size;
-    margin-bottom: 0.5em;
+	@include heading-font;
+	font-weight: 500;
+	font-size: variable.$h3-font-size;
+	margin-bottom: 0.5em;
 }
 
 @mixin g-title-4 {
-    @include heading-font;
-    font-weight: 500;
-    font-size: variable.$normal-font-size;
-    margin-bottom: 0.4em;
+	@include heading-font;
+	font-weight: 500;
+	font-size: variable.$normal-font-size;
+	margin-bottom: 0.4em;
 }
 
 @mixin g-title-5 {
-    @include heading-font;
-    font-size: variable.$small-font-size;
-    margin-bottom: 0.4em;
+	@include heading-font;
+	font-size: variable.$small-font-size;
+	margin-bottom: 0.4em;
 }
 
 @mixin g-title-6 {
-    @include heading-font;
-    font-size: variable.$smaller-font-size;
-    margin-bottom: 0.4em;
+	@include heading-font;
+	font-size: variable.$smaller-font-size;
+	margin-bottom: 0.4em;
 }
 
 /* Body Text Mixins */
 @mixin body-font($extrabold: false) {
-    line-height: variable.$body-line-height;
-    font-family: variable.$body-font;
-    color: variable.$white;
-    margin-bottom: 1rem;
+	line-height: variable.$body-line-height;
+	font-family: variable.$body-font;
+	color: variable.$white;
+	margin-bottom: 1rem;
 
-    @if $extrabold {
-        font-weight: 700;
-    } @else {
-        font-weight: 400;
-    }
+	@if $extrabold {
+		font-weight: 700;
+	} @else {
+		font-weight: 400;
+	}
 }
 
 @mixin g-biggest {
-    @include body-font(true);
-    font-size: variable.$h1-font-size;
-    margin-bottom: 1.5rem; 
+	@include body-font(true);
+	font-size: variable.$h1-font-size;
+	margin-bottom: 1.5rem;
 }
 
 @mixin g-bigger {
-    @include body-font(true);
-    font-size: variable.$h2-font-size;
-    margin-bottom: 1.25rem;
+	@include body-font(true);
+	font-size: variable.$h2-font-size;
+	margin-bottom: 1.25rem;
 }
 
 @mixin g-big {
-    @include body-font(true);
-    font-size: variable.$h3-font-size;
-    margin-bottom: 1.125rem;
+	@include body-font(true);
+	font-size: variable.$h3-font-size;
+	margin-bottom: 1.125rem;
 }
 
 @mixin g-normal {
-    @include body-font;
-    font-size: variable.$normal-font-size;
+	@include body-font;
+	font-size: variable.$normal-font-size;
 }
 
 @mixin g-small {
-    @include body-font;
-    font-size: variable.$small-font-size;
+	@include body-font;
+	font-size: variable.$small-font-size;
 }
 
 @mixin g-smaller {
-    @include body-font;
-    font-size: variable.$smaller-font-size;
+	@include body-font;
+	font-size: variable.$smaller-font-size;
 }
 
 /* Spacing */
@@ -178,4 +178,39 @@
 			box-shadow: 0 15px 40px variable.$blue-glow;
 		}
 	}
+}
+
+/* Pretitle */
+@mixin pretitle {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 28px;
+	color: variable.$gray-light;
+	@include g-smaller;
+	font-weight: 500;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+
+	@include mq(lg) {
+		margin-bottom: 38px;
+	}
+
+	&::before {
+		content: "";
+		width: 20px;
+		height: 1px;
+		background-color: variable.$blue-primary;
+
+		@include mq(lg) {
+			width: 35px;
+		}
+	}
+}
+
+/* Global Mixins */
+@mixin container {
+	width: calc(100% - (#{variable.$general-padding} * 2));
+	max-width: #{variable.$max-width};
+	margin-inline: auto;
 }

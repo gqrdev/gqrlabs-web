@@ -72,32 +72,9 @@
 		max-width: 1150px;
 	}
 
-	/* Eyebrow */
-	&__eyebrow {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		margin-bottom: 28px;
-		color: variable.$gray-light;
-		@include mixin.g-smaller;
-		font-weight: 500;
-		letter-spacing: 0.15em;
-		text-transform: uppercase;
-
-		@include mixin.mq(lg) {
-			margin-bottom: 38px;
-		}
-
-		&::before {
-			content: "";
-			width: 20px;
-			height: 1px;
-			background-color: variable.$blue-primary;
-
-			@include mixin.mq(lg) {
-				width: 35px;
-			}
-		}
+	/* Pretitle */
+	&__pretitle {
+		@include mixin.pretitle;
 	}
 
 	&__title {

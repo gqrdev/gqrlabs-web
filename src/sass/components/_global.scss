@@ -4,12 +4,6 @@
 
 @use "../base/variables" as variable;
 
-.container {
-	width: calc(100% - (#{variable.$general-padding} * 2));
-	max-width: #{variable.$max-width};
-	margin-inline: auto;
-}
-
 .section {
 	position: relative;
 	z-index: 2;
