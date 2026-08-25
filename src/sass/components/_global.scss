@@ -7,7 +7,7 @@
 .section {
 	position: relative;
 	z-index: 2;
-	padding-block: #{variable.$section-padding};
+	padding: #{variable.$section-padding} 0;
 }
 
 .section-label {
