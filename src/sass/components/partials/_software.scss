@@ -6,7 +6,7 @@
 @use "../../base/mixins" as mixin;
 
 .software {
-	background: var(--black);
+	background-color: #{variable.$black-soft};
 
 	&__container {
 		@include mixin.container;
