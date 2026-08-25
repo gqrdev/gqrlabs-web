@@ -5,114 +5,82 @@
 @use "../../base/variables" as variable;
 @use "../../base/mixins" as mixin;
 
-.services {
+.software {
 	background: var(--black);
 }
 
-.services-header {
+.software-header {
 	display: flex;
-
 	flex-direction: column;
-
 	align-items: flex-start;
-
 	gap: 25px;
-
 	margin-bottom: 55px;
 }
 
-.services-title {
+.software-title {
 	max-width: 850px;
-
 	font-family: var(--font-display);
-
 	font-size: clamp(2rem, 10vw, 4.5rem);
-
 	font-weight: 500;
-
 	line-height: 1.1;
-
 	letter-spacing: -0.04em;
 }
 
-.services-description {
+.software-description {
 	max-width: 380px;
-
 	color: var(--gray);
-
 	font-size: 14px;
-
 	line-height: 1.7;
 }
 
-.services-list {
+.software-list {
 	border-top: 1px solid var(--border);
 }
 
-.service {
+.software {
 	display: grid;
-
 	grid-template-columns: 50px 1fr 25px;
-
 	gap: 15px;
-
 	align-items: center;
-
 	padding: 26px 0;
-
 	border-bottom: 1px solid var(--border);
-
 	transition:
 		background 0.25s ease,
 		padding 0.25s ease;
 }
 
-.service:hover {
+.software:hover {
 	background: rgba(0, 55, 120, 0.035);
 }
 
-.service-number {
+.software-number {
 	color: var(--blue-soft);
-
 	font-family: var(--font-display);
-
 	font-size: 10px;
 }
 
-.service h3 {
+.software h3 {
 	font-family: var(--font-display);
-
 	font-size: 13px;
-
 	font-weight: 500;
-
 	text-transform: uppercase;
 }
 
-.service p {
+.software p {
 	display: none;
-
 	color: var(--gray);
-
 	font-size: 14px;
-
 	line-height: 1.6;
 }
 
-.service-arrow {
+.software-arrow {
 	color: var(--blue);
-
 	font-size: 18px;
-
 	text-align: right;
 }
 
-/* =====================================================
-   SERVICES — 768px
-====================================================== */
-
 @media (min-width: 768px) {
-	.services-header {
+	.software-header {
 		flex-direction: row;
 
 		align-items: flex-end;
@@ -120,7 +88,7 @@
 		justify-content: space-between;
 	}
 
-	.service {
+	.software-list {
 		grid-template-columns: 70px 1fr 40px;
 
 		gap: 30px;
@@ -128,39 +96,34 @@
 		padding: 30px 0;
 	}
 
-	.service h3 {
+	.software h3 {
 		font-size: 16px;
 	}
 }
 
-/* =====================================================
-   SERVICES — 1024px
-====================================================== */
-
 @media (min-width: 1024px) {
-	.services-header {
+	.software-header {
 		margin-bottom: 70px;
 	}
 
-	.services-title {
+	.software-title {
 		font-size: clamp(3rem, 4vw, 4.5rem);
 	}
 
-	.service {
+	.software {
 		grid-template-columns: 100px 1fr 320px 40px;
 	}
 
-	.service h3 {
+	.software h3 {
 		font-size: 18px;
 	}
 
-	.service p {
+	.software p {
 		display: block;
 	}
 
-	.service:hover {
+	.software:hover {
 		padding-left: 15px;
-
 		padding-right: 15px;
 	}
 }
