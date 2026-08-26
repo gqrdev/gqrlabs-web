@@ -1,6 +1,8 @@
 ---
 import "../../sass/components/partials/_hero.scss";
 import BackgroundSvg from "./utils/BackgroundSvg.astro";
+import {Image} from "astro:assets";
+import LinkedinLogo from "../../assets/icons/linkedin-logo.png";
 ---
 
 <section class="hero">
@@ -12,23 +14,44 @@ import BackgroundSvg from "./utils/BackgroundSvg.astro";
 		<div class="hero__pretitle">Inicio</div>
 
 		<h1 class="hero__title">
-			Desarrollo de Software
-			<span class="hero__accent"> Lorem ipsum </span>
+			Soluciones digitales que&nbsp;<span class="hero__accent"
+				>aportan valor.</span
+			>
 		</h1>
 
 		<p class="hero__description">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit... Lorem ipsum
-			dolor sit amet, consectetur adipiscing elit... Lorem ipsum dolor sit amet,
-			consectetur adipiscing elit... Lorem ipsum dolor sit amet, consectetur
-			adipiscing elit... Lorem ipsum dolor sit amet, consectetur adipiscing
-			elit...
+			Siempre me interesó entender cómo una idea se convierte en software real.
+			Con el tiempo, esa curiosidad se transformó en experiencia y en una forma
+			de trabajar que busca entender cada problema, encontrar la mejor solución
+			y convertir una idea en algo que realmente funcione.
+		</p>
+		<p class="hero__description">
+			Ese recorrido dio forma a GQR Labs, un proyecto donde la calidad, la
+			seguridad y la comunicación transparente son prioridad. Cada desarrollo se
+			construye de principio a fin, buscando soluciones pensadas para aportar
+			valor.
+		</p>
+		<p class="hero__description">
+			Si tenés un proyecto en mente, hablemos de cómo llevarlo adelante.
 		</p>
 
 		<div class="hero__actions">
-			<a href="#contact" class="hero__button">Hablemos<span>↗</span></a>
-			<a href="#projects" class="hero__link hero__link--secondary"
-				>Ver proyectos</a
-			>
+			<a href="#software" class="hero__button">
+				Servicios<!-- <span>↗</span> -->
+			</a>
 		</div>
 	</div>
+
+	<div class="hero__location" aria-label="Información de contacto y ubicación">
+		<a
+			href="https://www.linkedin.com/in/facundogqr/"
+			class="hero__author"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<span>Facundo Q. Rivoir</span>
+			<Image src={LinkedinLogo} alt="LinkedIn Logo" width={20} height={20} />
+		</a>
+	</div>
+	<span class="hero__place"> Montevideo · Uruguay </span>
 </section>

@@ -9,7 +9,8 @@
 	position: relative;
 	min-height: 90dvh;
 	overflow: hidden;
-	padding: variable.$padding-top-hero variable.$general-padding variable.$padding-bottom-hero;
+	padding: variable.$padding-top-hero variable.$general-padding
+		variable.$padding-bottom-hero;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -84,6 +85,7 @@
 	}
 
 	&__accent {
+		display: inline;
 		color: variable.$blue-primary;
 		text-shadow: 0 0 40px variable.$blue-glow;
 	}
@@ -94,18 +96,7 @@
 	}
 
 	&__actions {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 20px;
-
-		@include mixin.mq(md) {
-			margin-top: 40px;
-		}
-
-		@include mixin.mq(lg) {
-			margin-top: 44px;
-		}
+		margin-bottom: 2rem;
 	}
 
 	/* Botón principal */
@@ -132,7 +123,37 @@
 	}
 
 	&__button,
-	&__link {
+	&__link,
+	&__location {
 		text-transform: uppercase;
+	}
+
+	&__location {
+		@include mixin.g-smaller;
+		margin-bottom: 6px;
+		position: relative;
+		z-index: 3;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&__author {
+		display: flex;
+		align-items: center;
+		column-gap: 8px;
+		color: variable.$gray-light;
+		transition: color 0.25s ease;
+
+		&:hover {
+			color: variable.$white;
+		}
+	}
+
+	&__place {
+		@include mixin.g-smaller;
+		position: relative;
+		z-index: 3;
+		color: variable.$gray-light;
 	}
 }
