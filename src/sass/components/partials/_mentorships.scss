@@ -1,12 +1,12 @@
 // =========================================================
-// Hero
+// Mentorships
 // =========================================================
 
 @use "../../base/variables" as variable;
 @use "../../base/mixins" as mixin;
 
-.software {
-	background: #{variable.$black-soft};
+.mentorships {
+	background-color: variable.$black-soft;
 
 	&__container {
 		@include mixin.container;
@@ -36,7 +36,15 @@
 
 	&__title {
 		max-width: 850px;
-		@include mixin.g-title-1;
+		font-family: var(--font-display);
+		font-size: clamp(2rem, 10vw, 4.5rem);
+		font-weight: 500;
+		line-height: 1.1;
+		letter-spacing: -0.04em;
+
+		@include mixin.mq(lg) {
+			font-size: clamp(3rem, 4vw, 4.5rem);
+		}
 	}
 
 	&__description {
