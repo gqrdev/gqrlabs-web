@@ -6,124 +6,225 @@
 @use "../../base/mixins" as mixin;
 
 .mentorships {
+	@include mixin.background-alt;
 	@include mixin.section;
 
-	&__container {
-		@include mixin.container;
-	}
-
+	/* Pretitle */
 	&__pretitle {
 		@include mixin.pretitle;
 	}
 
+	/* Accent */
+	&__accent {
+		@include mixin.accent;
+	}
+
+	/* Header */
 	&__header {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 25px;
-		margin-bottom: 55px;
+		@include mixin.header-container;
+	}
+
+	/* Title */
+	&__title {
+		@include mixin.g-title-1;
+	}
+
+	/* Description */
+	&__description {
+		@include mixin.g-normal;
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
 
 		@include mixin.mq(md) {
-			flex-direction: row;
-			align-items: flex-end;
-			justify-content: space-between;
-		}
-
-		@include mixin.mq(lg) {
-			margin-bottom: 70px;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 24px;
 		}
 	}
 
-	&__title {
-		max-width: 850px;
-		font-family: var(--font-display);
-		font-size: clamp(2rem, 10vw, 4.5rem);
-		font-weight: 500;
-		line-height: 1.1;
-		letter-spacing: -0.04em;
+	&__card {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background: variable.$background-card;
+		border-radius: 8px;
+		padding: 28px 24px;
+		transition:
+			background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+			transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+			border-color 0.3s ease;
 
-		@include mixin.mq(lg) {
-			font-size: clamp(3rem, 4vw, 4.5rem);
+		&-body {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
 		}
-	}
 
-	&__description {
-		max-width: 380px;
-		color: var(--gray);
-		font-size: 14px;
-		line-height: 1.7;
-	}
+		&:hover {
+			background: rgba(255, 255, 255, 0.035);
+			border-color: rgba(255, 255, 255, 0.12);
+			transform: translateY(-4px);
 
-	&__list {
-		border-top: 1px solid var(--border);
+			.mentorships__code-badge {
+				&::before {
+					color: var(--white, #fff);
+					transform: scale(1.05);
+				}
+			}
+
+			.mentorships__item-title {
+				color: var(--white, #fff);
+			}
+		}
 	}
 
 	&__item {
-		display: grid;
-		grid-template-columns: 50px 1fr 25px;
-		gap: 15px;
-		align-items: center;
-		padding: 26px 0;
-		border-bottom: 1px solid var(--border);
-		transition:
-			background 0.25s ease,
-			padding 0.25s ease;
+		&-header {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
 
-		&:hover {
-			background: rgba(0, 55, 120, 0.035);
+		&-title {
+			font-family: var(--font-display);
+			font-size: 18px;
+			font-weight: 600;
+			letter-spacing: -0.02em;
+			color: rgba(255, 255, 255, 0.9);
+			transition: color 0.3s ease;
 
-			@include mixin.mq(lg) {
-				padding-left: 15px;
-				padding-right: 15px;
+			@include mixin.mq(md) {
+				font-size: 20px;
 			}
 		}
 
-		@include mixin.mq(md) {
-			grid-template-columns: 70px 1fr 40px;
-			gap: 30px;
-			padding: 30px 0;
-		}
-
-		@include mixin.mq(lg) {
-			grid-template-columns: 100px 1fr 320px 40px;
+		&-description {
+			color: var(--gray);
+			font-size: 14px;
+			line-height: 1.6;
 		}
 	}
 
-	&__number {
-		color: var(--blue-soft);
-		font-family: var(--font-display);
-		font-size: 10px;
+	&__code-badge {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 4px 8px;
+		border-radius: 4px;
+		transition:
+			background 0.3s ease,
+			border-color 0.3s ease;
+		flex-shrink: 0;
+
+		&::before {
+			content: ">";
+			font-family: var(--font-display, monospace);
+			font-size: 24px;
+			font-weight: 700;
+			letter-spacing: 1px;
+			color: var(--gray, #888);
+			transition:
+				color 0.3s ease,
+				transform 0.3s ease;
+		}
 	}
 
-	&__item-title {
-		font-family: var(--font-display);
-		font-size: 13px;
-		font-weight: 500;
+	&__tech-section {
+		margin-top: 55px;
+		text-align: center;
+	}
+
+	&__tech-title {
+		color: var(--gray, #8a91a1);
+		font-size: 12px;
 		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: 25px;
+		font-weight: 700;
+	}
+
+	&__tech-wrapper {
+		position: relative;
+		overflow: hidden;
+		padding: 20px 0;
+
+		mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 10%,
+			black 90%,
+			transparent
+		);
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 10%,
+			black 90%,
+			transparent
+		);
+	}
+
+	&__tech-track {
+		display: flex;
+		width: max-content;
+		gap: 35px;
+		animation: mentorshipsMove 28s linear infinite;
 
 		@include mixin.mq(md) {
-			font-size: 16px;
-		}
-
-		@include mixin.mq(lg) {
-			font-size: 18px;
+			gap: 55px;
 		}
 	}
 
-	&__item-description {
-		display: none;
-		color: var(--gray);
+	&__tech {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		color: rgba(255, 255, 255, 0.7);
 		font-size: 14px;
-		line-height: 1.6;
+		font-weight: 600;
+		white-space: nowrap;
+		transition:
+			color 0.3s ease,
+			transform 0.3s ease;
 
-		@include mixin.mq(lg) {
-			display: block;
+		&-badge {
+			display: inline-block;
+			padding: 8px 16px;
+			background: variable.$background-card;
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			border-radius: 6px;
+			transition:
+				border-color 0.3s ease,
+				color 0.3s ease;
+		}
+
+		&:hover {
+			color: var(--white, #fff);
+			transform: translateY(-6px);
+
+			.mentorships__tech-badge {
+				border-color: rgba(255, 255, 255, 0.2);
+			}
 		}
 	}
 
-	&__arrow {
-		color: var(--blue);
-		font-size: 18px;
-		text-align: right;
+	&__tech-line {
+		width: 70px;
+		height: 1px;
+		background: rgba(255, 255, 255, 0.1);
+		margin: 15px auto 0;
+	}
+}
+
+/* Infinite animation */
+@keyframes mentorshipsMove {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
 	}
 }
