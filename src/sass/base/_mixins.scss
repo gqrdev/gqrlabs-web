@@ -210,9 +210,9 @@
 
 /* Global Mixins */
 @mixin container {
-	width: calc(100% - (#{variable.$general-padding} * 2));
+	/* width: calc(100% - (#{variable.$general-padding} * 2));
 	max-width: #{variable.$max-width};
-	margin-inline: auto;
+	margin-inline: auto; */
 }
 
 @mixin background-svg {
@@ -229,4 +229,28 @@
 		height: 100%;
 		object-fit: cover;
 	}
+}
+
+/* Header container */
+@mixin header-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	@include mq(md) {
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
+
+	@include mq(lg) {
+		margin-bottom: 70px;
+	}
+}
+
+/* Accent */
+@mixin accent {
+	display: inline;
+	color: variable.$blue-primary;
+	text-shadow: 0 0 40px variable.$blue-glow;
 }
