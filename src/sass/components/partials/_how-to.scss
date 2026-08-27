@@ -8,11 +8,6 @@
 .howto {
 	@include mixin.section;
 
-	/* Background */
-	&__background {
-		@include mixin.background;
-	}
-
 	&__container {
 		position: relative;
 		z-index: 1;

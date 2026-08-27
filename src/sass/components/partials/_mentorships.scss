@@ -6,7 +6,6 @@
 @use "../../base/mixins" as mixin;
 
 .mentorships {
-	@include mixin.background-alt;
 	@include mixin.section;
 
 	/* Pretitle */
@@ -130,101 +129,5 @@
 				color 0.3s ease,
 				transform 0.3s ease;
 		}
-	}
-
-	&__tech-section {
-		margin-top: 55px;
-		text-align: center;
-	}
-
-	&__tech-title {
-		color: var(--gray, #8a91a1);
-		font-size: 12px;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-		margin-bottom: 25px;
-		font-weight: 700;
-	}
-
-	&__tech-wrapper {
-		position: relative;
-		overflow: hidden;
-		padding: 20px 0;
-
-		mask-image: linear-gradient(
-			to right,
-			transparent,
-			black 10%,
-			black 90%,
-			transparent
-		);
-		-webkit-mask-image: linear-gradient(
-			to right,
-			transparent,
-			black 10%,
-			black 90%,
-			transparent
-		);
-	}
-
-	&__tech-track {
-		display: flex;
-		width: max-content;
-		gap: 35px;
-		animation: mentorshipsMove 28s linear infinite;
-
-		@include mixin.mq(md) {
-			gap: 55px;
-		}
-	}
-
-	&__tech {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		color: rgba(255, 255, 255, 0.7);
-		font-size: 14px;
-		font-weight: 600;
-		white-space: nowrap;
-		transition:
-			color 0.3s ease,
-			transform 0.3s ease;
-
-		&-badge {
-			display: inline-block;
-			padding: 8px 16px;
-			background: variable.$background-card;
-			border: 1px solid rgba(255, 255, 255, 0.08);
-			border-radius: 6px;
-			transition:
-				border-color 0.3s ease,
-				color 0.3s ease;
-		}
-
-		&:hover {
-			color: var(--white, #fff);
-			transform: translateY(-6px);
-
-			.mentorships__tech-badge {
-				border-color: rgba(255, 255, 255, 0.2);
-			}
-		}
-	}
-
-	&__tech-line {
-		width: 70px;
-		height: 1px;
-		background: rgba(255, 255, 255, 0.1);
-		margin: 15px auto 0;
-	}
-}
-
-/* Infinite animation */
-@keyframes mentorshipsMove {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(-50%);
 	}
 }
