@@ -6,15 +6,7 @@
 @use "../../base/mixins" as mixin;
 
 .howto {
-	position: relative;
-	overflow: hidden;
-	background: #{variable.$black-soft};
-	padding: variable.$padding-top-hero variable.$general-padding
-		variable.$padding-bottom-hero;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	background-color: variable.$black;
+	@include mixin.section;
 
 	/* Background */
 	&__background {

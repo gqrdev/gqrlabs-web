@@ -6,9 +6,7 @@
 @use "../../base/mixins" as mixin;
 
 .contact {
-	position: relative;
-	overflow: hidden;
-	background-color: #{variable.$black-soft};
+	@include mixin.section;
 
 	&__background {
 		@include mixin.background;

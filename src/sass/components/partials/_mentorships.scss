@@ -6,7 +6,7 @@
 @use "../../base/mixins" as mixin;
 
 .mentorships {
-	background-color: variable.$black-soft;
+	@include mixin.section;
 
 	&__container {
 		@include mixin.container;
