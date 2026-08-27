@@ -11,7 +11,7 @@
 	background-color: #{variable.$black-soft};
 
 	&__background {
-		@include mixin.background-svg;
+		@include mixin.background;
 	}
 
 	&__container {

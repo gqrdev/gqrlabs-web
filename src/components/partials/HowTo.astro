@@ -4,64 +4,90 @@ import BackgroundSvg from "./utils/BackgroundSvg.astro";
 ---
 
 <section class="section howto" id="howto">
-    <div class="howto__background">
-        <BackgroundSvg />
-    </div>
-
 	<div class="howto__container">
-		<span class="howto__pretitle">Cómo trabajamos</span>
-
+		<!-- Header -->
 		<div class="howto__header">
+			<span class="howto__pretitle">Cómo trabajamos</span>
 			<h2 class="howto__title">
-				Un proceso claro, <br />enfocado en tus objetivos.
+				Un proceso claro para&nbsp;<span class="howto__accent">transformar.</span>
 			</h2>
+		</div>
 
+		<!-- Description -->
+		<div class="howto__descriptions">
 			<p class="howto__description">
-				Trabajamos de forma colaborativa y transparente. Desde el primer
-				encuentro hasta la entrega final, nos aseguramos de que cada paso esté
-				alineado con lo que tu proyecto necesita.
+				Cada proyecto comienza mucho antes del desarrollo. Primero buscamos
+				entender qué se necesita, qué se quiere mejorar y cuáles son los
+				objetivos que tenemos por delante. A partir de ahí definimos el camino
+				más adecuado para llevar la idea a la práctica.
+			</p>
+			<p class="howto__description">
+				Trabajamos de manera cercana y ordenada, manteniendo una comunicación
+				clara durante todo el proceso. El cliente forma parte de las decisiones
+				y conoce cómo avanza el proyecto, porque creemos que una buena solución
+				también se construye escuchando, analizando y compartiendo el proceso.
 			</p>
 		</div>
 
-		<div class="howto__list">
-			<article class="howto__item">
-				<span class="howto__number">01</span>
-				<h3 class="howto__item-title">Alineación de objetivos</h3>
-				<p class="howto__item-description">
-					Nos reunimos con vos para entender en profundidad tu negocio, definir
-					el alcance y establecer las metas del proyecto.
-				</p>
-				<span class="howto__arrow">↗</span>
+		<!-- Grid of Steps -->
+		<div class="howto__grid">
+			<article class="howto__card">
+				<div class="howto__card-body">
+					<div class="howto__item-header">
+						<span class="howto__code-badge"></span>
+						<h3 class="howto__item-title">Entender</h3>
+					</div>
+					<p class="howto__item-description">
+						El primer paso es conocer el problema. Analizamos la necesidad, el
+						contexto y la forma actual de trabajar para entender qué se puede
+						mejorar y qué objetivos queremos alcanzar.
+					</p>
+				</div>
 			</article>
 
-			<article class="howto__item">
-				<span class="howto__number">02</span>
-				<h3 class="howto__item-title">Planificación y Estructura</h3>
-				<p class="howto__item-description">
-					Diseñamos la hoja de ruta y la estructura de contenidos para
-					garantizar una navegación clara y eficiente.
-				</p>
-				<span class="howto__arrow">↗</span>
+			<article class="howto__card">
+				<div class="howto__card-body">
+					<div class="howto__item-header">
+						<span class="howto__code-badge"></span>
+						<h3 class="howto__item-title">Proponer</h3>
+					</div>
+					<p class="howto__item-description">
+						Con esa información buscamos la mejor alternativa. Evaluamos
+						distintas posibilidades y definimos una solución que tenga sentido
+						tanto desde lo técnico como desde las necesidades reales del
+						proyecto.
+					</p>
+				</div>
 			</article>
 
-			<article class="howto__item">
-				<span class="howto__number">03</span>
-				<h3 class="howto__item-title">Desarrollo a Medida</h3>
-				<p class="howto__item-description">
-					Transformamos la estrategia en código limpio, escalable y optimizado
-					utilizando tecnologías modernas.
-				</p>
-				<span class="howto__arrow">↗</span>
+			<article class="howto__card">
+				<div class="howto__card-body">
+					<div class="howto__item-header">
+						<span class="howto__code-badge"></span>
+						<h3 class="howto__item-title">Desarrollar</h3>
+					</div>
+					<p class="howto__item-description">
+						Una vez definido el camino, comienza el desarrollo. Trabajamos de
+						forma progresiva, manteniendo una comunicación constante y validando
+						las decisiones importantes para que el resultado evolucione en la
+						dirección correcta.
+					</p>
+				</div>
 			</article>
 
-			<article class="howto__item">
-				<span class="howto__number">04</span>
-				<h3 class="howto__item-title">Pruebas y Lanzamiento</h3>
-				<p class="howto__item-description">
-					Realizamos revisiones exhaustivas de rendimiento y adaptabilidad antes
-					de la puesta en marcha.
-				</p>
-				<span class="howto__arrow">↗</span>
+			<article class="howto__card">
+				<div class="howto__card-body">
+					<div class="howto__item-header">
+						<span class="howto__code-badge"></span>
+						<h3 class="howto__item-title">Acompañar</h3>
+					</div>
+					<p class="howto__item-description">
+						La entrega no es necesariamente el final. Acompañamos la puesta en
+						marcha y seguimos disponibles para resolver necesidades, realizar
+						mejoras y ayudar a que la solución continúe aportando valor con el
+						tiempo.
+					</p>
+				</div>
 			</article>
 		</div>
 	</div>
