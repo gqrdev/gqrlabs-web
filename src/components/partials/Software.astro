@@ -1,5 +1,11 @@
 ---
 import "../../sass/components/partials/_software.scss";
+import {Image} from "astro:assets";
+import AWSLogo from "../../assets/technologies/aws-logo.png";
+import GoogleCloudLogo from "../../assets/technologies/google-cloud-logo.png";
+import DigitalOceanLogo from "../../assets/technologies/digital-ocean-logo.png";
+import LaravelLogo from "../../assets/technologies/laravel-logo.png";
+import PythonLogo from "../../assets/technologies/python-logo.png";
 ---
 
 <section class="section software" id="software">
@@ -21,15 +27,15 @@ import "../../sass/components/partials/_software.scss";
 			alternativa más adecuada en cada caso.
 		</p>
 
+		<!-- Grid de Tarjetas -->
 		<div class="software__grid">
 			<!-- Item 1 -->
 			<article class="software__card">
-				<!-- <div class="software__card-header">
-					<span class="software__number">01</span>
-					<span class="software__arrow">↗</span>
-				</div> -->
 				<div class="software__card-body">
-					<h3 class="software__item-title">Soluciones a medida</h3>
+					<div class="software__item-header">
+						<span class="software__code-badge"></span>
+						<h3 class="software__item-title">Soluciones a medida</h3>
+					</div>
 					<p class="software__item-description">
 						Cada cliente tiene su propia forma de trabajar. Entender esa
 						realidad permite desarrollar herramientas que se adapten a sus
@@ -40,12 +46,11 @@ import "../../sass/components/partials/_software.scss";
 
 			<!-- Item 2 -->
 			<article class="software__card">
-				<!-- <div class="software__card-header">
-					<span class="software__number">02</span>
-					<span class="software__arrow">↗</span>
-				</div> -->
 				<div class="software__card-body">
-					<h3 class="software__item-title">Automatización e integración</h3>
+					<div class="software__item-header">
+						<span class="software__code-badge"></span>
+						<h3 class="software__item-title">Automatización e integración</h3>
+					</div>
 					<p class="software__item-description">
 						Procesos repetitivos, información dispersa o sistemas que no se
 						comunican entre sí pueden convertirse en oportunidades para
@@ -57,12 +62,11 @@ import "../../sass/components/partials/_software.scss";
 
 			<!-- Item 3 -->
 			<article class="software__card">
-				<!-- <div class="software__card-header">
-					<span class="software__number">03</span>
-					<span class="software__arrow">↗</span>
-				</div> -->
 				<div class="software__card-body">
-					<h3 class="software__item-title">Software que aporta valor</h3>
+					<div class="software__item-header">
+						<span class="software__code-badge"></span>
+						<h3 class="software__item-title">Software que aporta valor</h3>
+					</div>
 					<p class="software__item-description">
 						Las soluciones deben ser útiles, confiables y fáciles de utilizar.
 						El objetivo es que la inversión en tecnología resuelva problemas
@@ -70,6 +74,101 @@ import "../../sass/components/partials/_software.scss";
 					</p>
 				</div>
 			</article>
+		</div>
+
+		<!-- Mini Sección Tecnologías con Animación Infinita -->
+		<div class="software__tech-section">
+			<div class="software__tech-title">Tecnologías que utilizamos</div>
+
+			<div class="software__tech-wrapper">
+				<div class="software__tech-track">
+					<!-- Group 1 -->
+					<div class="software__tech">
+						<Image
+							src={AWSLogo}
+							alt="AWS Logo"
+							width="128"
+							class="software__tech-icon"
+						/>
+					</div>
+					<div class="software__tech">
+						<Image
+							src={GoogleCloudLogo}
+							alt="Google Cloud Logo"
+							width="128"
+							class="software__tech-icon"
+						/>
+					</div>
+					<div class="software__tech">
+						<Image
+							src={DigitalOceanLogo}
+							alt="DigitalOcean Logo"
+							width="128"
+							class="software__tech-icon"
+						/>
+					</div>
+					<div class="software__tech">
+						<Image
+							src={LaravelLogo}
+							alt="Laravel Logo"
+							width="128"
+							class="software__tech-icon"
+						/>
+					</div>
+					<div class="software__tech">
+						<Image
+							src={PythonLogo}
+							alt="Python Logo"
+							width="128"
+							class="software__tech-icon"
+						/>
+					</div>
+
+					<!-- Group 2 -->
+					<div class="software__tech">
+						<Image
+							src={AWSLogo}
+							alt="AWS Logo"
+							width="128"
+							class="software__tech-icon"
+						/>
+					</div>
+					<div class="software__tech">
+						<Image
+							src={GoogleCloudLogo}
+							alt="Google Cloud Logo"
+							width="128"
+							class="software__tech-icon"
+						/>
+					</div>
+					<div class="software__tech">
+						<Image
+							src={DigitalOceanLogo}
+							alt="DigitalOcean Logo"
+							width="128"
+							class="software__tech-icon"
+						/>
+					</div>
+					<div class="software__tech">
+						<Image
+							src={LaravelLogo}
+							alt="Laravel Logo"
+							width="128"
+							class="software__tech-icon"
+						/>
+					</div>
+					<div class="software__tech">
+						<Image
+							src={PythonLogo}
+							alt="Python Logo"
+							width="128"
+							class="software__tech-icon"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<div class="software__tech-line"></div>
 		</div>
 	</div>
 </section>
