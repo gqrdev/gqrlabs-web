@@ -1,29 +1,41 @@
 ---
 import "../../sass/components/partials/_contact.scss";
-import BackgroundSvg from "./utils/BackgroundSvg.astro";
+import {Image} from "astro:assets";
+import LinkedinLogo from "../../assets/icons/linkedin-logo.png";
+import MailLogo from "../../assets/icons/mail-logo.png";
+
 ---
 
 <section class="contact" id="contact">
+	<!-- Header -->
+	<div class="contact__header">
+		<span class="contact__pretitle">Contacto</span>
+		<h2 class="contact__title">
+			¿Hablamos sobre tu&nbsp;<span class="contact__accent"
+				>próximo proyecto?</span
+			>
+		</h2>
+	</div>
 
-	<div class="contact__container">
-		<div class="contact__pretitle">Contacto / 04</div>
+	<p class="contact__description">
+		Si estás buscando desarrollar una plataforma, rediseñar un producto digital
+		o querés agendar una mentoría personalizada, escribime y hablamos.
+	</p>
 
-		<div class="contact__header">
-			<h2 class="contact__title">
-				¿Hablamos sobre <br />
-				<span>tu próximo proyecto?</span>
-			</h2>
-
-			<p class="contact__description">
-				Si estás buscando desarrollar una plataforma, rediseñar un producto
-				digital o querés agendar una mentoría personalizada, escribime y lo
-				charlamos.
-			</p>
-		</div>
-
-		<a href="mailto:facundo@gqrlabs.com" class="contact__button">
-			facundo@gqrlabs.com
-			<span>↗</span>
+	<!-- Mail and Linkedin -->
+	<div class="contact__links">
+		<a href="mailto:gqrlabs@gmail.com" class="contact__button">
+			Enviar un mensaje
+			<Image src={MailLogo} alt="Mail Logo" height={32} />
+		</a>
+		<a
+			href="https://www.linkedin.com/company/gqrlabs/"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="contact__button"
+		>
+			Perfil profesional
+			<Image src={LinkedinLogo} alt="LinkedIn Logo" height={30} />
 		</a>
 	</div>
 </section>

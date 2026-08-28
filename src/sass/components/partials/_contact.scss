@@ -7,62 +7,51 @@
 
 .contact {
 	@include mixin.section;
-
-	&__background {
-		@include mixin.background;
+	min-height: unset;
+	
+	/* Header */
+	&__header {
+		@include mixin.header-container;
 	}
 
-	&__container {
-		position: relative;
-		z-index: 1;
-		@include mixin.container;
-	}
-
+	/* Pretitle */
 	&__pretitle {
 		@include mixin.pretitle;
 	}
 
-	&__header {
+	/* Title */
+	&__title {
+		@include mixin.g-title-1;
+	}
+
+	/* Accent */
+	&__accent {
+		@include mixin.accent;
+	}
+
+	/* Description */
+	&__description {
+		@include mixin.g-normal;
+	}
+
+	/* Links Container */
+	&__links {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
-		gap: 25px;
-		margin-bottom: 55px;
+		gap: 16px;
+		width: 100%;
 
 		@include mixin.mq(md) {
 			flex-direction: row;
-			align-items: flex-end;
-			justify-content: space-between;
-		}
-
-		@include mixin.mq(lg) {
-			margin-bottom: 70px;
+			align-items: center;
 		}
 	}
 
-	&__title {
-		max-width: 850px;
-		@include mixin.g-title-1;
-
-		span {
-			color: var(--gray);
-		}
-
-		@include mixin.mq(lg) {
-			font-size: clamp(3rem, 4vw, 4.5rem);
-		}
-	}
-
-	&__description {
-		max-width: 380px;
-		color: var(--gray);
-		font-size: 14px;
-		line-height: 1.7;
-	}
-
+	/* Buttons */
 	&__button {
 		display: inline-flex;
 		align-items: center;
+		justify-content: center;
 		gap: 12px;
 		font-family: var(--font-display);
 		font-size: 14px;
@@ -74,6 +63,7 @@
 		border: 1px solid rgba(0, 55, 120, 0.8);
 		padding: 16px 28px;
 		border-radius: 4px;
+		text-decoration: none;
 		transition:
 			background 0.25s ease,
 			transform 0.25s ease;
@@ -91,11 +81,6 @@
 			span {
 				transform: translateX(3px) translateY(-3px);
 			}
-		}
-
-		@include mixin.mq(md) {
-			font-size: 16px;
-			padding: 18px 34px;
 		}
 	}
 }
