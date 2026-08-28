@@ -8,6 +8,7 @@
 .hero {
 	@include mixin.background;
 	@include mixin.section;
+	padding-top: variable.$padding-top-hero-section;
 
 	/* Pretitle */
 	&__pretitle {

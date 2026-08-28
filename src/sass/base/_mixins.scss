@@ -218,11 +218,11 @@
 @mixin section {
 	position: relative;
 	min-height: 90dvh;
-	padding: variable.$padding-top-hero variable.$general-padding
-		variable.$padding-bottom-hero;
-	display: flex;
+	padding: variable.$section-top variable.$general-padding
+		variable.$section-bottom variable.$general-padding;
+	/* display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-between; */
 }
 
 @mixin background {
