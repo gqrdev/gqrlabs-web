@@ -6,14 +6,74 @@
 @use "../mixins" as mixin;
 
 .footer {
-	padding: variable.$general-padding;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	border-top: 1px solid variable.$border;
-	color: variable.$gray-light;
-	font-family: variable.$body-font;
-	font-size: variable.$smaller-font-size;
-	line-height: variable.$small-line-height;
-	text-transform: uppercase;
+	@include mixin.section;
+	background-color: variable.$footer-bg;
+	color: variable.$footer-text;
+	min-height: 240px;
+	padding: variable.$padding-top-footer variable.$padding-bottom-footer;
+	display: grid;
+	place-items: center;
+
+	&__principal-container {
+		width: 100%;
+		max-width: variable.$max-width-footer;
+	}
+
+	&__brand-area {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, 1fr);
+
+		@include mixin.mq(md) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: 1fr;
+		}
+	}
+
+	&__brand {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 20px;
+		gap: 8px;
+	}
+
+	&__company-name {
+		color: variable.$footer-text-light;
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		column-gap: 14px;
+	}
+
+	&__name {
+		@include mixin.g-title-3;
+		margin-bottom: unset;
+		align-self: center;
+	}
+
+	&__company-tagline {
+		@include mixin.g-small;
+		margin-bottom: unset;
+		color: inherit;
+	}
+
+	&__copyright {
+		@include mixin.g-smaller;
+		margin-bottom: unset;
+		text-align: center;
+		color: inherit;
+		border-top: 1px solid variable.$gray-dark;
+		padding-top: 10px;
+	}
+
+	&__social {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 16px;
+		place-self: center start;
+
+		@include mixin.mq(md) {
+			column-gap: 20px;
+			place-self: center end;
+		}
+	}
 }

@@ -3,7 +3,6 @@ import "../../sass/components/partials/_contact.scss";
 import {Image} from "astro:assets";
 import LinkedinLogo from "../../assets/icons/linkedin-logo.png";
 import MailLogo from "../../assets/icons/mail-logo.png";
-
 ---
 
 <section class="contact" id="contact">
@@ -26,7 +25,7 @@ import MailLogo from "../../assets/icons/mail-logo.png";
 	<div class="contact__links">
 		<a href="mailto:gqrlabs@gmail.com" class="contact__button">
 			Enviar un mensaje
-			<Image src={MailLogo} alt="Mail Logo" height={32} />
+			<Image src={MailLogo} height={28} densities={[1, 2, 3]} alt="Mail Logo" />
 		</a>
 		<a
 			href="https://www.linkedin.com/company/gqrlabs/"
@@ -35,7 +34,12 @@ import MailLogo from "../../assets/icons/mail-logo.png";
 			class="contact__button"
 		>
 			Perfil profesional
-			<Image src={LinkedinLogo} alt="LinkedIn Logo" height={30} />
+			<Image
+				src={LinkedinLogo}
+				height={28}
+				densities={[1, 2, 3]}
+				alt="LinkedIn Logo"
+			/>
 		</a>
 	</div>
 </section>

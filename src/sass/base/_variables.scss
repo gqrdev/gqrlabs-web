@@ -23,6 +23,12 @@ $gray-dark: #292f36;
 
 $border: #242a31;
 
+/* Footer */
+$footer-bg: #07090c;
+$footer-text: #94a3b8;
+$footer-text-light: #f8fafc;
+$footer-accent: #2563eb;
+
 body {
 	background-color: $black;
 }
@@ -61,6 +67,7 @@ $page-bottom-margin: 30px;
 $general-padding: 20px;
 $max-width: 1200px;
 $max-width-header: 1024px;
+$max-width-footer: 1024px;
 $section-padding: 60px;
 
 /* Section - padding */
@@ -76,3 +83,7 @@ $padding-bottom-header: 20px;
 $padding-top-card: 10px;
 $padding-bottom-card: 30px;
 $background-card: $black-card;
+
+/* Footer */
+$padding-top-footer: 50px;
+$padding-bottom-footer: 20px;

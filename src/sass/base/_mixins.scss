@@ -208,21 +208,11 @@
 	}
 }
 
-/* Global Mixins */
-@mixin container {
-	/* width: calc(100% - (#{variable.$general-padding} * 2));
-	max-width: #{variable.$max-width};
-	margin-inline: auto; */
-}
-
 @mixin section {
 	position: relative;
 	min-height: 90dvh;
 	padding: variable.$section-top variable.$general-padding
 		variable.$section-bottom variable.$general-padding;
-	/* display: flex;
-	flex-direction: column;
-	justify-content: space-between; */
 }
 
 @mixin background {

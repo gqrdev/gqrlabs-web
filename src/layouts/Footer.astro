@@ -1,8 +1,61 @@
 ---
 import "../sass/base/layout/_footer.scss";
+import LinkedinLogo from "../assets/icons/linkedin-logo.png";
+import EmailLogo from "../assets/icons/mail-logo.png";
+import {Image} from "astro:assets";
+import GQRLabsLogo from "../../public/icons/logo-gqrlabs.png";
+
+const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
-	<span> © 2026 GQR Labs </span>
-	<span>Desarrollo de Software</span>
+	<div class="footer__principal-container">
+		<div class="footer__brand-area">
+			<!-- Brand -->
+			<div class="footer__brand">
+				<div class="footer__company-name">
+					<Image
+						src={GQRLabsLogo}
+						height={38}
+						densities={[1, 2, 3]}
+						alt="Logo de GQR Labs"
+					/>
+					<span class="footer__name">GQR Labs</span>
+				</div>
+				<span class="footer__company-tagline">
+					Desarrollo de Software y Ciberseguridad
+				</span>
+			</div>
+
+			<!-- Social -->
+			<div class="footer__social">
+				<a
+					href="https://linkedin.com"
+					class="footer__social-link"
+					target="_blank"
+					rel="noopener"
+				>
+					<Image
+						src={LinkedinLogo}
+						height={36}
+						densities={[1, 2, 3]}
+						alt="LinkedIn Logo"
+					/>
+				</a>
+				<a href="mailto:gqrlabs@gmail.com" class="footer__social-link">
+					<Image
+						src={EmailLogo}
+						height={36}
+						densities={[1, 2, 3]}
+						alt="Mail Logo"
+					/>
+				</a>
+			</div>
+		</div>
+
+		<!-- Copyright -->
+		<div class="footer__copyright">
+			&copy; {year} GQR Labs. Montevideo, Uruguay.
+		</div>
+	</div>
 </footer>

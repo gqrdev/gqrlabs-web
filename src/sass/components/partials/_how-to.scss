@@ -11,7 +11,6 @@
 	&__container {
 		position: relative;
 		z-index: 1;
-		@include mixin.container;
 	}
 
 	/* Pretitle */
