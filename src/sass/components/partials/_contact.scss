@@ -53,12 +53,8 @@
 		align-items: center;
 		justify-content: center;
 		gap: 12px;
-		font-family: var(--font-display);
-		font-size: 14px;
-		font-weight: 500;
+		@include mixin.g-normal;
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		color: #ffffff;
 		background: rgba(0, 55, 120, 0.4);
 		border: 1px solid rgba(0, 55, 120, 0.8);
 		padding: 16px 28px;
