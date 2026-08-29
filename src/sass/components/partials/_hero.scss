@@ -8,6 +8,7 @@
 .hero {
 	@include mixin.background;
 	@include mixin.section;
+	@include mixin.max-width;
 	padding-top: variable.$padding-top-hero-section;
 
 	/* Pretitle */
@@ -27,7 +28,6 @@
 
 	/* Title */
 	&__title {
-		@include mixin.max-width;
 		@include mixin.g-title-1;
 	}
 
@@ -50,51 +50,24 @@
 		margin-bottom: unset;
 	}
 
-	&__link {
-		&--secondary {
-			@include mixin.button-variant(
-				variable.$blue-primary,
-				variable.$white,
-				true
-			);
-
-			margin-bottom: unset;
-		}
-	}
-
 	&__title,
 	&__button,
 	&__link,
-	&__location {
+	&__author {
 		text-transform: uppercase;
 	}
 
-	&__location {
+	&__author {
 		@include mixin.g-smaller;
 		margin-bottom: 6px;
-		position: relative;
-		z-index: 3;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	&__author {
-		display: flex;
-		align-items: center;
-		column-gap: 8px;
-		color: variable.$gray-light;
-		transition: color 0.25s ease;
-
-		&:hover {
-			color: variable.$white;
+		&-link {
+			display: flex;
+			column-gap: 8px;
 		}
 	}
 
 	&__place {
 		@include mixin.g-smaller;
-		position: relative;
-		z-index: 3;
 		color: variable.$gray-light;
 	}
 }

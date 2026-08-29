@@ -6,7 +6,9 @@
 @use "../../base/mixins" as mixin;
 
 .mentorships {
+	@include mixin.background;
 	@include mixin.section;
+	@include mixin.max-width;
 
 	/* Pretitle */
 	&__pretitle {
@@ -119,5 +121,9 @@
 				color 0.3s ease,
 				transform 0.3s ease;
 		}
+	}
+
+	&__title {
+		text-transform: uppercase;
 	}
 }

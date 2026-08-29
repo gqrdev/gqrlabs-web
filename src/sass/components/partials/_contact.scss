@@ -6,9 +6,11 @@
 @use "../../base/mixins" as mixin;
 
 .contact {
+	@include mixin.background;
 	@include mixin.section;
+	@include mixin.max-width;
 	min-height: unset;
-	
+
 	/* Header */
 	&__header {
 		@include mixin.header-container;
@@ -32,14 +34,14 @@
 	/* Description */
 	&__description {
 		@include mixin.g-normal;
+		margin-bottom: 40px;
 	}
 
 	/* Links Container */
 	&__links {
 		display: flex;
 		flex-direction: column;
-		gap: 16px;
-		width: 100%;
+		gap: 8px;
 
 		@include mixin.mq(md) {
 			flex-direction: row;
@@ -78,5 +80,9 @@
 				transform: translateX(3px) translateY(-3px);
 			}
 		}
+	}
+
+	&__title {
+		text-transform: uppercase;
 	}
 }

@@ -8,11 +8,7 @@
 .howto {
 	@include mixin.background-alt;
 	@include mixin.section;
-
-	&__container {
-		position: relative;
-		z-index: 1;
-	}
+	@include mixin.max-width;
 
 	/* Pretitle */
 	&__pretitle {
@@ -72,7 +68,6 @@
 		&-body {
 			display: flex;
 			flex-direction: column;
-			gap: 16px;
 		}
 
 		&:hover {
@@ -82,13 +77,8 @@
 
 			.howto__code-badge {
 				&::before {
-					color: var(--white, #fff);
 					transform: scale(1.05);
 				}
-			}
-
-			.howto__item-title {
-				color: var(--white, #fff);
 			}
 		}
 	}
@@ -97,15 +87,12 @@
 		&-header {
 			display: flex;
 			align-items: center;
-			gap: 12px;
+			margin-bottom: 8px;
 		}
 
 		&-title {
-			font-family: var(--font-display);
-			font-size: 18px;
-			font-weight: 600;
-			letter-spacing: -0.02em;
-			color: rgba(255, 255, 255, 0.9);
+			@include mixin.g-title-3;
+			margin-bottom: unset;
 			transition: color 0.3s ease;
 
 			@include mixin.mq(md) {
@@ -121,26 +108,10 @@
 	}
 
 	&__code-badge {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		padding: 4px 8px;
-		border-radius: 4px;
-		transition:
-			background 0.3s ease,
-			border-color 0.3s ease;
-		flex-shrink: 0;
+		@include mixin.code-badge;
+	}
 
-		&::before {
-			content: ">";
-			font-family: var(--font-display, monospace);
-			font-size: 24px;
-			font-weight: 700;
-			letter-spacing: 1px;
-			color: var(--gray, #888);
-			transition:
-				color 0.3s ease,
-				transform 0.3s ease;
-		}
+	&__title {
+		text-transform: uppercase;
 	}
 }
