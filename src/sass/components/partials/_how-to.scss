@@ -4,11 +4,17 @@
 
 @use "../../base/variables" as variable;
 @use "../../base/mixins" as mixin;
+@use "sass:math";
 
 .howto {
-	@include mixin.background-alt;
+	@include mixin.background;
 	@include mixin.section;
 	@include mixin.max-width;
+
+	@include mixin.mq(md) {
+		padding-bottom: variable.$section-bottom * 3;
+		min-height: unset;
+	}
 
 	/* Pretitle */
 	&__pretitle {

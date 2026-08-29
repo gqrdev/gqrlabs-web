@@ -6,9 +6,13 @@
 @use "../../base/mixins" as mixin;
 
 .mentorships {
-	@include mixin.background;
+	@include mixin.background-alt;
 	@include mixin.section;
-	@include mixin.max-width;
+
+	@include mixin.mq(md) {
+		padding-bottom: variable.$section-bottom * 3;
+		min-height: unset;
+	}
 
 	/* Pretitle */
 	&__pretitle {

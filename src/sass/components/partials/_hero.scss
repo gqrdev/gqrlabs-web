@@ -11,6 +11,10 @@
 	@include mixin.max-width;
 	padding-top: variable.$padding-top-hero-section;
 
+	@include mixin.mq(md) {
+		min-height: unset;
+	}
+
 	/* Pretitle */
 	&__pretitle {
 		@include mixin.pretitle;

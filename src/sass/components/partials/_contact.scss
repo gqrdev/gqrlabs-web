@@ -11,6 +11,10 @@
 	@include mixin.max-width;
 	min-height: unset;
 
+	@include mixin.mq(md) {
+		padding-bottom: variable.$section-bottom * 3;
+	}
+
 	/* Header */
 	&__header {
 		@include mixin.header-container;
@@ -46,6 +50,7 @@
 		@include mixin.mq(md) {
 			flex-direction: row;
 			align-items: center;
+			gap: 16px;
 		}
 	}
 
@@ -59,7 +64,7 @@
 		text-transform: uppercase;
 		background: rgba(0, 55, 120, 0.4);
 		border: 1px solid rgba(0, 55, 120, 0.8);
-		padding: 16px 28px;
+		padding: 12px 20px;
 		border-radius: 4px;
 		text-decoration: none;
 		transition:
@@ -70,6 +75,10 @@
 			color: var(--blue);
 			font-size: 18px;
 			transition: transform 0.25s ease;
+		}
+
+		@include mixin.mq(md) {
+			padding: 12px 20px;
 		}
 
 		&:hover {
