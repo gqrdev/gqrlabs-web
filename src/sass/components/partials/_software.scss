@@ -37,7 +37,7 @@
 
 	/* Description */
 	&__description {
-		@include mixin.g-normal;
+		@include mixin.g-small;
 	}
 
 	&__grid {
@@ -115,13 +115,13 @@
 	}
 
 	&__tech-title {
-		@include mixin.g-title-3;
+		@include mixin.g-title-4;
 		margin-bottom: unset;
 		color: variable.$gray;
 		text-transform: uppercase;
 
 		@include mixin.mq(md) {
-			@include mixin.g-title-2;
+			@include mixin.g-title-3;
 		}
 	}
 
