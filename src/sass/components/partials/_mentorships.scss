@@ -42,11 +42,12 @@
 	&__grid {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 20px;
+		row-gap: 28px;
+		margin-bottom: 3.6rem;
 
 		@include mixin.mq(md) {
 			grid-template-columns: repeat(3, 1fr);
-			gap: 24px;
+			column-gap: 36px;
 		}
 	}
 

@@ -61,8 +61,9 @@
 		justify-content: center;
 		gap: 12px;
 		@include mixin.g-normal;
+		margin-bottom: .6rem;
 		text-transform: uppercase;
-		background: rgba(0, 55, 120, 0.4);
+		background: #0037781f;
 		border: 1px solid rgba(0, 55, 120, 0.8);
 		padding: 12px 20px;
 		border-radius: 4px;

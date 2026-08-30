@@ -7,9 +7,9 @@
 
 .footer {
 	@include mixin.section;
+	min-height: unset;
 	background-color: variable.$footer-bg;
 	color: variable.$footer-text;
-	min-height: 240px;
 	padding: variable.$padding-top-footer variable.$padding-bottom-footer;
 	display: grid;
 	place-items: center;
@@ -20,11 +20,12 @@
 	}
 
 	&__brand-area {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: repeat(2, 1fr);
+		display: flex;
+		flex-direction: column-reverse;
+		row-gap: 16px;
 
 		@include mixin.mq(md) {
+			display:grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: 1fr;
 		}
@@ -33,15 +34,15 @@
 	&__brand {
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 20px;
-		gap: 8px;
+		gap: 6px;
 	}
 
 	&__company-name {
 		color: variable.$footer-text-light;
 		display: grid;
 		grid-template-columns: max-content 1fr;
-		column-gap: 14px;
+		column-gap: 8px;
+		align-self: center;
 	}
 
 	&__name {
@@ -54,26 +55,18 @@
 		@include mixin.g-small;
 		margin-bottom: unset;
 		color: inherit;
-	}
-
-	&__copyright {
-		@include mixin.g-smaller;
-		margin-bottom: unset;
 		text-align: center;
-		color: inherit;
-		border-top: 1px solid variable.$gray-dark;
-		padding-top: 16px;
 	}
 
 	&__social {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 16px;
-		place-self: center start;
+		place-self: center;
 
 		@include mixin.mq(md) {
 			column-gap: 20px;
-			place-self: center end;
+			/* place-self: center end; */
 		}
 	}
 }

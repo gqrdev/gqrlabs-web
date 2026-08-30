@@ -23,7 +23,7 @@
 	line-height: variable.$heading-line-height;
 	font-family: variable.$heading-font;
 	color: variable.$white;
-	margin-bottom: 1.8rem;
+	margin-bottom: variable.$margin-bottom-heading;
 
 	@if $extrabold {
 		font-weight: 700;
@@ -75,7 +75,7 @@
 	line-height: variable.$body-line-height;
 	font-family: variable.$body-font;
 	color: variable.$white;
-	margin-bottom: 1rem;
+	margin-bottom: variable.$margin-bottom-body;
 
 	@if $extrabold {
 		font-weight: 700;
@@ -179,7 +179,7 @@
 	align-items: center;
 	gap: 12px;
 	@include g-smaller;
-	margin-bottom: unset;
+	margin-bottom: variable.$margin-bottom-pretitle;
 	text-transform: uppercase;
 
 	&::before {

@@ -43,11 +43,12 @@
 	&__grid {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 20px;
+		row-gap: 28px;
+		margin-bottom: 3.6rem;
 
 		@include mixin.mq(md) {
 			grid-template-columns: repeat(3, 1fr);
-			gap: 24px;
+			column-gap: 36px;
 		}
 	}
 
@@ -110,17 +111,18 @@
 	}
 
 	&__tech-section {
-		margin-top: 55px;
 		text-align: center;
 	}
 
 	&__tech-title {
-		color: var(--gray, #8a91a1);
-		font-size: 12px;
+		@include mixin.g-title-3;
+		margin-bottom: unset;
+		color: variable.$gray;
 		text-transform: uppercase;
-		letter-spacing: 2px;
-		margin-bottom: 25px;
-		font-weight: 700;
+
+		@include mixin.mq(md) {
+			@include mixin.g-title-2;
+		}
 	}
 
 	&__tech-wrapper {
@@ -188,10 +190,10 @@
 	}
 
 	&__tech-line {
-		width: 70px;
+		width: 100px;
 		height: 1px;
-		background: rgba(255, 255, 255, 0.1);
-		margin: 15px auto 0;
+		background-color: variable.$gray-dark;
+		margin-inline: auto;
 	}
 
 	&__title {
