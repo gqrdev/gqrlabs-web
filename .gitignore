@@ -136,3 +136,5 @@ dist
 
 # AGENTS
 AGENTS.md
+
+/.wrangler/
