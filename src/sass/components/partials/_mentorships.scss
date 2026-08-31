@@ -37,6 +37,7 @@
 	/* Description */
 	&__description {
 		@include mixin.g-small;
+		margin-bottom: 30px;
 	}
 
 	&__grid {
