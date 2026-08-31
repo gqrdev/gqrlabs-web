@@ -33,11 +33,19 @@
 	/* Title */
 	&__title {
 		@include mixin.g-title-1;
+
+		@include mixin.mq(md) {
+			@include mixin.g-biggest-title;
+		}
 	}
 
 	/* Description */
 	&__description {
 		@include mixin.g-small;
+
+		@include mixin.mq(md) {
+			@include mixin.g-normal;
+		}
 	}
 
 	/* Actions */

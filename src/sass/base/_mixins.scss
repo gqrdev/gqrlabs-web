@@ -32,6 +32,11 @@
 	}
 }
 
+@mixin g-biggest-title {
+	@include heading-font(true);
+	font-size: variable.$biggest-font-size;
+}
+
 @mixin g-bigger-title {
 	@include heading-font(true);
 	font-size: variable.$bigger-font-size;
@@ -181,6 +186,10 @@
 	@include g-smaller;
 	margin-bottom: variable.$margin-bottom-pretitle;
 	text-transform: uppercase;
+
+	@include mq(md) {
+		@include g-small;
+	}
 
 	&::before {
 		content: "";
