@@ -220,26 +220,16 @@
 }
 
 /* Code badge */
-@mixin code-badge {
+@mixin icon-badge-code {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	padding-right: 8px;
-	border-radius: 4px;
-	transition:
-		background 0.3s ease,
-		border-color 0.3s ease;
+	width: 44px;
+	height: 44px;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	margin-right: 16px;
+	position: relative;
 	flex-shrink: 0;
-
-	&::before {
-		content: ">";
-		font-family: var(--font-display, monospace);
-		font-size: 24px;
-		font-weight: 700;
-		letter-spacing: 1px;
-		color: var(--gray, #888);
-		transition:
-			color 0.3s ease,
-			transform 0.3s ease;
-	}
 }

@@ -114,7 +114,66 @@
 	}
 
 	&__code-badge {
-		@include mixin.code-badge;
+		@include mixin.icon-badge-code;
+
+		// Item 1:
+		.howto__card:nth-child(1) & {
+			&::before {
+				content: "";
+				position: absolute;
+				width: 14px;
+				height: 14px;
+				border: 2px solid currentColor;
+				border-radius: 50%;
+				top: 13px;
+				left: 13px;
+				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				width: 6px;
+				height: 2px;
+				background: currentColor;
+				bottom: 13px;
+				right: 13px;
+				transform: rotate(45deg);
+				border-radius: 1px;
+			}
+		}
+
+		// Item 2:
+		.howto__card:nth-child(2) & {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&::before {
+				content: "</>";
+				font-family: monospace;
+				font-weight: 700;
+				font-size: 13px;
+				letter-spacing: -0.5px;
+				color: currentColor;
+				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+			}
+		}
+
+		// Item 3:
+		.howto__card:nth-child(3) & {
+			&::before {
+				content: "";
+				position: absolute;
+				width: 5px;
+				height: 10px;
+				border: solid currentColor;
+				border-width: 0 2px 2px 0;
+				transform: rotate(45deg);
+				top: 14px;
+				left: 18px;
+				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+			}
+		}
 	}
 
 	&__title {

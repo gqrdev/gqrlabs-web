@@ -85,6 +85,7 @@
 		&-header {
 			display: flex;
 			align-items: center;
+			margin-bottom: 8px;
 		}
 
 		&-title {
@@ -105,26 +106,75 @@
 	}
 
 	&__code-badge {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		padding: 4px 8px;
-		border-radius: 4px;
-		transition:
-			background 0.3s ease,
-			border-color 0.3s ease;
-		flex-shrink: 0;
+		@include mixin.icon-badge-code;
 
-		&::before {
-			content: ">";
-			font-family: var(--font-display, monospace);
-			font-size: 24px;
-			font-weight: 700;
-			letter-spacing: 1px;
-			color: var(--gray, #888);
-			transition:
-				color 0.3s ease,
-				transform 0.3s ease;
+		// Item 1:
+		.mentorships__card:nth-child(1) & {
+			&::before {
+				content: "?";
+				position: static;
+				font-family:
+					system-ui,
+					-apple-system,
+					sans-serif;
+				font-weight: 700;
+				font-size: 20px;
+				color: currentColor;
+				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+			}
+		}
+
+		// Item 2:
+		.mentorships__card:nth-child(2) & {
+			&::before {
+				content: "";
+				position: absolute;
+				width: 16px;
+				height: 20px;
+				border: 2px solid currentColor;
+				border-radius: 3px;
+				top: 11px;
+				left: 13px;
+				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				width: 8px;
+				height: 2px;
+				background: currentColor;
+				box-shadow: 0 4px 0 currentColor;
+				top: 16px;
+				left: 17px;
+				border-radius: 1px;
+			}
+		}
+
+		// Item 3:
+		.mentorships__card:nth-child(3) & {
+			&::before {
+				content: "";
+				position: absolute;
+				width: 14px;
+				height: 14px;
+				border-top: 2px solid currentColor;
+				border-right: 2px solid currentColor;
+				transform: rotate(45deg);
+				top: 14px;
+				right: 14px;
+				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				width: 16px;
+				height: 2px;
+				background: currentColor;
+				transform: rotate(-45deg);
+				bottom: 19px;
+				left: 13px;
+				border-radius: 1px;
+			}
 		}
 	}
 
