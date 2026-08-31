@@ -181,4 +181,20 @@
 	&__title {
 		text-transform: uppercase;
 	}
+
+	&__actions {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 2rem;
+	}
+
+	&__cta {
+		text-transform: uppercase;
+		@include mixin.button-variant(
+			variable.$blue-primary,
+			variable.$white,
+			false
+		);
+		margin-bottom: unset;
+	}
 }
