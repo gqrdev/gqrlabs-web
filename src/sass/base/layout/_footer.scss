@@ -25,7 +25,7 @@
 		row-gap: 16px;
 
 		@include mixin.mq(md) {
-			display:grid;
+			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: 1fr;
 		}
@@ -35,6 +35,13 @@
 		display: flex;
 		flex-direction: column;
 		gap: 6px;
+		border-top: 1px solid variable.$gray-dark;
+		padding-top: 16px;
+
+		@include mixin.mq(md) {
+			border-top: unset;
+			padding-top: unset;
+		}
 	}
 
 	&__company-name {
