@@ -9,193 +9,363 @@
 	@include mixin.background-alt;
 	@include mixin.section;
 
-	@include mixin.mq(md) {
-		padding-bottom: variable.$section-bottom * 3;
-		min-height: unset;
-	}
+	padding-bottom: variable.$section-bottom * 3;
 
-	/* Pretitle */
+	// =====================================================
+	// Header
+	// =====================================================
+
 	&__pretitle {
 		@include mixin.pretitle;
 	}
 
-	/* Accent */
 	&__accent {
 		@include mixin.accent;
 	}
 
-	/* Header */
 	&__header {
 		@include mixin.header-container;
 	}
 
-	/* Title */
 	&__title {
 		@include mixin.g-title-1;
+
+		text-transform: uppercase;
 	}
 
-	/* Description */
 	&__description {
 		@include mixin.g-small;
-		margin-bottom: 30px;
 	}
 
-	&__grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		row-gap: 28px;
-		margin-bottom: 3.6rem;
+	// =====================================================
+	// Timeline
+	// =====================================================
 
-		@include mixin.mq(md) {
-			grid-template-columns: repeat(3, 1fr);
-			column-gap: 36px;
-		}
-	}
+	&__timeline {
+		position: relative;
 
-	&__card {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
-		background: variable.$background-card;
-		border-radius: 8px;
+		align-items: center;
+
+		width: 100%;
+
+		margin-top: 3rem;
+	}
+
+	// =====================================================
+	// Timeline line
+	// =====================================================
+
+	&__timeline-line {
+		position: absolute;
+		z-index: 0;
+
+		top: 0;
+		bottom: 0;
+
+		left: 50%;
+
+		display: block;
+
+		width: 1px;
+		height: auto;
+
+		background: rgba(255, 255, 255, 0.12);
+
+		transform: translateX(-50%);
+	}
+
+	// =====================================================
+	// Timeline item
+	// =====================================================
+
+	&__item {
+		position: relative;
+		z-index: 2;
+
+		display: block;
+
+		width: 100%;
+		max-width: 450px;
+	}
+
+	// =====================================================
+	// Card
+	// =====================================================
+
+	&__card {
+		position: relative;
+		z-index: 2;
+
+		display: flex;
+		flex-direction: column;
+
+		width: 100%;
+		min-height: unset;
+
 		padding: variable.$general-padding;
+
+		background: variable.$background-card;
+
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		border-radius: 8px;
+
 		transition:
 			background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
 			transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
 			border-color 0.3s ease;
 
-		&-body {
-			display: flex;
-			flex-direction: column;
-		}
-
 		&:hover {
 			background: rgba(255, 255, 255, 0.035);
 			border-color: rgba(255, 255, 255, 0.12);
+
 			transform: translateY(-4px);
-
-			.mentorships__code-badge {
-				&::before {
-					transform: scale(1.05);
-				}
-			}
 		}
 	}
 
-	&__item {
-		&-header {
-			display: flex;
-			align-items: center;
-			margin-bottom: 8px;
-		}
+	// =====================================================
+	// Dot
+	// =====================================================
 
-		&-title {
-			@include mixin.g-title-3;
-			margin-bottom: unset;
-			transition: color 0.3s ease;
+	&__dot {
+		position: relative;
+		z-index: 3;
 
-			@include mixin.mq(md) {
-				font-size: 20px;
-			}
-		}
+		display: block;
+		flex: 0 0 18px;
 
-		&-description {
-			color: var(--gray);
-			font-size: 14px;
-			line-height: 1.6;
-		}
-	}
+		width: 18px;
+		height: 18px;
 
-	&__code-badge {
-		@include mixin.icon-badge-code;
+		margin: 1.5rem 0;
 
-		// Item 1:
-		.mentorships__card:nth-child(1) & {
-			&::before {
-				content: "?";
-				position: static;
-				font-family:
-					system-ui,
-					-apple-system,
-					sans-serif;
-				font-weight: 700;
-				font-size: 20px;
-				color: currentColor;
-				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-			}
-		}
+		background: variable.$background-card;
 
-		// Item 2:
-		.mentorships__card:nth-child(2) & {
-			&::before {
-				content: "";
-				position: absolute;
-				width: 16px;
-				height: 20px;
-				border: 2px solid currentColor;
-				border-radius: 3px;
-				top: 11px;
-				left: 13px;
-				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-			}
-			&::after {
-				content: "";
-				position: absolute;
-				width: 8px;
-				height: 2px;
-				background: currentColor;
-				box-shadow: 0 4px 0 currentColor;
-				top: 16px;
-				left: 17px;
-				border-radius: 1px;
-			}
-		}
+		border: 3px solid variable.$blue-primary;
+		border-radius: 50%;
 
-		// Item 3:
-		.mentorships__card:nth-child(3) & {
-			&::before {
-				content: "";
-				position: absolute;
-				width: 14px;
-				height: 14px;
-				border-top: 2px solid currentColor;
-				border-right: 2px solid currentColor;
-				transform: rotate(45deg);
-				top: 14px;
-				right: 14px;
-				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-			}
-			&::after {
-				content: "";
-				position: absolute;
-				width: 16px;
-				height: 2px;
-				background: currentColor;
-				transform: rotate(-45deg);
-				bottom: 19px;
-				left: 13px;
-				border-radius: 1px;
-			}
+		box-shadow: 0 0 0 5px variable.$background-card;
+
+		transition:
+			background 0.3s ease,
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
+
+		&:hover {
+			background: variable.$blue-primary;
+
+			transform: scale(1.15);
+
+			box-shadow:
+				0 0 0 5px variable.$background-card,
+				0 0 18px rgba(37, 99, 235, 0.25);
 		}
 	}
 
-	&__title {
+	// =====================================================
+	// Plan step
+	// =====================================================
+
+	&__step {
+		display: block;
+
+		margin-bottom: 0.5rem;
+
+		color: variable.$blue-primary;
+
+		font-family:
+			system-ui,
+			-apple-system,
+			sans-serif;
+
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		line-height: 1.4;
+
 		text-transform: uppercase;
 	}
 
-	&__actions {
+	// =====================================================
+	// Plan title
+	// =====================================================
+
+	&__item-title {
+		@include mixin.g-title-3;
+
+		margin-bottom: 0.6rem;
+
+		text-transform: uppercase;
+	}
+
+	// =====================================================
+	// Plan description
+	// =====================================================
+
+	&__item-description {
+		color: var(--gray);
+
+		font-size: 14px;
+		line-height: 1.6;
+
+		margin-bottom: 1.25rem;
+	}
+
+	// =====================================================
+	// Features
+	// =====================================================
+
+	&__features {
 		display: flex;
-		justify-content: center;
-		margin-bottom: 2rem;
+		flex-direction: column;
+
+		gap: 0.35rem;
+
+		margin: auto 0 0;
+		padding: 0;
+
+		list-style: none;
+
+		li {
+			position: relative;
+
+			padding-left: 1rem;
+
+			color: var(--gray);
+
+			font-size: 13px;
+			line-height: 1.5;
+
+			&::before {
+				content: "";
+
+				position: absolute;
+
+				top: 0.55em;
+				left: 0;
+
+				width: 4px;
+				height: 4px;
+
+				background: variable.$blue-primary;
+
+				border-radius: 50%;
+			}
+		}
+	}
+
+	// =====================================================
+	// Footer
+	// =====================================================
+
+	&__footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		gap: 1.25rem;
+		padding-top: 2rem;
+	}
+
+	&__hint {
+		color: var(--gray);
+		text-align: center;
+
+		font-size: 14px;
+		line-height: 1.6;
+
+		margin-bottom: unset;
+
+		span {
+			color: var(--white);
+		}
 	}
 
 	&__cta {
+		flex-shrink: 0;
+
 		text-transform: uppercase;
+
 		@include mixin.button-variant(
 			variable.$blue-primary,
 			variable.$white,
 			false
 		);
+
 		margin-bottom: unset;
+	}
+
+	// =====================================================
+	// Medium
+	// =====================================================
+
+	@include mixin.mq(md) {
+		&__timeline {
+			display: grid;
+
+			grid-template-columns:
+				minmax(0, 1fr)
+				64px
+				minmax(0, 1fr)
+				64px
+				minmax(0, 1fr);
+
+			align-items: center;
+
+			margin-top: 4rem;
+		}
+
+		// -------------------------------------------------
+		// Horizontal line
+		// -------------------------------------------------
+
+		&__timeline-line {
+			top: 50%;
+			bottom: auto;
+
+			left: 0;
+			right: 0;
+
+			width: 100%;
+			height: 1px;
+
+			transform: translateY(-50%);
+		}
+
+		// -------------------------------------------------
+		// Items
+		// -------------------------------------------------
+
+		&__item {
+			width: 100%;
+			max-width: none;
+		}
+
+		// -------------------------------------------------
+		// Cards
+		// -------------------------------------------------
+
+		&__card {
+			min-height: 280px;
+		}
+
+		// -------------------------------------------------
+		// Dots
+		// -------------------------------------------------
+
+		&__dot {
+			justify-self: center;
+			align-self: center;
+
+			margin: 0;
+		}
+
+		/* Footer */
+		&__footer {
+			align-items: center;
+
+			gap: 2rem;
+		}
 	}
 }

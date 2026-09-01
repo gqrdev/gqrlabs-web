@@ -38,19 +38,10 @@
 	/* Description */
 	&__description {
 		@include mixin.g-small;
-		margin-bottom: 30px;
 	}
 
 	&__grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		row-gap: 28px;
-		margin-bottom: 3.6rem;
-
-		@include mixin.mq(md) {
-			grid-template-columns: repeat(3, 1fr);
-			column-gap: 36px;
-		}
+		@include mixin.grid;
 	}
 
 	&__card {
