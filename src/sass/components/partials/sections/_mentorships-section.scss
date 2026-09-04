@@ -20,10 +20,6 @@
 		@include mixin.pretitle;
 	}
 
-	&__pretitle {
-		@include mixin.pretitle;
-	}
-
 	&__title {
 		@include mixin.g-title-1;
 		text-transform: uppercase;
@@ -68,7 +64,6 @@
 		@include mixin.mq(md) {
 			transition:
 				transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-				background 0.3s ease,
 				border-color 0.3s ease,
 				box-shadow 0.3s ease;
 		}
@@ -133,6 +128,7 @@
 		padding: 65px 40px;
 		border-radius: 10px;
 		box-shadow: 0 30px 80px rgba(variable.$blue-primary, 0.12);
+		margin-bottom: 3rem;
 
 		&-label {
 			@include mixin.g-bigger;
@@ -202,6 +198,111 @@
 
 			@include mixin.mq(md) {
 				align-self: center;
+			}
+		}
+	}
+
+	/* FAQ */
+	&__faq-title {
+		@include mixin.g-title-2;
+		text-align: center;
+	}
+
+	&__faq-description {
+		@include mixin.g-normal;
+		color: variable.$gray;
+	}
+
+	&__faq-list {
+		border-top: 1px solid variable.$border;
+	}
+
+	&__faq-item {
+		border-bottom: 1px solid variable.$border;
+
+		&[open] {
+			.mentorships-section__faq-question {
+				&::after {
+					transform: rotate(45deg);
+				}
+			}
+
+			.mentorships-section__faq-answer {
+				grid-template-rows: 1fr;
+			}
+		}
+	}
+
+	&__faq-question {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+		list-style: none;
+		gap: 10px;
+		padding: 10px 4px;
+		color: variable.$gray-light;
+		@include mixin.g-normal;
+		margin-bottom: unset;
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+
+		&::after {
+			content: "+";
+			flex: 0 0 auto;
+			width: 28px;
+			height: 28px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid variable.$border-blue;
+			border-radius: 50%;
+			color: variable.$blue-light;
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 1;
+			transition:
+				transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+				color 0.25s ease;
+		}
+
+		@include mixin.mq(md) {
+			&:hover {
+				color: variable.$white;
+
+				&::after {
+					background: variable.$blue-bg;
+				}
+			}
+		}
+
+		&:focus-visible {
+			outline: 2px solid variable.$blue-primary;
+			outline-offset: 4px;
+			border-radius: 4px;
+		}
+	}
+
+	&__faq-answer {
+		display: grid;
+		grid-template-rows: 0fr;
+		@include mixin.g-normal;
+
+		&-text {
+			min-height: 0;
+			overflow: hidden;
+			max-width: 760px;
+			margin: 0;
+			padding: 0 60px 0 4px;
+			color: variable.$gray;
+			font-size: 14px;
+			line-height: 1.8;
+
+			strong{
+				color: variable.$blue-soft;
 			}
 		}
 	}
