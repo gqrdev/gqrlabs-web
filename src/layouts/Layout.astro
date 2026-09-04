@@ -31,6 +31,33 @@ const {title, description} = Astro.props;
 			rel="stylesheet"
 		/>
 
+		<!-- Open Graph -->
+		<meta property="og:title" content={title ?? "GQR Labs"} />
+		<meta
+			property="og:description"
+			content={description ??
+				"Desarrollo de software y Ciberseguridad. Montevideo, Uruguay."}
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://gqrlabs.com/" />
+		<meta property="og:image" content="https://gqrlabs.com/og-image.png" />
+		<meta
+			property="og:image:alt"
+			content="GQR Labs - Desarrollo de software y Ciberseguridad. Montevideo, Uruguay."
+		/>
+		<meta property="og:site_name" content="GQR Labs" />
+
+		<!-- JSON -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "WebSite",
+				"name": "GQR Labs",
+				"alternateName": ["GQRLabs"],
+				"url": "https://gqrlabs.com"
+			}
+		</script>
+
 		<!-- Clarity -->
 		<script type="text/javascript">
 			(function (c, l, a, r, i, t, y) {
