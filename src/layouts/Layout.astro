@@ -15,13 +15,9 @@ const {title, description} = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<title>
-			{title ? `${title} - GQR Labs` : "GQR Labs - Software y Ciberseguridad"}
+			{title ? `${title} - GQR Labs` : "GQR Labs - Desarrollo de Software y Ciberseguridad"}
 		</title>
-		<meta
-			name="description"
-			content={description ??
-				"Desarrollo de software y Ciberseguridad. Montevideo, Uruguay."}
-		/>
+		<meta name="description" content={description ?? "Desarrollo de software, ciberseguridad y soluciones tecnológicas a medida. Consultoría y mentorías para potenciar proyectos y equipos desde Uruguay."} />
 		<meta name="robots" content="index, follow" />
 		<link rel="canonical" href="https://gqrlabs.com/" />
 
@@ -33,17 +29,11 @@ const {title, description} = Astro.props;
 
 		<!-- Open Graph -->
 		<meta property="og:title" content={title ?? "GQR Labs"} />
-		<meta
-			property="og:description"
-			content={description ??
-				"Desarrollo de software y Ciberseguridad. Montevideo, Uruguay."}
-		/>
+		<meta property="og:description" content={description ?? "Desarrollo de software y Ciberseguridad. Montevideo, Uruguay."} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://gqrlabs.com/" />
 		<meta property="og:image" content="https://gqrlabs.com/og-image.png" />
-		<meta
-			property="og:image:alt"
-			content="GQR Labs - Desarrollo de software y Ciberseguridad. Montevideo, Uruguay."
+		<meta property="og:image:alt" content="GQR Labs - Desarrollo de software y Ciberseguridad. Montevideo, Uruguay."
 		/>
 		<meta property="og:site_name" content="GQR Labs" />
 
