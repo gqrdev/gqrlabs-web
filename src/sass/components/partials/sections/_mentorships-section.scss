@@ -178,7 +178,7 @@
 			position: relative;
 			z-index: 1;
 			display: grid;
-			gap: 20px;
+			gap: 40px;
 			margin: 0 auto;
 
 			@include mixin.mq(md) {
