@@ -35,7 +35,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 6px;
-		border-top: 1px solid variable.$gray-dark;
+		border-top: 1px solid variable.$gray-muted;
 		padding-top: 16px;
 
 		@include mixin.mq(md) {
@@ -48,18 +48,17 @@
 		color: variable.$footer-text-light;
 		display: grid;
 		grid-template-columns: max-content 1fr;
-		column-gap: 8px;
 		align-self: center;
 	}
 
 	&__name {
-		@include mixin.g-title-3;
+		@include mixin.g-title-4;
 		margin-bottom: unset;
 		align-self: center;
 	}
 
 	&__company-tagline {
-		@include mixin.g-small;
+		@include mixin.g-smaller;
 		margin-bottom: unset;
 		color: inherit;
 		text-align: center;

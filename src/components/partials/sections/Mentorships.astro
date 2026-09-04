@@ -1,172 +1,216 @@
 ---
 import "../../../sass/components/partials/sections/_mentorships-section.scss";
-import Contact from "../../partials/Contact.astro";
+import {Image} from "astro:assets";
+import CalendarIcon from "../../../assets/icons/calendar-icon.png";
 ---
 
 <main>
 	<section class="mentorships-section" id="mentorships">
 		<div class="wrapper">
-			<div class="mentorships-section__header">
-				<div class="mentorships-section__pretitle">Mentorías 1:1</div>
+			<!-- Hero -->
+			<header class="mentorships-section__header">
+				<span class="mentorships-section__pretitle"> Acompañamiento </span>
 
-				<h2 class="mentorships-section__title">
-					Acompañamiento <span class="mentorships-section__accent"
-						>a tu medida</span
-					>
-				</h2>
+				<h1 class="mentorships-section__title">
+					Mentorías <span class="mentorships-section__accent">1:1</span>
+				</h1>
 
 				<p class="mentorships-section__description">
 					No todas las personas necesitan aprender lo mismo ni de la misma
 					manera. Por eso, las mentorías se adaptan a cada situación: desde
-					resolver un problema puntual hasta realizar un recorrido completo para
-					aprender sobre seguridad y tecnología con mayor tranquilidad y
-					confianza.
+					resolver un problema puntual hasta aprender sobre seguridad y
+					tecnología con mayor tranquilidad y confianza.
+				</p>
+			</header>
+
+			<!-- Topics -->
+			<div class="mentorships-section__topics">
+				<div class="mentorships-section__topics-header">
+					<h2 class="mentorships-section__topics-title">
+						Algunos de los temas que podemos abordar.
+					</h2>
+
+					<p class="mentorships-section__topics-description">
+						Vos marcás los objetivos. Nosotros construimos el contenido para
+						ayudarte a alcanzarlos.
+					</p>
+				</div>
+
+				<div class="mentorships-section__topics-list">
+					<article class="mentorships-section__topic">
+						<div class="mentorships-section__topic-body">
+							<h3 class="mentorships-section__topic-title">
+								Estafas y engaños
+							</h3>
+
+							<p class="mentorships-section__topic-description">
+								Aprende a reconocer phishing, mensajes falsos y otras estafas
+								antes de caer en ellas.
+							</p>
+						</div>
+					</article>
+
+					<article class="mentorships-section__topic">
+						<div class="mentorships-section__topic-body">
+							<h3 class="mentorships-section__topic-title">
+								Privacidad y cuentas
+							</h3>
+
+							<p class="mentorships-section__topic-description">
+								Protege tus datos, contraseñas y cuentas para tener mayor
+								control sobre tu información.
+							</p>
+						</div>
+					</article>
+
+					<article class="mentorships-section__topic">
+						<div class="mentorships-section__topic-body">
+							<h3 class="mentorships-section__topic-title">
+								Seguridad en el móvil
+							</h3>
+
+							<p class="mentorships-section__topic-description">
+								Configura tu teléfono y tus aplicaciones para usarlos de forma
+								más segura y tranquila.
+							</p>
+						</div>
+					</article>
+				</div>
+			</div>
+
+			<!-- Plans -->
+			<div class="mentorships-section__plans-header">
+				<h2 class="mentorships-section__plans-title">
+					Elegí la modalidad que mejor se adapte a vos.
+				</h2>
+
+				<p class="mentorships-section__plans-description">
+					Desde una consulta puntual hasta un proceso completo de aprendizaje y
+					acompañamiento.
 				</p>
 			</div>
 
 			<div class="mentorships-section__plans">
 				<article class="mentorship-plan">
-					<div class="mentorship-plan__header">
-						<span class="mentorship-plan__label">Punto de partida</span>
+					<div class="mentorship-plan__number">01</div>
 
+					<div class="mentorship-plan__header">
 						<h3 class="mentorship-plan__name">Mentoría 1:1</h3>
 
 						<p class="mentorship-plan__description">
-							Una sesión individual para analizar una situación concreta,
-							resolver dudas o profundizar en un tema específico. Un espacio
+							Una sesión enfocada en analizar una situación concreta, resolver
+							dudas o profundizar en un tema específico. Un espacio
 							personalizado para entender, analizar y abordar el problema con
 							acompañamiento y criterio.
 						</p>
 					</div>
 
-					<div class="mentorship-plan__content">
-						<ul class="mentorship-plan__includes">
-							<li>Una sesión individual.</li>
-							<li>Análisis de tu situación.</li>
-							<li>Explicaciones claras y prácticas.</li>
-							<li>Recomendaciones para avanzar.</li>
-						</ul>
-					</div>
+					<ul class="mentorship-plan__includes">
+						<li class="mentorship-plan__item">Una sesión individual.</li>
+
+						<li class="mentorship-plan__item">Análisis de tu situación.</li>
+
+						<li class="mentorship-plan__item">
+							Explicaciones claras y prácticas.
+						</li>
+
+						<li class="mentorship-plan__item">Recomendaciones para avanzar.</li>
+					</ul>
 				</article>
 
 				<article class="mentorship-plan mentorship-plan--featured">
+					<span class="mentorship-plan__badge"> Para avanzar </span>
+
+					<div class="mentorship-plan__number">02</div>
+
 					<div class="mentorship-plan__header">
-						<span class="mentorship-plan__label">Para avanzar</span>
 						<h3 class="mentorship-plan__name">Curso personalizado</h3>
+
 						<p class="mentorship-plan__description">
-							Un recorrido corto creado alrededor de un objetivo concreto, con
-							contenidos y ejemplos adaptados a tus necesidades. La propuesta se
-							centra en aquello que querés aprender o resolver, para que cada
-							encuentro tenga un propósito claro y puedas aplicar lo aprendido a
-							situaciones concretas.
+							Un recorrido creado alrededor de un objetivo concreto, con
+							contenidos y ejemplos adaptados a tus necesidades. Un espacio para
+							aprender, profundizar y avanzar de forma práctica, con un
+							propósito claro en cada encuentro.
 						</p>
 					</div>
 
-					<div class="mentorship-plan__content">
-						<ul class="mentorship-plan__includes">
-							<li>Programa adaptado a tus objetivos.</li>
-							<li>4 sesiones individuales.</li>
-							<li>Ejemplos y situaciones reales.</li>
-							<li>Material para continuar aprendiendo.</li>
-						</ul>
-					</div>
+					<ul class="mentorship-plan__includes">
+						<li class="mentorship-plan__item">
+							Programa adaptado a tus objetivos.
+						</li>
+
+						<li class="mentorship-plan__item">4 sesiones individuales.</li>
+
+						<li class="mentorship-plan__item">
+							Ejemplos y situaciones reales.
+						</li>
+
+						<li class="mentorship-plan__item">
+							Material para continuar aprendiendo.
+						</li>
+					</ul>
 				</article>
 
 				<article class="mentorship-plan">
+					<span class="mentorship-plan__badge"> + Extendido </span>
+
+					<div class="mentorship-plan__number">03</div>
+
 					<div class="mentorship-plan__header">
-						<span class="mentorship-plan__label">Profundización</span>
-						<h3 class="mentorship-plan__name">Programa personalizado</h3>
+						<h3 class="mentorship-plan__name">Especialización</h3>
 
 						<p class="mentorship-plan__description">
-							Un recorrido más completo para trabajar diferentes áreas,
-							construir conocimientos de forma progresiva y ganar autonomía.
+							Un proceso más completo y profundo para trabajar diferentes áreas,
+							desarrollar conocimientos de forma progresiva y aplicarlos con
+							mayor autonomía. Un proceso adaptado a tus objetivos, con
+							acompañamiento total.
 						</p>
 					</div>
 
-					<div class="mentorship-plan__content">
-						<ul class="mentorship-plan__includes">
-							<li>Programa diseñado desde cero.</li>
-							<li>Múltiples sesiones individuales.</li>
-							<li>Profundización en diferentes temas.</li>
-							<li>Acompañamiento durante todo el proceso.</li>
-						</ul>
-					</div>
+					<ul class="mentorship-plan__includes">
+						<li class="mentorship-plan__item">Programa diseñado desde cero.</li>
+
+						<li class="mentorship-plan__item">
+							8 sesiones individuales o más.
+						</li>
+
+						<li class="mentorship-plan__item">
+							Profundización en diferentes temas.
+						</li>
+
+						<li class="mentorship-plan__item">
+							Acompañamiento durante todo el proceso.
+						</li>
+					</ul>
 				</article>
 			</div>
+		</div>
 
-			<div class="mentorships-section__topics">
-				<div class="mentorships-section__pretitle">Qué podemos trabajar</div>
+		<!-- CTA -->
+		<div class="mentorships-section__cta">
+			<div class="mentorships-section__cta-content">
+				<div class="mentorships-section__cta-info">
+					<p class="mentorships-section__cta-label">
+						¿No sabés cuál elegir?
+					</p>
 
-				<h2 class="section-title">
-					El contenido se adapta a lo que necesitas aprender.
-				</h2>
-
-				<p class="section-description">
-					No se trata de seguir un programa cerrado. Partimos de tus objetivos y
-					construimos el contenido alrededor de ellos, utilizando ejemplos
-					cercanos y situaciones que puedas encontrar en el día a día.
-				</p>
-
-				<div class="mentorships-section__topics-list">
-					<article class="mentorship-topic">
-						<h3>Seguridad digital</h3>
-
-						<p>
-							Estafas, phishing y otras situaciones que pueden poner en riesgo
-							tu información.
-						</p>
-					</article>
-
-					<article class="mentorship-topic">
-						<h3>Privacidad</h3>
-
-						<p>
-							Configuraciones, datos personales y formas de tener un mayor
-							control sobre tu información.
-						</p>
-					</article>
-
-					<article class="mentorship-topic">
-						<h3>Hábitos seguros</h3>
-
-						<p>
-							Contraseñas, dispositivos y pequeñas prácticas que pueden hacer
-							una gran diferencia.
-						</p>
-					</article>
-
-					<article class="mentorship-topic">
-						<h3>Tecnología cotidiana</h3>
-
-						<p>
-							Entender mejor las herramientas que utilizas todos los días y
-							aprender a utilizarlas con confianza.
-						</p>
-					</article>
-				</div>
-			</div>
-
-			<!-- CTA -->
-			<div class="mentorships-section__cta">
-				<div>
-					<div class="mentorships-section__pretitle">
-						¿No sabes cuál elegir?
-					</div>
-
-					<h2>Empecemos por entender qué necesitas.</h2>
-
-					<p>
-						Hablemos sobre qué situación te preocupa o qué te
-						gustaría mejorar y encontramos juntos la modalidad más adecuada.
+					<p class="mentorships-section__cta-description">
+						No hace falta que lo tengas claro desde el principio. Podemos partir
+						de lo que necesitás y encontrar la modalidad que mejor se adapte a
+						tu situación.
 					</p>
 				</div>
 
-				<a href="#contact" class="button button-primary">
-					Consultar mentorías →
+				<a href="https://calendly.com/gqrlabs/30min" class="mentorships-section__cta-button">
+					Hablemos<Image
+						src={CalendarIcon}
+						alt="Calendar Icon"
+						width="30"
+						height="30"
+						class="mentorships-section__cta-calendar-icon"
+					/>
 				</a>
 			</div>
 		</div>
 	</section>
-
-	<Contact />
 </main>

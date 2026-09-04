@@ -38,6 +38,7 @@
 	/* Description */
 	&__description {
 		@include mixin.g-small;
+		margin-bottom: variable.$section-bottom;
 	}
 
 	&__grid {
@@ -62,13 +63,15 @@
 		}
 
 		&:hover {
-			background: rgba(255, 255, 255, 0.035);
-			border-color: rgba(255, 255, 255, 0.12);
-			transform: translateY(-4px);
+			@include mixin.mq(md) {
+				background: rgba(255, 255, 255, 0.035);
+				border-color: rgba(255, 255, 255, 0.12);
+				transform: translateY(-4px);
 
-			.software__code-badge {
-				&::before {
-					transform: scale(1.05);
+				.software__code-badge {
+					&::before {
+						transform: scale(1.05);
+					}
 				}
 			}
 		}
@@ -84,10 +87,9 @@
 		&-title {
 			@include mixin.g-title-3;
 			margin-bottom: unset;
-			transition: color 0.3s ease;
 
 			@include mixin.mq(md) {
-				font-size: 20px;
+				transition: color 0.3s ease;
 			}
 		}
 
@@ -112,7 +114,9 @@
 				border-radius: 3px;
 				top: 11px;
 				left: 11px;
-				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+				@include mixin.mq(md) {
+					transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+				}
 			}
 			&::after {
 				content: "";
@@ -137,7 +141,9 @@
 				border-radius: 50%;
 				top: 17px;
 				left: 17px;
-				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+				@include mixin.mq(md) {
+					transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+				}
 			}
 			&::after {
 				content: "";
@@ -150,7 +156,9 @@
 				border-bottom-color: transparent;
 				top: 11px;
 				left: 11px;
-				transform: rotate(45deg);
+				@include mixin.mq(md) {
+					transform: rotate(45deg);
+				}
 			}
 		}
 
@@ -167,7 +175,9 @@
 				background: currentColor;
 				border-radius: 2px 2px 0 0;
 				position: static;
-				transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+				@include mixin.mq(md) {
+					transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+				}
 			}
 			&::after {
 				content: "";
@@ -220,9 +230,9 @@
 		display: flex;
 		width: max-content;
 		gap: 35px;
-		animation: technologyMove 28s linear infinite;
 
 		@include mixin.mq(md) {
+			animation: technologyMove 28s linear infinite;
 			gap: 55px;
 		}
 	}
@@ -235,26 +245,32 @@
 		font-size: 14px;
 		font-weight: 600;
 		white-space: nowrap;
-		transition:
-			color 0.3s ease,
-			transform 0.3s ease;
+
+		@include mixin.mq(md) {
+			transition:
+				color 0.3s ease,
+				transform 0.3s ease;
+		}
 
 		&-icon {
-			/* width: 24px;
-			height: 24px;
-			filter: grayscale(100%) opacity(0.7); */
 			object-fit: contain;
-			transition:
-				filter 0.3s ease,
-				transform 0.3s ease;
+			@include mixin.mq(md) {
+				transition:
+					filter 0.3s ease,
+					transform 0.3s ease;
+			}
 		}
 
 		&:hover {
 			color: var(--white, #fff);
-			transform: translateY(-6px);
+			@include mixin.mq(md) {
+				transform: translateY(-6px);
+			}
 
-			.software__tech-icon {
-				filter: grayscale(0%) opacity(1);
+			@include mixin.mq(md) {
+				.software__tech-icon {
+					filter: grayscale(0%) opacity(1);
+				}
 			}
 		}
 	}
@@ -262,7 +278,7 @@
 	&__tech-line {
 		width: 100px;
 		height: 1px;
-		background-color: variable.$gray-dark;
+		background-color: variable.$gray-muted;
 		margin-inline: auto;
 	}
 

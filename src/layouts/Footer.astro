@@ -3,7 +3,6 @@ import "../sass/base/layout/_footer.scss";
 import LinkedinLogo from "../assets/icons/linkedin-logo.png";
 import EmailLogo from "../assets/icons/mail-logo.png";
 import {Image} from "astro:assets";
-import GQRLabsLogo from "../../public/icons/logo-gqrlabs.png";
 
 const year = new Date().getFullYear();
 ---
@@ -14,13 +13,6 @@ const year = new Date().getFullYear();
 			<!-- Brand -->
 			<div class="footer__brand">
 				<div class="footer__company-name">
-					<Image
-						src={GQRLabsLogo}
-						width={40}
-						height={40}
-						densities={[1, 2, 3]}
-						alt="Logo de GQR Labs"
-					/>
 					<span class="footer__name">GQR Labs</span>
 				</div>
 				<span class="footer__company-tagline">

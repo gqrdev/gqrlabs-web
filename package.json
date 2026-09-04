@@ -7,20 +7,20 @@
 	},
 	"scripts": {
 		"dev": "astro dev",
-		"dev:clean": "node -e \"fs.rmSync('.astro', { recursive: true, force: true }); fs.rmSync('node_modules/.vite', { recursive: true, force: true });\" && astro dev",
+		"dev:clean": "node -e \"fs.rmSync('.astro', { recursive: true, force: true }); fs.rmSync('node_modules/.vite', { recursive: true, force: true }); fs.rmSync('.wrangler', { recursive: true, force: true });\" && astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro"
 	},
 	"dependencies": {
-		"astro": "^7.2.10"
+		"astro": "^7.3.1"
 	},
 	"devDependencies": {
-		"@astrojs/cloudflare": "^14.2.6",
+		"@astrojs/cloudflare": "^14.3.0",
 		"lightningcss": "^1.33.0",
 		"sass": "^1.103.1",
 		"sharp": "^0.35.4",
-		"wrangler": "^4.127.1"
+		"wrangler": "^4.128.0"
 	},
 	"packageManager": "pnpm@11.25.0+sha512.5cde925b4f075f725eb71fbae18a42ffe784524789f19b61c731cb8721ec28aaee160e01a8d5af4fedb2a42cdbf300efe23db356b0d4a17b4d63e11f8ab7c956"
 }

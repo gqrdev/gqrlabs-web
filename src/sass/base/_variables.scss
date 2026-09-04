@@ -4,33 +4,44 @@
 
 /* Colors */
 $blue-primary: #2563eb;
-$blue-light: #06498f;
-$blue-soft: #4674a8;
-$background-section: #070a0f;
-$background-section-cta: #162235;
+$blue-hover: #3b82f6;
+$blue-light: #60a5fa;
+$blue-soft: #93c5fd;
+$blue-bg: #2563eb14;
+$blue-bg-strong: #2563eb24;
+$blue-glow: #2563eb38;
 
-$blue-glow: rgba(0, 55, 120, 0.32);
+$black-soft: #10151b;
+$black-card: #111820;
+$black-card-hover: #151d26;
 
-$black: #0b0d10;
-$black-soft: #101419;
-$black-card: #14191f;
+$background-section: #0b0f14;
+$background-section-alt: #0a0e14;
+$background-section-cta: #0d316b;
 
-$white: #f5f7fa;
+$white: #f8fafc;
+$gray: #94a3b8;
+$gray-light: #cbd5e1;
+$gray-muted: #64748b;
 
-$gray: #7e8792;
-$gray-light: #aeb5bd;
-$gray-dark: #171b1f;
+/* Topic */
+$border: #94a3b824;
+$border-light: #94a3b814;
+$border-blue: #0d225059;
+$box-shadow-featured: #2563eb1a;
 
-$border: #242a31;
+$success: #22c55e;
+$warning: #f59e0b;
+$error: #ef4444;
 
 /* Footer */
-$footer-bg: #07090c;
+$footer-bg: #05070a;
 $footer-text: #94a3b8;
 $footer-text-light: #f8fafc;
 $footer-accent: #2563eb;
 
 body {
-	background-color: $black;
+	background-color: $background-section;
 }
 
 /* Typography */
@@ -79,7 +90,7 @@ $section-bottom: 30px;
 /* Typography - margins */
 $margin-bottom-heading: 1.4rem;
 $margin-bottom-body: 1.4rem;
-$margin-bottom-pretitle: .8rem;
+$margin-bottom-pretitle: 0.8rem;
 
 /* Header */
 $padding-top-bottom-header: 18px;
