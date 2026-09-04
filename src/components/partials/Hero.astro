@@ -2,9 +2,19 @@
 import "../../sass/components/partials/_hero.scss";
 import {Image} from "astro:assets";
 import LinkedinLogo from "../../assets/icons/linkedin-logo.png";
+import HeroVideoDesktop from "../../assets/videos/home-video.mp4";
+import HeroVideoMobile from "../../assets/videos/home-video-mobile.mp4";
 ---
 
 <section class="hero">
+	<video class="hero__background-video" autoplay muted loop playsinline>
+		<source
+			src={HeroVideoDesktop}
+			type="video/mp4"
+			media="(min-width: 768px)"
+		/>
+		<source src={HeroVideoMobile} type="video/mp4" />
+	</video>
 	<div class="hero__content">
 		<!-- Header -->
 		<div class="hero__header">
@@ -33,27 +43,28 @@ import LinkedinLogo from "../../assets/icons/linkedin-logo.png";
 
 		<div class="hero__actions">
 			<a href="#software" class="hero__button">
-				Servicios<!-- <span>↗</span> -->
+				Servicios
 			</a>
 		</div>
-	</div>
 
-	<div class="hero__author" aria-label="Información de contacto y ubicación">
-		<a
-			href="https://www.linkedin.com/in/facundogqr/"
-			class="hero__author-link"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<span>Facundo Q. Rivoir</span>
-			<Image
-				src={LinkedinLogo}
-				alt="LinkedIn Logo"
-				width={20}
-				height={20}
-				densities={[1, 2, 3]}
-			/>
-		</a>
+		<!-- Author -->
+		<div class="hero__author" aria-label="Información de contacto y ubicación">
+			<a
+				href="https://www.linkedin.com/in/facundogqr/"
+				class="hero__author-link"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<span>Facundo Q. Rivoir</span>
+				<Image
+					src={LinkedinLogo}
+					alt="LinkedIn Logo"
+					width={20}
+					height={20}
+					densities={[1, 2, 3]}
+				/>
+			</a>
+		</div>
+		<span class="hero__place"> Montevideo · Uruguay </span>
 	</div>
-	<span class="hero__place"> Montevideo · Uruguay </span>
 </section>

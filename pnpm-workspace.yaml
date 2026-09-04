@@ -3,10 +3,10 @@ allowBuilds:
   esbuild: true
   workerd: true
 minimumReleaseAgeExclude:
-  - sass@1.103.1
+  - sass@1.103.1 || 1.104.0
   - '@astrojs/markdown-satteri@0.3.8 || 0.4.0'
   - astro@7.2.6 || 7.2.7 || 7.2.9 || 7.2.10 || 7.3.1
   - '@astrojs/cloudflare@14.2.6 || 14.3.0'
   - '@astrojs/internal-helpers@0.11.0'
-  - miniflare@5.20260831.0-alpha
-  - wrangler@4.128.0
+  - miniflare@5.20260831.0-alpha || 5.20260903.0-alpha
+  - wrangler@4.128.0 || 4.129.0
