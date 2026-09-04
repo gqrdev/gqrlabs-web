@@ -203,6 +203,10 @@
 	}
 
 	/* FAQ */
+	&__faq {
+		@include mixin.max-width;
+	}
+
 	&__faq-title {
 		@include mixin.g-title-2;
 		text-align: center;
@@ -211,6 +215,10 @@
 	&__faq-description {
 		@include mixin.g-normal;
 		color: variable.$gray;
+
+		@include mixin.mq(md) {
+			text-align: center;
+		}
 	}
 
 	&__faq-list {
