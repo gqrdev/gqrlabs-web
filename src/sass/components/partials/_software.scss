@@ -230,9 +230,9 @@
 		display: flex;
 		width: max-content;
 		gap: 35px;
+		animation: technologyMove 28s linear infinite;
 
 		@include mixin.mq(md) {
-			animation: technologyMove 28s linear infinite;
 			gap: 55px;
 		}
 	}
