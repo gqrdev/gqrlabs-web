@@ -9,9 +9,9 @@
 .howto {
 	@include mixin.background;
 	@include mixin.section;
-	@include mixin.max-width;
-
+	
 	@include mixin.mq(md) {
+		@include mixin.max-width;
 		padding-bottom: variable.$section-bottom * 3;
 		min-height: unset;
 	}

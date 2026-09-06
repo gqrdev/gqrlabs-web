@@ -1,0 +1,116 @@
+// =========================================================
+// Tech Section
+// =========================================================
+
+@use "../../base/variables" as variable;
+@use "../../base/mixins" as mixin;
+
+.tech-section {
+	@include mixin.background-alt;
+	@include mixin.section;
+    min-height: unset;
+    padding-top: unset;
+
+	@include mixin.mq(md) {
+		/* padding-bottom: variable.$section-bottom * 3; */
+	}
+
+	&__title {
+		text-align: center;
+		@include mixin.g-title-4;
+		margin-bottom: unset;
+		color: variable.$gray;
+		text-transform: uppercase;
+
+		@include mixin.mq(md) {
+			@include mixin.g-title-3;
+		}
+	}
+
+	&__tech-wrapper {
+		position: relative;
+		overflow: hidden;
+		padding: 20px 0;
+
+		mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 10%,
+			black 90%,
+			transparent
+		);
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 10%,
+			black 90%,
+			transparent
+		);
+	}
+
+	&__tech-track {
+		display: flex;
+		width: max-content;
+		gap: 35px;
+		animation: technologyMove 28s linear infinite;
+
+		@include mixin.mq(md) {
+			gap: 55px;
+		}
+	}
+
+	&__tech {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		color: rgba(255, 255, 255, 0.7);
+		font-size: 14px;
+		font-weight: 600;
+		white-space: nowrap;
+
+		@include mixin.mq(md) {
+			transition:
+				color 0.3s ease,
+				transform 0.3s ease;
+		}
+
+		&-icon {
+			object-fit: contain;
+			@include mixin.mq(md) {
+				transition:
+					filter 0.3s ease,
+					transform 0.3s ease;
+			}
+		}
+
+		&:hover {
+			color: var(--white, #fff);
+			@include mixin.mq(md) {
+				transform: translateY(-6px);
+			}
+
+			@include mixin.mq(md) {
+				.tech-section__tech-icon {
+					filter: grayscale(0%) opacity(1);
+				}
+			}
+		}
+	}
+
+	&__tech-line {
+		width: 100px;
+		height: 1px;
+		background-color: variable.$gray-muted;
+		margin-inline: auto;
+	}
+}
+
+/* Infinite animation */
+@keyframes technologyMove {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
