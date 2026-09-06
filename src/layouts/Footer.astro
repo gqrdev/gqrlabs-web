@@ -9,43 +9,58 @@ const year = new Date().getFullYear();
 
 <footer class="footer">
 	<div class="footer__principal-container">
-		<div class="footer__brand-area">
-			<!-- Brand -->
-			<div class="footer__brand">
-				<div class="footer__company-name">
-					<span class="footer__name">GQR Labs</span>
-				</div>
-				<span class="footer__company-tagline">
-					Desarrollo de software y formación en ciberseguridad
-				</span>
-			</div>
+		<!-- Social -->
+		<div class="footer__social">
+			<a
+				href="https://linkedin.com"
+				class="footer__social-link"
+				target="_blank"
+				rel="noopener"
+			>
+				<Image
+					src={LinkedinLogo}
+					width={36}
+					height={36}
+					densities={[1, 2, 3]}
+					alt="LinkedIn Logo"
+				/>
+			</a>
+			<a href="mailto:gqrlabs@gmail.com" class="footer__social-link">
+				<Image
+					src={EmailLogo}
+					width={36}
+					height={36}
+					densities={[1, 2, 3]}
+					alt="Mail Logo"
+				/>
+			</a>
+		</div>
 
-			<!-- Social -->
-			<div class="footer__social">
-				<a
-					href="https://linkedin.com"
-					class="footer__social-link"
-					target="_blank"
-					rel="noopener"
-				>
-					<Image
-						src={LinkedinLogo}
-						width={36}
-						height={36}
-						densities={[1, 2, 3]}
-						alt="LinkedIn Logo"
-					/>
-				</a>
-				<a href="mailto:gqrlabs@gmail.com" class="footer__social-link">
-					<Image
-						src={EmailLogo}
-						width={36}
-						height={36}
-						densities={[1, 2, 3]}
-						alt="Mail Logo"
-					/>
-				</a>
+		<!-- Brand -->
+		<div class="footer__brand">
+			<div class="footer__company-name">
+				<span class="footer__name">GQR Labs</span>
 			</div>
+			<span class="footer__company-tagline">
+				Desarrollo de software y formación en ciberseguridad.
+			</span>
+		</div>
+
+		<!-- Legal -->
+		<div class="footer__legal-area">
+			<a href="/legal/terminos-y-condiciones" class="footer__legal-link">
+				Términos y Condiciones
+			</a>
+			<a href="/legal/politica-de-privacidad" class="footer__legal-link">
+				Política de Privacidad
+			</a>
+		</div>
+
+		<!-- Copyright -->
+		<div class="footer__copyright-area">
+			<p class="footer__legal-copyright">
+				&copy; {year} GQR Labs. Todos los derechos reservados.
+			</p>
 		</div>
 	</div>
 </footer>

@@ -78,8 +78,8 @@ $breakpoints: (
 $page-bottom-margin: 30px;
 $general-padding: 16px;
 $max-width: 1024px;
-$max-width-header: 1024px;
-$max-width-footer: 1024px;
+$max-width-header: $max-width;
+$max-width-footer: $max-width;
 $section-padding: 60px;
 
 /* Section - padding */

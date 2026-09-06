@@ -11,60 +11,87 @@
 	background-color: variable.$footer-bg;
 	color: variable.$footer-text;
 	padding: variable.$padding-top-footer variable.$padding-bottom-footer;
-	display: grid;
-	place-items: center;
-
+	
 	&__principal-container {
-		width: 100%;
-		max-width: variable.$max-width-footer;
-	}
-
-	&__brand-area {
-		display: flex;
-		flex-direction: column-reverse;
-		row-gap: 16px;
+		@include mixin.max-width;
+		display: grid;
+		grid-template-rows: repeat(4, auto);
+		grid-template-areas:
+			"social"
+			"brand"
+			"legal"
+			"copyright";
+		row-gap: 18px;
 
 		@include mixin.mq(md) {
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: 1fr;
+			grid-template-rows: repeat(2, auto);
+			grid-template-columns: repeat(2, auto);
+			grid-template-areas:
+				"brand social"
+				"legal copyright";
 		}
 	}
 
 	&__brand {
+		grid-area: brand;
 		display: flex;
 		flex-direction: column;
-		gap: 6px;
-		border-top: 1px solid variable.$gray-muted;
-		padding-top: 16px;
+		row-gap: 10px;
 
 		@include mixin.mq(md) {
-			border-top: unset;
-			padding-top: unset;
+			display: unset;
+			flex-direction: unset;
+			flex-direction: row;
+			column-gap: 16px;
 		}
 	}
 
 	&__company-name {
 		color: variable.$footer-text-light;
-		display: grid;
-		grid-template-columns: max-content 1fr;
-		align-self: center;
 	}
 
 	&__name {
 		@include mixin.g-title-4;
 		margin-bottom: unset;
-		align-self: center;
 	}
 
 	&__company-tagline {
-		@include mixin.g-smaller;
+		@include mixin.g-small;
 		margin-bottom: unset;
 		color: inherit;
-		text-align: center;
+	}
+
+	&__legal-area {
+		grid-area: legal;
+		color: inherit;
+		display: flex;
+		flex-direction: column;
+		row-gap: 8px;
+
+		@include mixin.mq(md) {
+			flex-direction: row;
+			column-gap: 16px;
+		}
+	}
+
+	&__legal-link {
+		@include mixin.g-smaller;
+		color: inherit;
+		margin-bottom: unset;
+	}
+
+	&__legal-copyright {
+		@include mixin.g-smaller;
+		color: inherit;
+		margin-bottom: unset;
+
+		@include mixin.mq(md) {
+			text-align: right;
+		}
 	}
 
 	&__social {
+		grid-area: social;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		column-gap: 16px;
@@ -72,6 +99,7 @@
 
 		@include mixin.mq(md) {
 			column-gap: 20px;
+			justify-self: end;
 		}
 	}
 }
