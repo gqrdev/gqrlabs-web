@@ -38,7 +38,7 @@
 	/* Description */
 	&__description {
 		@include mixin.g-small;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 	}
 
 	/* Links Container */
@@ -56,11 +56,10 @@
 
 	/* Buttons */
 	&__button {
-		@include mixin.button-variant($variant: outline);
-		@include mixin.g-normal;
-		margin-bottom: .6rem;
+		@include mixin.button-variant($variant: primary, $outline: true);
+		@include mixin.g-small;
+		margin-bottom: 0.6rem;
 		text-transform: uppercase;
-		text-decoration: none;
 
 		span {
 			color: var(--blue);
