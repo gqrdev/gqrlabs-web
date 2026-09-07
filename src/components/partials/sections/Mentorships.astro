@@ -5,18 +5,26 @@ import CalendarIcon from "../../../assets/icons/calendar-icon.png";
 
 const whatsappNumber = "TU_NUMERO_DE_WHATSAPP";
 
-const whatsappLinks = {
-	oneToOne: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-		"Hola, me interesa la Mentoría 1:1 y quería consultar cómo funciona.",
+const mailContact = {
+	oneToOne: `mailto:tu_correo@example.com?subject=${encodeURIComponent(
+		"Consulta sobre Mentoría 1:1"
+	)}&body=${encodeURIComponent(
+		"Hola, me interesa la Mentoría 1:1 y quería consultar cómo funciona."
 	)}`,
-	personalized: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-		"Hola, me interesa el Acompañamiento personalizado y quería consultar cómo funciona.",
+	personalized: `mailto:tu_correo@example.com?subject=${encodeURIComponent(
+		"Consulta sobre Acompañamiento personalizado"
+	)}&body=${encodeURIComponent(
+		"Hola, me interesa el Acompañamiento personalizado y quería consultar cómo funciona."
 	)}`,
-	integral: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-		"Hola, me interesa el Programa integral y quería consultar cómo funciona.",
+	integral: `mailto:tu_correo@example.com?subject=${encodeURIComponent(
+		"Consulta sobre Programa integral"
+	)}&body=${encodeURIComponent(
+		"Hola, me interesa el Programa integral y quería consultar cómo funciona."
 	)}`,
-	general: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-		"Hola, tengo algunas dudas sobre las mentorías y quería consultar qué modalidad podría ser adecuada para mí.",
+	general: `mailto:tu_correo@example.com?subject=${encodeURIComponent(
+		"Consulta general sobre mentorías"
+	)}&body=${encodeURIComponent(
+		"Hola, tengo algunas dudas sobre las mentorías y quería consultar qué modalidad podría ser adecuada para mí."
 	)}`,
 };
 ---
@@ -137,7 +145,7 @@ const whatsappLinks = {
 					</ul>
 
 					<a
-						href={whatsappLinks.oneToOne}
+						href={mailContact.oneToOne}
 						class="mentorship-plan__cta"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -183,7 +191,7 @@ const whatsappLinks = {
 					</ul>
 
 					<a
-						href={whatsappLinks.personalized}
+						href={mailContact.personalized}
 						class="mentorship-plan__cta"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -231,7 +239,7 @@ const whatsappLinks = {
 					</ul>
 
 					<a
-						href={whatsappLinks.integral}
+						href={mailContact.integral}
 						class="mentorship-plan__cta"
 						target="_blank"
 						rel="noopener noreferrer"
