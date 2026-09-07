@@ -39,7 +39,7 @@
 	}
 
 	&__topics-title {
-		@include mixin.g-title-1;
+		@include mixin.g-title-2;
 	}
 
 	&__topics-description {
@@ -132,13 +132,13 @@
 		margin-bottom: 3rem;
 
 		&-label {
-			@include mixin.g-bigger;
-			margin-bottom: unset;
+			@include mixin.g-title-2;
 			text-align: center;
 			text-transform: uppercase;
 
 			@include mixin.mq(md) {
 				text-align: left;
+				margin-bottom: unset;
 			}
 		}
 
@@ -179,7 +179,7 @@
 			position: relative;
 			z-index: 1;
 			display: grid;
-			gap: 40px;
+			gap: 20px;
 			margin: 0 auto;
 
 			@include mixin.mq(md) {
@@ -241,7 +241,7 @@
 		position: relative;
 		z-index: 1;
 		display: grid;
-		gap: 40px;
+		gap: 20px;
 		margin: 0 auto;
 
 		@include mixin.mq(md) {
@@ -250,13 +250,13 @@
 	}
 
 	&__faq-cta-title {
-		@include mixin.g-bigger;
-		margin-bottom: unset;
+		@include mixin.g-title-2;
 		text-align: center;
 		text-transform: uppercase;
 
 		@include mixin.mq(md) {
 			text-align: left;
+			margin-bottom: unset;
 		}
 	}
 
