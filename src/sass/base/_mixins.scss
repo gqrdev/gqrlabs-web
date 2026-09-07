@@ -134,48 +134,84 @@
 	margin-inline: auto;
 }
 
-/* Buttons */
-@mixin button-variant(
-	$bg-color: variable.$blue-primary,
-	$text-color: variable.$white,
-	$is-outline: false
-) {
+/* Buttons (outline, primary and success) */
+@mixin button-variant($variant: primary, $outline: false) {
+	$default-bg: null;
+	$default-text: null;
+	$default-hover-bg: null;
+	$default-shadow: null;
+
+	@if $variant == primary {
+		$default-bg: variable.$button-primary;
+		$default-text: variable.$button-text;
+		$default-hover-bg: variable.$button-primary-hover;
+		$default-shadow: variable.$button-shadow;
+	} @else if $variant == success {
+		$default-bg: variable.$button-success;
+		$default-text: variable.$button-text;
+		$default-hover-bg: variable.$button-success-hover;
+		$default-shadow: variable.$button-shadow;
+	} @else if $variant == outline {
+		$default-bg: transparent;
+		$default-text: variable.$button-outline;
+		$default-hover-bg: variable.$button-outline-hover;
+		$default-shadow: variable.$button-shadow;
+	}
+
 	display: inline-flex;
 	align-items: center;
 	gap: 10px;
 	padding: 10px 20px;
-	@include g-small;
-	transition:
-		transform 0.25s ease,
-		background-color 0.25s ease,
-		color 0.25s ease,
-		box-shadow 0.25s ease,
-		border-color 0.25s ease;
 	cursor: pointer;
 	border-radius: 4px;
+	border: 1px solid transparent;
 
-	@if $is-outline {
+	@include g-small;
+	@include mq(md) {
+		transition:
+			transform 0.25s ease,
+			background-color 0.25s ease,
+			border-color 0.25s ease;
+	}
+
+	@if $variant == outline or $outline {
 		background-color: transparent;
-		color: $text-color;
-		border: 1px solid $bg-color;
+		color: $default-text;
+		border-color: $default-bg;
 
-		&:hover {
-			transform: translateY(-2px);
-			background-color: $bg-color;
-			color: variable.$white;
-			box-shadow: 0 10px 10px variable.$blue-glow;
+		@include mq(md) {
+			&:hover {
+				transform: translateY(-2px);
+				background-color: $default-hover-bg;
+				border-color: transparent;
+				color: $default-text;
+			}
 		}
 	} @else {
-		background-color: $bg-color;
-		color: $text-color;
-		border: 1px solid transparent;
+		background-color: $default-bg;
+		color: $default-text;
 
-		&:hover {
-			transform: translateY(-3px);
-			background-color: variable.$blue-light;
-			color: variable.$white;
-			box-shadow: 0 15px 20px variable.$blue-glow;
+		@include mq(md) {
+			&:hover {
+				transform: translateY(-3px);
+				background-color: $default-hover-bg;
+				color: $default-text;
+			}
 		}
+	}
+
+	&:focus-visible {
+		outline: 2px solid rgba(255,255,255,0.06);
+		outline-offset: 2px;
+	}
+
+	&:disabled,
+	&.is-disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+		transform: none;
+		pointer-events: none;
+		box-shadow: none;
 	}
 }
 

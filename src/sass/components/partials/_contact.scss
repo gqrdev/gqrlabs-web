@@ -56,21 +56,11 @@
 
 	/* Buttons */
 	&__button {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		gap: 12px;
+		@include mixin.button-variant($variant: outline);
 		@include mixin.g-normal;
 		margin-bottom: .6rem;
 		text-transform: uppercase;
-		background: #0037781f;
-		border: 1px solid rgba(0, 55, 120, 0.8);
-		padding: 12px 20px;
-		border-radius: 4px;
 		text-decoration: none;
-		transition:
-			background 0.25s ease,
-			transform 0.25s ease;
 
 		span {
 			color: var(--blue);
@@ -83,9 +73,6 @@
 		}
 
 		&:hover {
-			background: rgba(0, 55, 120, 0.7);
-			transform: translateY(-2px);
-
 			span {
 				transform: translateX(3px) translateY(-3px);
 			}

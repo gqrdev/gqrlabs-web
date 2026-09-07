@@ -98,11 +98,7 @@
 	}
 
 	&__button {
-		@include mixin.button-variant(
-			variable.$blue-primary,
-			variable.$white,
-			false
-		);
+		@include mixin.button-variant($variant: primary);
 		margin-bottom: unset;
 	}
 

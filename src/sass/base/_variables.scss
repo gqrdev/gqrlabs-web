@@ -3,7 +3,7 @@
 // =========================================================
 
 /* Colors */
-$blue-primary: #2563eb;
+$blue-primary: #0D47A1;
 $blue-hover: #3b82f6;
 $blue-light: #60a5fa;
 $blue-soft: #93c5fd;
@@ -23,6 +23,7 @@ $white: #f8fafc;
 $gray: #94a3b8;
 $gray-light: #cbd5e1;
 $gray-muted: #64748b;
+$success: #1dab51;
 
 /* Topic */
 $border: #94a3b824;
@@ -30,9 +31,15 @@ $border-light: #94a3b814;
 $border-blue: #0d225059;
 $box-shadow-featured: #2563eb1a;
 
-$success: #22c55e;
-$warning: #f59e0b;
-$error: #ef4444;
+/* Buttons */
+$button-primary: #2563eb;
+$button-primary-hover: #1d4ed8;
+$button-success: #1dab51;
+$button-success-hover: #178f43;
+$button-outline: #0d47a1;
+$button-outline-hover: #08306f;
+$button-text: #f8fafc;
+$button-shadow: #2563eb38;
 
 /* Footer */
 $footer-bg: #05070a;

@@ -2,6 +2,23 @@
 import "../../../sass/components/partials/sections/_mentorships-section.scss";
 import {Image} from "astro:assets";
 import CalendarIcon from "../../../assets/icons/calendar-icon.png";
+
+const whatsappNumber = "TU_NUMERO_DE_WHATSAPP";
+
+const whatsappLinks = {
+	oneToOne: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+		"Hola, me interesa la Mentoría 1:1 y quería consultar cómo funciona.",
+	)}`,
+	personalized: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+		"Hola, me interesa el Acompañamiento personalizado y quería consultar cómo funciona.",
+	)}`,
+	integral: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+		"Hola, me interesa el Programa integral y quería consultar cómo funciona.",
+	)}`,
+	general: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+		"Hola, tengo algunas dudas sobre las mentorías y quería consultar qué modalidad podría ser adecuada para mí.",
+	)}`,
+};
 ---
 
 <main>
@@ -118,6 +135,15 @@ import CalendarIcon from "../../../assets/icons/calendar-icon.png";
 							Recomendaciones prácticas para avanzar.
 						</li>
 					</ul>
+
+					<a
+						href={whatsappLinks.oneToOne}
+						class="mentorship-plan__cta"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Me interesa
+					</a>
 				</article>
 
 				<!-- Plan 02 -->
@@ -155,6 +181,15 @@ import CalendarIcon from "../../../assets/icons/calendar-icon.png";
 							Seguimiento durante el proceso.
 						</li>
 					</ul>
+
+					<a
+						href={whatsappLinks.personalized}
+						class="mentorship-plan__cta"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Me interesa
+					</a>
 				</article>
 
 				<!-- Plan 03 -->
@@ -194,6 +229,15 @@ import CalendarIcon from "../../../assets/icons/calendar-icon.png";
 							Acompañamiento durante todo el proceso.
 						</li>
 					</ul>
+
+					<a
+						href={whatsappLinks.integral}
+						class="mentorship-plan__cta"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Me interesa
+					</a>
 				</article>
 			</div>
 		</div>
@@ -278,7 +322,7 @@ import CalendarIcon from "../../../assets/icons/calendar-icon.png";
 						<p class="mentorships-section__faq-answer-text">
 							El <strong>Programa integral</strong> es un proceso de 8 sesiones o
 							más para trabajar diferentes aspectos de tu seguridad digital con un
-							acompañamiento más completo.
+							acomp añamiento más completo.
 						</p>
 					</div>
 				</details>
@@ -305,13 +349,32 @@ import CalendarIcon from "../../../assets/icons/calendar-icon.png";
 
 					<div class="mentorships-section__faq-answer">
 						<p class="mentorships-section__faq-answer-text">
-							Sí. Podés empezar con una Mentoría 1:1 y, si después querés
-							seguir trabajando sobre otros temas, avanzar hacia un
-							acompañamiento más completo. La modalidad puede adaptarse a tus
-							necesidades en cada momento.
+							Sí. Podés empezar con una Mentoría 1:1 y, si después querés seguir
+							trabajando sobre otros temas, avanzar hacia un acomp añamiento más
+							completo. La modalidad puede adaptarse a tus necesidades en cada
+							momento.
 						</p>
 					</div>
 				</details>
+			</div>
+
+			<!-- Final CTA -->
+			<div class="mentorships-section__faq-cta">
+				<p class="mentorships-section__faq-cta-title">¿Todavía tenés dudas?</p>
+
+				<p class="mentorships-section__faq-cta-description">
+					Contanos qué necesitás y te ayudamos a encontrar la modalidad que
+					tenga más sentido para vos.
+				</p>
+
+				<a
+					href={whatsappLinks.general}
+					class="mentorships-section__faq-cta-button"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Hablemos
+				</a>
 			</div>
 		</div>
 	</section>
