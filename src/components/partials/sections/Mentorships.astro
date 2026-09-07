@@ -258,6 +258,8 @@ const whatsappLinks = {
 				<a
 					href="https://calendly.com/gqrlabs/30min"
 					class="mentorships-section__cta-button"
+					target="_blank"
+					rel="noopener noreferrer"
 				>
 					Hablemos<Image
 						src={CalendarIcon}
@@ -360,21 +362,33 @@ const whatsappLinks = {
 
 			<!-- Final CTA -->
 			<div class="mentorships-section__faq-cta">
-				<p class="mentorships-section__faq-cta-title">¿Todavía tenés dudas?</p>
+				<div class="mentorships-section__faq-cta-content">
+					<div class="mentorships-section__faq-cta-info">
+						<p class="mentorships-section__faq-cta-title">
+							¿Todavía tenés dudas?
+						</p>
 
-				<p class="mentorships-section__faq-cta-description">
-					Contanos qué necesitás y te ayudamos a encontrar la modalidad que
-					tenga más sentido para vos.
-				</p>
+						<p class="mentorships-section__faq-cta-description">
+							Contanos qué necesitás y te ayudamos a encontrar la modalidad que
+							tenga más sentido para vos.
+						</p>
+					</div>
 
-				<a
-					href={whatsappLinks.general}
-					class="mentorships-section__faq-cta-button"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Hablemos
-				</a>
+					<a
+						href="https://calendly.com/gqrlabs/30min"
+						class="mentorships-section__cta-button"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Hablemos<Image
+							src={CalendarIcon}
+							alt="Calendar Icon"
+							width="30"
+							height="30"
+							class="mentorships-section__faq-cta-calendar-icon"
+						/>
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>

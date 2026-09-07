@@ -123,6 +123,7 @@
 
 	/* CTA */
 	&__cta {
+		@include mixin.max-width;
 		position: relative;
 		overflow: hidden;
 		padding: 65px 40px;
@@ -201,6 +202,83 @@
 	/* FAQ */
 	&__faq {
 		@include mixin.max-width;
+	}
+
+	&__faq-cta {
+		@include mixin.max-width;
+		position: relative;
+		overflow: hidden;
+		padding: 65px 40px;
+		border-radius: 10px;
+		box-shadow: 0 30px 80px rgba(variable.$blue-primary, 0.12);
+		margin-block: 3rem;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			border-radius: 50%;
+		}
+
+		&::before {
+			width: 380px;
+			height: 380px;
+			top: -250px;
+			right: -100px;
+			background: rgba(variable.$white, 0.08);
+		}
+
+		&::after {
+			width: 280px;
+			height: 280px;
+			bottom: -210px;
+			left: -90px;
+			background: rgba(variable.$black-soft, 0.12);
+		}
+	}
+
+	&__faq-cta-content {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		gap: 40px;
+		margin: 0 auto;
+
+		@include mixin.mq(md) {
+			grid-template-columns: 1fr max-content;
+		}
+	}
+
+	&__faq-cta-title {
+		@include mixin.g-bigger;
+		margin-bottom: unset;
+		text-align: center;
+		text-transform: uppercase;
+
+		@include mixin.mq(md) {
+			text-align: left;
+		}
+	}
+
+	&__faq-cta-description {
+		@include mixin.g-normal;
+		margin-bottom: unset;
+		text-align: center;
+		color: variable.$gray-light;
+
+		@include mixin.mq(md) {
+			text-align: left;
+		}
+	}
+
+	&__faq-cta-button {
+		@include mixin.button-variant($variant: primary);
+		margin-bottom: unset;
+		justify-content: center;
+
+		@include mixin.mq(md) {
+			align-self: center;
+		}
 	}
 
 	&__faq-title {
