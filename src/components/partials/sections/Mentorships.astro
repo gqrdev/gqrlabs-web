@@ -5,24 +5,24 @@ import CalendarIcon from "../../../assets/icons/calendar-icon.png";
 
 const mailContact = {
 	oneToOne: `mailto:gqrlabs@gmail.com?subject=${encodeURIComponent(
-		"Consulta sobre Mentoría 1:1"
+		"Consulta sobre Mentoría 1:1",
 	)}&body=${encodeURIComponent(
-		"Hola, me interesa la Mentoría 1:1 y quería consultar cómo funciona."
+		"Hola, me interesa la Mentoría 1:1 y quería consultar cómo funciona.",
 	)}`,
 	personalized: `mailto:gqrlabs@gmail.com?subject=${encodeURIComponent(
-		"Consulta sobre Acompañamiento personalizado"
+		"Consulta sobre Acompañamiento personalizado",
 	)}&body=${encodeURIComponent(
-		"Hola, me interesa el Acompañamiento personalizado y quería consultar cómo funciona."
+		"Hola, me interesa el Acompañamiento personalizado y quería consultar cómo funciona.",
 	)}`,
 	integral: `mailto:gqrlabs@gmail.com?subject=${encodeURIComponent(
-		"Consulta sobre Programa integral"
+		"Consulta sobre Programa integral",
 	)}&body=${encodeURIComponent(
-		"Hola, me interesa el Programa integral y quería consultar cómo funciona."
+		"Hola, me interesa el Programa integral y quería consultar cómo funciona.",
 	)}`,
 	general: `mailto:gqrlabs@gmail.com?subject=${encodeURIComponent(
-		"Consulta general sobre mentorías"
+		"Consulta general sobre mentorías",
 	)}&body=${encodeURIComponent(
-		"Hola, tengo algunas dudas sobre las mentorías y quería consultar qué modalidad podría ser adecuada para mí."
+		"Hola, tengo algunas dudas sobre las mentorías y quería consultar qué modalidad podría ser adecuada para mí.",
 	)}`,
 };
 ---
@@ -170,10 +170,16 @@ const mailContact = {
 
 					<ul class="mentorship-plan__includes">
 						<li class="mentorship-plan__item">
-							Programa adaptado a tus necesidades.
+							<strong>Programa diseñado según tus necesidades.</strong>
 						</li>
 
-						<li class="mentorship-plan__item">4 sesiones individuales.</li>
+						<li class="mentorship-plan__item">
+							<strong>4 sesiones individuales.</strong>
+						</li>
+
+						<li class="mentorship-plan__item">
+							Acompañamiento durante todo el proceso.
+						</li>
 
 						<li class="mentorship-plan__item">
 							Ejemplos y situaciones de la vida real.
@@ -181,10 +187,6 @@ const mailContact = {
 
 						<li class="mentorship-plan__item">
 							Material práctico para continuar aprendiendo.
-						</li>
-
-						<li class="mentorship-plan__item">
-							Seguimiento durante el proceso.
 						</li>
 					</ul>
 
@@ -209,30 +211,29 @@ const mailContact = {
 
 						<p class="mentorship-plan__description">
 							Un acompañamiento completo para trabajar diferentes aspectos de tu
-							seguridad digital y desarrollar hábitos que puedas aplicar con
-							confianza en tu día a día.
+							seguridad digital y desarrollar hábitos que puedas aplicar en tu día a día.
 						</p>
 					</div>
 
 					<ul class="mentorship-plan__includes">
 						<li class="mentorship-plan__item">
-							Programa diseñado según tus necesidades.
+							<strong>Programa diseñado según tus necesidades.</strong>
 						</li>
 
 						<li class="mentorship-plan__item">
-							8 sesiones individuales o más.
-						</li>
-
-						<li class="mentorship-plan__item">
-							Trabajo sobre diferentes áreas de seguridad digital.
-						</li>
-
-						<li class="mentorship-plan__item">
-							Ejemplos y situaciones reales.
+							<strong>8 sesiones individuales.</strong>
 						</li>
 
 						<li class="mentorship-plan__item">
 							Acompañamiento durante todo el proceso.
+						</li>
+
+						<li class="mentorship-plan__item">
+							Ejemplos y situaciones de la vida real.
+						</li>
+
+						<li class="mentorship-plan__item">
+							Material práctico para continuar aprendiendo.
 						</li>
 					</ul>
 
@@ -247,17 +248,137 @@ const mailContact = {
 				</article>
 			</div>
 		</div>
+	</section>
 
-		<!-- CTA -->
-		<div class="mentorships-section__cta">
-			<div class="mentorships-section__cta-content">
-				<div class="mentorships-section__cta-info">
-					<p class="mentorships-section__cta-label">¿No sabés cuál elegir?</p>
+	<!-- CTA -->
+	<div class="mentorships-section__cta">
+		<div class="mentorships-section__cta-content">
+			<div class="mentorships-section__cta-info">
+				<p class="mentorships-section__cta-label">¿No sabés cuál elegir?</p>
 
-					<p class="mentorships-section__cta-description">
-						No hace falta que lo tengas claro desde el principio. Podemos partir
-						de lo que necesitás y encontrar la modalidad que mejor se adapte a
-						tu situación.
+				<p class="mentorships-section__cta-description">
+					No hace falta que lo tengas claro desde el principio. Podemos partir
+					de lo que necesitás y encontrar la modalidad que mejor se adapte a tu
+					situación.
+				</p>
+			</div>
+
+			<a
+				href="https://calendly.com/gqrlabs/hablemos"
+				class="mentorships-section__cta-button"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Hablemos<Image
+					src={CalendarIcon}
+					alt="Calendar Icon"
+					width="30"
+					height="30"
+					class="mentorships-section__cta-calendar-icon"
+				/>
+			</a>
+		</div>
+	</div>
+
+	<!-- FAQs -->
+	<div class="mentorships-section__faq">
+		<div class="mentorships-section__faq-header">
+			<h2 class="mentorships-section__faq-title">Preguntas frecuentes</h2>
+
+			<p class="mentorships-section__faq-description">
+				Algunas respuestas para ayudarte a entender cómo trabajamos y elegir el
+				acompañamiento que mejor se adapte a vos.
+			</p>
+		</div>
+
+		<div class="mentorships-section__faq-list">
+			<details class="mentorships-section__faq-item">
+				<summary class="mentorships-section__faq-question">
+					¿Necesito tener conocimientos previos?
+				</summary>
+
+				<div class="mentorships-section__faq-answer">
+					<p class="mentorships-section__faq-answer-text">
+						No. Partimos de tu nivel y adaptamos cada encuentro a tus
+						necesidades. No necesitás ser experto en tecnología: podemos empezar
+						desde lo más básico, avanzar paso a paso o trabajar directamente
+						sobre una situación que quieras entender o resolver.
+					</p>
+				</div>
+			</details>
+
+			<details class="mentorships-section__faq-item">
+				<summary class="mentorships-section__faq-question">
+					¿Qué modalidad es la adecuada para mí?
+				</summary>
+
+				<div class="mentorships-section__faq-answer">
+					<p class="mentorships-section__faq-answer-text">
+						Depende de lo que quieras resolver o aprender y del acompañamiento
+						que estés buscando.
+					</p>
+
+					<p class="mentorships-section__faq-answer-text">
+						La <strong>Mentoría 1:1</strong> es ideal si tenés una duda, una situación
+						concreta o necesitás orientación sobre un tema específico.
+					</p>
+
+					<p class="mentorships-section__faq-answer-text">
+						El <strong>Acompañamiento personalizado</strong> propone un proceso de
+						4 sesiones para trabajar sobre tus necesidades y mejorar tu seguridad
+						digital de forma práctica.
+					</p>
+
+					<p class="mentorships-section__faq-answer-text">
+						El <strong>Programa integral</strong> es un proceso de 8 sesiones o más
+						para trabajar diferentes aspectos de tu seguridad digital con un acomp
+						añamiento más completo.
+					</p>
+				</div>
+			</details>
+
+			<details class="mentorships-section__faq-item">
+				<summary class="mentorships-section__faq-question">
+					¿Qué pasa si no sé exactamente qué necesito?
+				</summary>
+
+				<div class="mentorships-section__faq-answer">
+					<p class="mentorships-section__faq-answer-text">
+						No hace falta que tengas todo definido antes de empezar. Podés
+						contarnos qué te preocupa, qué te gustaría aprender o qué situación
+						querés resolver, y te ayudamos a encontrar el camino que tenga más
+						sentido para vos.
+					</p>
+				</div>
+			</details>
+
+			<details class="mentorships-section__faq-item">
+				<summary class="mentorships-section__faq-question">
+					¿Puedo empezar con una Mentoría 1:1 y después continuar?
+				</summary>
+
+				<div class="mentorships-section__faq-answer">
+					<p class="mentorships-section__faq-answer-text">
+						Sí. Podés empezar con una Mentoría 1:1 y, si después querés seguir
+						trabajando sobre otros temas, avanzar hacia un acomp añamiento más
+						completo. La modalidad puede adaptarse a tus necesidades en cada
+						momento.
+					</p>
+				</div>
+			</details>
+		</div>
+
+		<!-- Final CTA -->
+		<div class="mentorships-section__faq-cta">
+			<div class="mentorships-section__faq-cta-content">
+				<div class="mentorships-section__faq-cta-info">
+					<p class="mentorships-section__faq-cta-title">
+						¿Todavía tenés dudas?
+					</p>
+
+					<p class="mentorships-section__faq-cta-description">
+						Contanos qué necesitás y te ayudamos a encontrar la modalidad que
+						tenga más sentido para vos.
 					</p>
 				</div>
 
@@ -272,130 +393,10 @@ const mailContact = {
 						alt="Calendar Icon"
 						width="30"
 						height="30"
-						class="mentorships-section__cta-calendar-icon"
+						class="mentorships-section__faq-cta-calendar-icon"
 					/>
 				</a>
 			</div>
 		</div>
-
-		<!-- FAQs -->
-		<div class="mentorships-section__faq">
-			<div class="mentorships-section__faq-header">
-				<h2 class="mentorships-section__faq-title">Preguntas frecuentes</h2>
-
-				<p class="mentorships-section__faq-description">
-					Algunas respuestas para ayudarte a entender cómo trabajamos y elegir
-					el acompañamiento que mejor se adapte a vos.
-				</p>
-			</div>
-
-			<div class="mentorships-section__faq-list">
-				<details class="mentorships-section__faq-item">
-					<summary class="mentorships-section__faq-question">
-						¿Necesito tener conocimientos previos?
-					</summary>
-
-					<div class="mentorships-section__faq-answer">
-						<p class="mentorships-section__faq-answer-text">
-							No. Partimos de tu nivel y adaptamos cada encuentro a tus
-							necesidades. No necesitás ser experto en tecnología: podemos
-							empezar desde lo más básico, avanzar paso a paso o trabajar
-							directamente sobre una situación que quieras entender o resolver.
-						</p>
-					</div>
-				</details>
-
-				<details class="mentorships-section__faq-item">
-					<summary class="mentorships-section__faq-question">
-						¿Qué modalidad es la adecuada para mí?
-					</summary>
-
-					<div class="mentorships-section__faq-answer">
-						<p class="mentorships-section__faq-answer-text">
-							Depende de lo que quieras resolver o aprender y del acompañamiento
-							que estés buscando.
-						</p>
-
-						<p class="mentorships-section__faq-answer-text">
-							La <strong>Mentoría 1:1</strong> es ideal si tenés una duda, una situación
-							concreta o necesitás orientación sobre un tema específico.
-						</p>
-
-						<p class="mentorships-section__faq-answer-text">
-							El <strong>Acompañamiento personalizado</strong> propone un proceso
-							de 4 sesiones para trabajar sobre tus necesidades y mejorar tu seguridad
-							digital de forma práctica.
-						</p>
-
-						<p class="mentorships-section__faq-answer-text">
-							El <strong>Programa integral</strong> es un proceso de 8 sesiones o
-							más para trabajar diferentes aspectos de tu seguridad digital con un
-							acomp añamiento más completo.
-						</p>
-					</div>
-				</details>
-
-				<details class="mentorships-section__faq-item">
-					<summary class="mentorships-section__faq-question">
-						¿Qué pasa si no sé exactamente qué necesito?
-					</summary>
-
-					<div class="mentorships-section__faq-answer">
-						<p class="mentorships-section__faq-answer-text">
-							No hace falta que tengas todo definido antes de empezar. Podés
-							contarnos qué te preocupa, qué te gustaría aprender o qué
-							situación querés resolver, y te ayudamos a encontrar el camino que
-							tenga más sentido para vos.
-						</p>
-					</div>
-				</details>
-
-				<details class="mentorships-section__faq-item">
-					<summary class="mentorships-section__faq-question">
-						¿Puedo empezar con una Mentoría 1:1 y después continuar?
-					</summary>
-
-					<div class="mentorships-section__faq-answer">
-						<p class="mentorships-section__faq-answer-text">
-							Sí. Podés empezar con una Mentoría 1:1 y, si después querés seguir
-							trabajando sobre otros temas, avanzar hacia un acomp añamiento más
-							completo. La modalidad puede adaptarse a tus necesidades en cada
-							momento.
-						</p>
-					</div>
-				</details>
-			</div>
-
-			<!-- Final CTA -->
-			<div class="mentorships-section__faq-cta">
-				<div class="mentorships-section__faq-cta-content">
-					<div class="mentorships-section__faq-cta-info">
-						<p class="mentorships-section__faq-cta-title">
-							¿Todavía tenés dudas?
-						</p>
-
-						<p class="mentorships-section__faq-cta-description">
-							Contanos qué necesitás y te ayudamos a encontrar la modalidad que
-							tenga más sentido para vos.
-						</p>
-					</div>
-
-					<a
-						href="https://calendly.com/gqrlabs/hablemos"
-						class="mentorships-section__cta-button"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Hablemos<Image
-							src={CalendarIcon}
-							alt="Calendar Icon"
-							width="30"
-							height="30"
-							class="mentorships-section__faq-cta-calendar-icon"
-						/>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+	</div>
 </main>
