@@ -13,10 +13,6 @@
 	position: relative;
 	overflow: hidden;
 
-	@include mixin.mq(md) {
-		min-height: unset;
-	}
-
 	/* Overlay */
 	&::before {
 		content: "";
@@ -111,7 +107,7 @@
 
 	&__author {
 		@include mixin.g-smaller;
-		margin-bottom: 6px;
+		margin-bottom: unset;
 		&-link {
 			display: flex;
 			column-gap: 8px;

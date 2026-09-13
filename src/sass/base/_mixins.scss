@@ -202,7 +202,7 @@
 	}
 
 	&:focus-visible {
-		outline: 2px solid rgba(255,255,255,0.06);
+		outline: 2px solid rgba(255, 255, 255, 0.06);
 		outline-offset: 2px;
 	}
 
@@ -242,6 +242,10 @@
 	min-height: 90dvh;
 	padding: variable.$section-top variable.$general-padding
 		variable.$section-bottom variable.$general-padding;
+
+	@include mq(md) {
+		min-height: unset;
+	}
 }
 
 @mixin background {

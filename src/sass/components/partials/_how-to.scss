@@ -12,8 +12,6 @@
 	
 	@include mixin.mq(md) {
 		@include mixin.max-width;
-		padding-bottom: variable.$section-bottom * 3;
-		min-height: unset;
 	}
 
 	/* Pretitle */

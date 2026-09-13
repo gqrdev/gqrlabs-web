@@ -13,14 +13,14 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"astro": "^7.3.1"
+		"astro": "^7.3.2"
 	},
 	"devDependencies": {
-		"@astrojs/cloudflare": "^14.3.0",
+		"@astrojs/cloudflare": "^14.3.1",
 		"lightningcss": "^1.33.0",
-		"sass": "^1.104.0",
+		"sass": "^1.104.1",
 		"sharp": "^0.35.4",
-		"wrangler": "^4.129.1"
+		"wrangler": "^4.131.1"
 	},
-	"packageManager": "pnpm@11.25.0+sha512.5cde925b4f075f725eb71fbae18a42ffe784524789f19b61c731cb8721ec28aaee160e01a8d5af4fedb2a42cdbf300efe23db356b0d4a17b4d63e11f8ab7c956"
+	"packageManager": "pnpm@12.4.1"
 }

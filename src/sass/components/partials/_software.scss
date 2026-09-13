@@ -10,11 +10,6 @@
 	@include mixin.background-alt;
 	@include mixin.section;
 
-	@include mixin.mq(md) {
-		/* padding-bottom: variable.$section-bottom * 3; */
-		min-height: unset;
-	}
-
 	/* Pretitle */
 	&__pretitle {
 		@include mixin.pretitle;
