@@ -297,3 +297,24 @@
 		column-gap: 36px;
 	}
 }
+
+/* Actions */
+@mixin actions {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.25rem;
+
+	@include mq(md) {
+		align-items: center;
+		gap: 2rem;
+		margin-bottom: 3rem;
+	}
+}
+
+/* CTA */
+@mixin cta {
+	text-transform: uppercase;
+	@include button-variant($variant: primary);
+	margin-bottom: unset;
+}

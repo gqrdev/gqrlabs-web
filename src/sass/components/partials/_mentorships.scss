@@ -174,16 +174,7 @@
 
 	/* Actions */
 	&__actions {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1.25rem;
-
-		@include mixin.mq(md) {
-			align-items: center;
-			gap: 2rem;
-			margin-bottom: 3rem;
-		}
+		@include mixin.actions;
 	}
 
 	&__hint {
@@ -198,9 +189,7 @@
 	}
 
 	&__cta {
-		text-transform: uppercase;
-		@include mixin.button-variant($variant: primary);
-		margin-bottom: unset;
+		@include mixin.cta;
 	}
 
 	/* Medium */

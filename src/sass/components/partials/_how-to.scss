@@ -9,7 +9,7 @@
 .howto {
 	@include mixin.background;
 	@include mixin.section;
-	
+
 	@include mixin.mq(md) {
 		@include mixin.max-width;
 	}
@@ -168,5 +168,13 @@
 
 	&__title {
 		text-transform: uppercase;
+	}
+
+	&__actions {
+		@include mixin.actions;
+	}
+
+	&__cta {
+		@include mixin.cta;
 	}
 }
