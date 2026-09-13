@@ -7,7 +7,10 @@ import HeroVideoMobile from "../../assets/videos/home-video-mobile.mp4";
 ---
 
 <section class="hero">
-	<video class="hero__background-video" autoplay muted loop playsinline>
+	<!-- @ts-ignore -->
+	<video class="hero__background-video" autoplay muted loop playsinline
+	poster="/images/home-video-poster.jpg"
+	>
 		<source
 			src={HeroVideoDesktop}
 			type="video/mp4"
@@ -42,9 +45,7 @@ import HeroVideoMobile from "../../assets/videos/home-video-mobile.mp4";
 		</p>
 
 		<div class="hero__actions">
-			<a href="#software" class="hero__button">
-				Servicios
-			</a>
+			<a href="#software" class="hero__button"> Servicios </a>
 		</div>
 
 		<!-- Author -->

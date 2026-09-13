@@ -4,6 +4,8 @@ import "../sass/styles.scss";
 import Header from "../components/Header.astro";
 import Footer from "../layouts/Footer.astro";
 
+/* import HeroVideoDesktop from "../assets/videos/home-video.mp4";
+import HeroVideoMobile from "../assets/videos/home-video-mobile.mp4"; */
 const {title, description} = Astro.props;
 ---
 
@@ -26,6 +28,7 @@ const {title, description} = Astro.props;
 			href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Noto+Sans+Display:wght@400;700&display=swap"
 			rel="stylesheet"
 		/>
+		<link rel="preload" as="image" href="/images/home-video-poster.jpg" fetchpriority="high" />
 
 		<!-- Open Graph -->
 		<meta property="og:title" content={title ?? "GQR Labs"} />
