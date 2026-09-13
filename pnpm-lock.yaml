@@ -169,6 +169,9 @@ importers:
       astro:
         specifier: ^7.3.2
         version: 7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(sass@1.104.1)
+      astro-microsoft-clarity-integration:
+        specifier: ^1.1.7
+        version: 1.1.7(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(sass@1.104.1))
     devDependencies:
       '@astrojs/cloudflare':
         specifier: ^14.3.1
@@ -1371,6 +1374,11 @@ packages:
   aria-query@5.3.2:
     resolution: {integrity: sha512-COROpnaoap1E2F000S62r6A60uHZnmlvomhfyT2DlTcrY1OrBKn2UhH7qn5wTC9zMvD0AY7csdPSNwKP+7WiQw==}
     engines: {node: '>= 0.4'}
+
+  astro-microsoft-clarity-integration@1.1.7:
+    resolution: {integrity: sha512-HMYatKSxtquY4+j6HAEVre3XcqnIOyue61ouW+f3iD3GOsbgCSkqiJIRRTXBmN4oVpFvZAf0Kl1R6Lw9MNrmRg==}
+    peerDependencies:
+      astro: ^4.0.0 || ^5.0.0 || ^6.0.0
 
   astro@7.3.2:
     resolution: {integrity: sha512-ysTcdpGP61XZpHoMRYC/CK19DQ94qkBvzXMtXEo0gEqPNkmOU/Tv++CtWmzaI4nF2Ck8RXFdiWvdlTWa2oOr9w==}
@@ -3010,6 +3018,10 @@ snapshots:
   argparse@2.0.1: {}
 
   aria-query@5.3.2: {}
+
+  astro-microsoft-clarity-integration@1.1.7(astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(sass@1.104.1)):
+    dependencies:
+      astro: 7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(sass@1.104.1)
 
   astro@7.3.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(sass@1.104.1):
     dependencies:
