@@ -1,11 +1,11 @@
 // =========================================================
-// Mentorships
+// Training
 // =========================================================
 
 @use "../../base/variables" as variable;
 @use "../../base/mixins" as mixin;
 
-.mentorships {
+.training {
 	@include mixin.background-alt;
 	@include mixin.section;
 
