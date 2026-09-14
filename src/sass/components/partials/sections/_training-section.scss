@@ -1,12 +1,12 @@
 // =========================================================
-// Mentorships Section
+// Training Section
 // =========================================================
 
 @use "../../../base/variables" as variable;
 @use "../../../base/mixins" as mixin;
 @use "sass:math";
 
-.mentorships-section {
+.training-section {
 	@include mixin.background-alt;
 	@include mixin.section;
 	padding-top: math.div(variable.$section-top, 2);
