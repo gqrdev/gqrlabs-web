@@ -6,7 +6,7 @@
 @use "../../../base/mixins" as mixin;
 @use "sass:math";
 
-.training-section {
+.mentorships-section {
 	@include mixin.background-alt;
 	@include mixin.section;
 	padding-top: math.div(variable.$section-top, 2);
@@ -132,7 +132,7 @@
 		margin-bottom: 3rem;
 
 		&-label {
-			@include mixin.g-title-2;
+			@include mixin.g-title-1;
 			text-align: center;
 			text-transform: uppercase;
 
