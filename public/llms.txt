@@ -1,0 +1,12 @@
+# GQR Labs
+
+> GQR Labs es una empresa con base en Uruguay especializada en desarrollo de software, ciberseguridad, soluciones tecnológicas a medida y mentorías personalizadas. Potenciamos proyectos y equipos mediante asesoramiento técnico de alta calidad, desarrollo robusto y ciberseguridad práctica y accesible.
+
+## Secciones Principales
+
+- [Inicio](https://gqrlabs.com/): Página principal de GQR Labs, con una visión general de nuestros servicios de desarrollo, ciberseguridad y consultoría tecnológica.
+- [Capacitación](https://gqrlabs.com/capacitacion): Programas de formación, mentorías 1:1 y acompañamiento personalizado enfocados en la resolución de problemas técnicos, ciberseguridad digital y adopción de hábitos seguros tanto a nivel profesional como cotidiano.
+- [Política de Privacidad](https://gqrlabs.com/legal/politica-de-privacidad): Marco legal, manejo responsable de datos y políticas de privacidad de los servicios ofrecidos por GQR Labs.
+
+## Recursos y Contacto
+- [Contacto](https://gqrlabs.com/#contacto): Canales directos de comunicación para solicitar asesoramiento a medida, auditorías técnicas o presupuestos corporativos.
