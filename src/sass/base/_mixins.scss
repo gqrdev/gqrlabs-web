@@ -167,7 +167,7 @@
 	border: 1px solid transparent;
 	justify-content: center;
 
-	@include g-small;
+	@include g-normal;
 	@include mq(md) {
 		transition:
 			transform 0.25s ease,
