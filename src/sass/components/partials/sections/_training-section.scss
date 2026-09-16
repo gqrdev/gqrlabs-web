@@ -132,13 +132,13 @@
 		margin-bottom: 3rem;
 
 		&-label {
-			@include mixin.g-title-2;
+			@include mixin.g-title-1;
 			text-align: center;
 			text-transform: uppercase;
 
 			@include mixin.mq(md) {
 				text-align: left;
-				margin-bottom: unset;
+				margin-bottom: .4rem;
 			}
 		}
 
