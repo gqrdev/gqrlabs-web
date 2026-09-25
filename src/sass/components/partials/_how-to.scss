@@ -50,6 +50,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 		background: variable.$background-card;
+		border: 1px solid rgba(255, 255, 255, 0.06);
 		border-radius: 8px;
 		padding: variable.$general-padding;
 		transition:
@@ -63,13 +64,15 @@
 		}
 
 		&:hover {
-			background: rgba(255, 255, 255, 0.035);
-			border-color: rgba(255, 255, 255, 0.12);
-			transform: translateY(-4px);
+			@include mixin.mq(md) {
+				background: rgba(255, 255, 255, 0.035);
+				border-color: rgba(255, 255, 255, 0.12);
+				transform: translateY(-4px);
 
-			.howto__code-badge {
-				&::before {
-					transform: scale(1.05);
+				.howto__code-badge {
+					&::before {
+						transform: scale(1.05);
+					}
 				}
 			}
 		}
@@ -93,7 +96,7 @@
 		}
 
 		&-description {
-			color: var(--gray);
+			color: variable.$gray;
 			font-size: 14px;
 			line-height: 1.6;
 		}

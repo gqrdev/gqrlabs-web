@@ -41,16 +41,16 @@ $button-outline: #0d47a1;
 $button-outline-hover: #08306f;
 $button-text: #f8fafc;
 $button-shadow: #2563eb38;
+$button-content-gap: 10px;
+$button-padding-block: 10px;
+$button-padding-inline: 20px;
+$button-radius: 4px;
 
 /* Footer */
 $footer-bg: #05070a;
 $footer-text: #94a3b8;
 $footer-text-light: #f8fafc;
 $footer-accent: #2563eb;
-
-body {
-	background-color: $background-section;
-}
 
 /* Typography */
 $heading-font: "Exo 2", sans-serif;
@@ -82,9 +82,20 @@ $breakpoints: (
 	xl: $bp-desktop,
 );
 
+/* Spacing scale */
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
+$space-8: 32px;
+$space-10: 40px;
+$space-12: 48px;
+
 /* General Layout */
 $page-bottom-margin: 30px;
-$general-padding: 16px;
+$general-padding: $space-4;
 $max-width: 1280px;
 $max-width-header: $max-width;
 $max-width-footer: $max-width;
@@ -110,4 +121,5 @@ $background-card: $black-card;
 
 /* Footer */
 $padding-top-footer: 50px;
+$padding-inline-footer: 20px;
 $padding-bottom-footer: 20px;

@@ -48,7 +48,7 @@
 
 	&__topics-list {
 		@include mixin.grid;
-		gap: 18px;
+		row-gap: 18px;
 	}
 
 	&__topic {
@@ -117,7 +117,7 @@
 	/* Plans */
 	&__plans {
 		@include mixin.grid;
-		gap: 18px;
+		row-gap: 18px;
 		align-items: stretch;
 	}
 
@@ -126,10 +126,14 @@
 		@include mixin.max-width;
 		position: relative;
 		overflow: hidden;
-		padding: 65px 40px;
+		padding: variable.$space-8 variable.$general-padding;
 		border-radius: 10px;
 		box-shadow: 0 30px 80px rgba(variable.$blue-primary, 0.12);
-		margin-bottom: 3rem;
+		margin-bottom: variable.$space-12;
+
+		@include mixin.mq(md) {
+			padding: 65px variable.$space-10;
+		}
 
 		&-label {
 			@include mixin.g-title-1;
@@ -179,7 +183,7 @@
 			position: relative;
 			z-index: 1;
 			display: grid;
-			gap: 20px;
+			gap: variable.$space-5;
 			margin: 0 auto;
 
 			@include mixin.mq(md) {
@@ -208,10 +212,15 @@
 		@include mixin.max-width;
 		position: relative;
 		overflow: hidden;
-		padding: 65px 40px;
+		padding: variable.$space-8 variable.$general-padding;
 		border-radius: 10px;
 		box-shadow: 0 30px 80px rgba(variable.$blue-primary, 0.12);
-		margin-block: 3rem;
+		margin-top: variable.$space-12;
+		margin-bottom: 0;
+
+		@include mixin.mq(md) {
+			padding: 65px variable.$space-10;
+		}
 
 		&::before,
 		&::after {
@@ -241,7 +250,7 @@
 		position: relative;
 		z-index: 1;
 		display: grid;
-		gap: 20px;
+		gap: variable.$space-5;
 		margin: 0 auto;
 
 		@include mixin.mq(md) {
@@ -323,7 +332,7 @@
 		cursor: pointer;
 		list-style: none;
 		gap: 10px;
-		padding: 10px 4px;
+		padding: 10px variable.$space-1;
 		color: variable.$gray-light;
 		@include mixin.g-normal;
 		margin-bottom: unset;
@@ -378,10 +387,14 @@
 			overflow: hidden;
 			max-width: 760px;
 			margin: 0;
-			padding: 0 60px 0 4px;
+			padding: 0 4px;
 			color: variable.$gray;
 			font-size: 14px;
 			line-height: 1.8;
+
+			@include mixin.mq(md) {
+				padding-right: 60px;
+			}
 
 			strong {
 				color: variable.$blue-soft;
@@ -436,7 +449,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 24px;
+		margin-bottom: variable.$space-6;
 		border: 1px solid rgba(37, 99, 235, 0.2);
 		border-radius: 50%;
 		background: variable.$blue-bg;

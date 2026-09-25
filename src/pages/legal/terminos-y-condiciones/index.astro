@@ -272,11 +272,13 @@ import Layout from "../../../layouts/Layout.astro";
 </Layout>
 
 <style lang="scss">
+	@use "../../../sass/base/variables" as variable;
+
 	.terms {
 		max-width: 800px;
 		margin: 0 auto;
-		padding: 2rem;
-		font-family: Arial, sans-serif;
+		padding: variable.$space-8 variable.$general-padding;
+		font-family: variable.$body-font;
 		line-height: 1.6;
 	}
 

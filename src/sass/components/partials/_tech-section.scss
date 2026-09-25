@@ -84,7 +84,7 @@
 		}
 
 		&:hover {
-			color: var(--white, #fff);
+			color: variable.$white;
 			@include mixin.mq(md) {
 				transform: translateY(-6px);
 			}

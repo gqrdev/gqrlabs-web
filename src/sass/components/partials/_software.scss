@@ -38,6 +38,7 @@
 
 	&__grid {
 		@include mixin.grid;
+		margin-bottom: 0;
 	}
 
 	&__card {
@@ -45,6 +46,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 		background: variable.$background-card;
+		border: 1px solid rgba(255, 255, 255, 0.06);
 		border-radius: 8px;
 		padding: variable.$general-padding;
 		transition:
@@ -89,7 +91,7 @@
 		}
 
 		&-description {
-			color: var(--gray);
+			color: variable.$gray;
 			font-size: 14px;
 		}
 	}

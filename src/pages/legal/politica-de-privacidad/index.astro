@@ -322,11 +322,14 @@ import Layout from "../../../layouts/Layout.astro";
 </Layout>
 
 <style lang="scss">
+	@use "../../../sass/base/variables" as variable;
+	@use "../../../sass/base/mixins" as mixin;
+
 	.privacy {
 		max-width: 800px;
 		margin: 0 auto;
-		padding: 2rem;
-		font-family: Arial, sans-serif;
+		padding: variable.$space-8 variable.$general-padding;
+		font-family: variable.$body-font;
 		line-height: 1.6;
 	}
 
@@ -391,11 +394,7 @@ import Layout from "../../../layouts/Layout.astro";
 		margin-top: 2.5rem;
 	}
 
-	@media (min-width: 640px) {
-		.privacy {
-			padding: 3rem;
-		}
-
+	@include mixin.mq(md) {
 		.privacy__header {
 			margin-bottom: 3rem;
 
@@ -417,11 +416,7 @@ import Layout from "../../../layouts/Layout.astro";
 		}
 	}
 
-	@media (min-width: 1024px) {
-		.privacy {
-			padding: 4rem;
-		}
-
+	@include mixin.mq(lg) {
 		.privacy__header {
 			margin-bottom: 4rem;
 
@@ -439,11 +434,7 @@ import Layout from "../../../layouts/Layout.astro";
 		}
 	}
 
-	@media (min-width: 1440px) {
-		.privacy {
-			padding: 5rem 6rem;
-		}
-
+	@include mixin.mq(xl) {
 		.privacy__header {
 			margin-bottom: 5rem;
 

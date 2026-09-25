@@ -211,13 +211,13 @@
 	}
 
 	&__hint {
-		color: var(--gray);
+		color: variable.$gray;
 		text-align: center;
 		@include mixin.g-small;
 		margin-bottom: unset;
 
 		span {
-			color: var(--white);
+			color: variable.$white;
 		}
 	}
 

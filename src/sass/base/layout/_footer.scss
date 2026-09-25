@@ -10,7 +10,8 @@
 	min-height: unset;
 	background-color: variable.$footer-bg;
 	color: variable.$footer-text;
-	padding: variable.$padding-top-footer variable.$padding-bottom-footer;
+	padding: variable.$padding-top-footer variable.$padding-inline-footer
+		variable.$padding-bottom-footer;
 	
 	&__principal-container {
 		@include mixin.max-width;

@@ -11,10 +11,6 @@
 	@include mixin.max-width;
 	min-height: unset;
 
-	@include mixin.mq(md) {
-		padding-bottom: variable.$section-bottom * 3;
-	}
-
 	/* Header */
 	&__header {
 		@include mixin.header-container;
@@ -45,12 +41,12 @@
 	&__links {
 		display: flex;
 		flex-direction: column;
-		gap: 8px;
+		gap: variable.$space-2;
 
 		@include mixin.mq(md) {
 			flex-direction: row;
 			align-items: center;
-			gap: 16px;
+			gap: variable.$space-4;
 		}
 	}
 
@@ -62,13 +58,13 @@
 		text-transform: uppercase;
 
 		span {
-			color: var(--blue);
+			color: variable.$blue-light;
 			font-size: 18px;
 			transition: transform 0.25s ease;
 		}
 
 		@include mixin.mq(md) {
-			padding: 12px 20px;
+			padding: variable.$space-3 variable.$button-padding-inline;
 		}
 
 		&:hover {
