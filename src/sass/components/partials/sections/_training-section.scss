@@ -49,6 +49,12 @@
 	&__topics-list {
 		@include mixin.grid;
 		row-gap: 18px;
+
+		@include mixin.mq(md) {
+			grid-template-columns: repeat(3, 320px);
+			column-gap: 30px;
+			justify-content: center;
+		}
 	}
 
 	&__topic {
@@ -117,7 +123,9 @@
 	/* Plans */
 	&__plans {
 		@include mixin.grid;
-		row-gap: 18px;
+		grid-template-columns: repeat(3, 360px);
+		column-gap: 30px;
+		justify-content: center;
 		align-items: stretch;
 	}
 
@@ -132,7 +140,7 @@
 		margin-bottom: variable.$space-12;
 
 		@include mixin.mq(md) {
-			padding: 65px variable.$space-10;
+			padding: variable.$space-10;
 		}
 
 		&-label {
@@ -219,7 +227,7 @@
 		margin-bottom: 0;
 
 		@include mixin.mq(md) {
-			padding: 65px variable.$space-10;
+			padding: variable.$space-10;
 		}
 
 		&::before,
