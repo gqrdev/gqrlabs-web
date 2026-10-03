@@ -1,4 +1,7 @@
 ---
+import LandingVideoMobile from "../../assets/videos/landing-video-mobile.mp4";
+import LandingVideoDesktop from "../../assets/videos/landing-video.mp4";
+
 const mailContact = {
 	oneToOne: `mailto:gqrlabs@gmail.com?subject=${encodeURIComponent(
 		"Consulta sobre Mentoría 1:1",
@@ -17,18 +20,19 @@ const mailContact = {
 	)}`,
 };
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="noindex, nofollow" />
 		<meta name="googlebot" content="noindex, nofollow" />
-		<title>GQR Labs | Protección Digital con una Persona Real</title>
+		<title>GQR Labs | Protección Digital</title>
 
 		<meta
 			name="description"
-			content="Aprendé a protegerte en internet con una persona real. Mentoría 1:1, capacitación personalizada y acompañamiento digital para personas que buscan más seguridad y tranquilidad."
+			content="Desarrollo de software, ciberseguridad y soluciones tecnológicas a medida. Consultoría y mentorías para potenciar proyectos y equipos desde Uruguay."
 		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,686 +40,6 @@ const mailContact = {
 			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
-		<style>
-			:root {
-				--bg: #07131f;
-				--bg2: #0b1d2c;
-				--card: #10283b;
-				--primary: #2dd4bf;
-				--primary2: #5eead4;
-				--blue: #38bdf8;
-				--white: #f8fafc;
-				--text: #d9e5ed;
-				--muted: #91a6b8;
-				--border: rgba(255, 255, 255, 0.1);
-				--green: #25d366;
-				--max: 1120px;
-				--radius: 22px;
-			}
-			* {
-				box-sizing: border-box;
-				margin: 0;
-				padding: 0;
-			}
-			html {
-				scroll-behavior: smooth;
-			}
-			body {
-				font-family:
-					"Roboto Condensed",
-					-apple-system,
-					BlinkMacSystemFont,
-					"Segoe UI",
-					Arial,
-					sans-serif;
-				background:
-					radial-gradient(
-						circle at 85% 0%,
-						rgba(45, 212, 191, 0.12),
-						transparent 28%
-					),
-					radial-gradient(
-						circle at 0% 30%,
-						rgba(56, 189, 248, 0.08),
-						transparent 28%
-					),
-					var(--bg);
-				color: var(--white);
-				line-height: 1.6;
-				font-size: 18px;
-				font-weight: 400;
-			}
-			a {
-				color: inherit;
-				text-decoration: none;
-			}
-			h1,
-			h2,
-			h3,
-			.logo,
-			.nav-links,
-			.nav-cta,
-			.btn,
-			.eyebrow,
-			.kicker,
-			.badge,
-			.plan-number,
-			.price,
-			.step-number,
-			summary {
-				font-family:
-					"Plus Jakarta Sans",
-					-apple-system,
-					BlinkMacSystemFont,
-					"Segoe UI",
-					Arial,
-					sans-serif;
-			}
-			h1,
-			h2,
-			h3 {
-				font-weight: 800;
-			}
-			button,
-			input,
-			textarea,
-			select {
-				font-family: inherit;
-			}
-			.container {
-				width: min(var(--max), calc(100% - 36px));
-				margin: auto;
-			}
-			section {
-				padding: 90px 0;
-			}
-			header {
-				position: sticky;
-				top: 0;
-				z-index: 1000;
-				background: rgba(7, 19, 31, 0.88);
-				backdrop-filter: blur(16px);
-				border-bottom: 1px solid var(--border);
-			}
-			.nav {
-				min-height: 70px;
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-			}
-			.logo {
-				font-size: 1.4rem;
-				font-weight: 900;
-				letter-spacing: -0.5px;
-			}
-			.logo span {
-				color: var(--primary);
-			}
-			.nav-links {
-				display: flex;
-				gap: 28px;
-			}
-			.nav-links a {
-				color: var(--text);
-				font-size: 0.88rem;
-				font-weight: 600;
-			}
-			.nav-links a:hover {
-				color: var(--primary);
-			}
-			.nav-cta {
-				padding: 10px 17px;
-				border-radius: 999px;
-				background: var(--primary);
-				color: #04211e;
-				font-size: 0.78rem;
-				font-weight: 800;
-			}
-			.btn {
-				min-height: 54px;
-				padding: 0 23px;
-				border-radius: 13px;
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				gap: 8px;
-				font-weight: 800;
-				font-size: 0.88rem;
-				transition: 0.2s ease;
-			}
-			.btn-primary {
-				background: var(--primary);
-				color: #04211e;
-				box-shadow: 0 12px 35px rgba(45, 212, 191, 0.18);
-			}
-			.btn-primary:hover {
-				background: var(--primary2);
-				transform: translateY(-2px);
-			}
-			.btn-secondary {
-				background: rgba(255, 255, 255, 0.04);
-				border: 1px solid var(--border);
-			}
-			.btn-secondary:hover {
-				background: rgba(255, 255, 255, 0.08);
-			}
-			.hero {
-				padding: 95px 0 80px;
-			}
-			.hero-grid {
-				display: grid;
-				grid-template-columns: 1.08fr 0.92fr;
-				gap: 65px;
-				align-items: center;
-			}
-			.eyebrow {
-				display: inline-flex;
-				gap: 8px;
-				align-items: center;
-				padding: 7px 13px;
-				border-radius: 999px;
-				color: var(--primary);
-				background: rgba(45, 212, 191, 0.08);
-				border: 1px solid rgba(45, 212, 191, 0.25);
-				font-size: 0.72rem;
-				font-weight: 800;
-				margin-bottom: 22px;
-			}
-			.dot {
-				width: 7px;
-				height: 7px;
-				border-radius: 50%;
-				background: var(--primary);
-				box-shadow: 0 0 12px var(--primary);
-			}
-			h1 {
-				font-size: clamp(2.8rem, 6vw, 5.3rem);
-				line-height: 0.98;
-				letter-spacing: -3.5px;
-				margin-bottom: 25px;
-			}
-			h1 span {
-				color: var(--primary);
-			}
-			.hero-text {
-				color: var(--text);
-				font-size: 1.12rem;
-				line-height: 1.55;
-				max-width: 650px;
-				margin-bottom: 28px;
-			}
-			.hero-text strong {
-				color: white;
-				font-weight: 700;
-			}
-			.hero-actions {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 12px;
-				margin-bottom: 22px;
-			}
-			.trust {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 17px;
-				color: var(--muted);
-				font-size: 0.85rem;
-			}
-			.trust span::before {
-				content: "✓";
-				color: var(--primary);
-				font-weight: 900;
-				margin-right: 5px;
-			}
-			.person-card {
-				background: linear-gradient(145deg, #123349, #091d2d);
-				border: 1px solid var(--border);
-				border-radius: 28px;
-				padding: 32px;
-				box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
-			}
-			.photo {
-				width: 145px;
-				height: 145px;
-				margin: 0 auto 20px;
-				border-radius: 50%;
-				display: grid;
-				place-items: center;
-				background: #12384d;
-				border: 4px solid rgba(45, 212, 191, 0.4);
-				color: var(--primary);
-				font-size: 2.7rem;
-				overflow: hidden;
-			}
-			.photo img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				display: block;
-			}
-			.person-card h2 {
-				text-align: center;
-				font-size: 1.45rem;
-				margin-bottom: 5px;
-				line-height: 1.2;
-			}
-			.role {
-				text-align: center;
-				color: var(--primary);
-				font-weight: 700;
-				font-size: 0.84rem;
-				margin-bottom: 15px;
-			}
-			.person-card p {
-				color: var(--muted);
-				text-align: center;
-				margin-bottom: 22px;
-				font-size: 1rem;
-				line-height: 1.5;
-			}
-			.person-points {
-				display: grid;
-				gap: 9px;
-			}
-			.point {
-				display: flex;
-				align-items: center;
-				gap: 10px;
-				padding: 11px 13px;
-				border-radius: 11px;
-				background: rgba(255, 255, 255, 0.04);
-				color: var(--text);
-				font-size: 0.95rem;
-			}
-			.kicker {
-				color: var(--primary);
-				text-transform: uppercase;
-				letter-spacing: 1.5px;
-				font-size: 0.7rem;
-				font-weight: 900;
-				margin-bottom: 9px;
-			}
-			.section-title {
-				font-size: clamp(2rem, 4vw, 3.2rem);
-				line-height: 1.07;
-				letter-spacing: -1.6px;
-				margin-bottom: 14px;
-			}
-			.section-intro {
-				color: var(--muted);
-				max-width: 720px;
-				font-size: 1rem;
-				line-height: 1.55;
-			}
-			.section-head {
-				margin-bottom: 43px;
-			}
-			.human-box {
-				display: grid;
-				grid-template-columns: 0.8fr 1.2fr;
-				gap: 50px;
-				align-items: center;
-				padding: 52px;
-				border-radius: 28px;
-				background: linear-gradient(
-					135deg,
-					rgba(45, 212, 191, 0.08),
-					rgba(56, 189, 248, 0.04)
-				);
-				border: 1px solid rgba(45, 212, 191, 0.22);
-			}
-			.human-box h2 {
-				font-size: clamp(2rem, 4vw, 3.1rem);
-				line-height: 1.05;
-				letter-spacing: -1.5px;
-			}
-			.human-box p {
-				color: var(--text);
-				margin-bottom: 15px;
-				line-height: 1.55;
-			}
-			.quote {
-				margin-top: 18px;
-				padding: 18px;
-				border-left: 3px solid var(--primary);
-				background: rgba(0, 0, 0, 0.14);
-				font-weight: 700;
-			}
-			.problem-grid {
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				gap: 18px;
-			}
-			.card {
-				padding: 27px;
-				border-radius: var(--radius);
-				border: 1px solid var(--border);
-				background: rgba(255, 255, 255, 0.035);
-			}
-			.icon {
-				width: 45px;
-				height: 45px;
-				display: grid;
-				place-items: center;
-				border-radius: 12px;
-				background: rgba(45, 212, 191, 0.1);
-				margin-bottom: 17px;
-				font-size: 1.25rem;
-			}
-			.card h3 {
-				margin-bottom: 7px;
-				font-size: 1.05rem;
-				line-height: 1.25;
-			}
-			.card p {
-				color: var(--muted);
-				font-size: 0.98rem;
-				line-height: 1.5;
-			}
-			.steps {
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: 17px;
-			}
-			.step-number {
-				width: 42px;
-				height: 42px;
-				display: grid;
-				place-items: center;
-				border-radius: 12px;
-				background: var(--primary);
-				color: #04211e;
-				font-weight: 900;
-				margin-bottom: 18px;
-			}
-			.plans {
-				background: linear-gradient(
-					180deg,
-					rgba(16, 40, 59, 0.45),
-					transparent
-				);
-			}
-			.plans-head {
-				text-align: center;
-				max-width: 760px;
-				margin: 0 auto 45px;
-			}
-			.plans-head .section-intro {
-				margin: auto;
-			}
-			.plan-grid {
-				display: grid;
-				grid-template-columns: 1fr;
-				gap: 20px;
-				align-items: stretch;
-			}
-			@media (min-width: 768px) {
-				.plan-grid {
-					grid-template-columns: repeat(3, 1fr);
-				}
-			}
-			.plan {
-				display: flex;
-				flex-direction: column;
-				padding: 30px;
-				border-radius: 24px;
-				background: linear-gradient(155deg, #10283b, #091d2d);
-				border: 1px solid var(--border);
-			}
-			.plan.featured {
-				border: 2px solid var(--primary);
-				box-shadow: 0 25px 65px rgba(45, 212, 191, 0.09);
-			}
-			.badge {
-				align-self: flex-start;
-				padding: 6px 10px;
-				border-radius: 999px;
-				background: var(--primary);
-				color: #04211e;
-				text-transform: uppercase;
-				font-size: 0.63rem;
-				font-weight: 900;
-				margin-bottom: 16px;
-			}
-			.plan-number {
-				color: var(--primary);
-				font-size: 0.68rem;
-				font-weight: 900;
-				letter-spacing: 1.3px;
-				text-transform: uppercase;
-				margin-bottom: 8px;
-			}
-			.plan h3 {
-				font-size: 1.25rem;
-				margin-bottom: 9px;
-				line-height: 1.2;
-			}
-			.plan-subtitle {
-				color: var(--primary);
-				font-weight: 700;
-				margin-bottom: 15px;
-			}
-			.plan p {
-				color: var(--muted);
-				font-size: 0.98rem;
-				line-height: 1.5;
-				margin-bottom: 19px;
-			}
-			.plan ul {
-				list-style: none;
-				display: grid;
-				gap: 10px;
-				margin-bottom: 27px;
-			}
-			.plan li {
-				color: var(--text);
-				font-size: 0.95rem;
-			}
-			.plan li::before {
-				content: "✓";
-				color: var(--primary);
-				font-weight: 900;
-				margin-right: 8px;
-			}
-			.plan .btn {
-				width: 100%;
-				margin-top: auto;
-			}
-			.price {
-				font-size: 2rem;
-				font-weight: 900;
-				margin-bottom: 18px;
-			}
-			.price small {
-				color: var(--muted);
-				font-size: 0.7rem;
-				font-weight: 500;
-			}
-			.price-note {
-				text-align: center;
-				color: var(--muted);
-				font-size: 0.75rem;
-				margin-top: 19px;
-			}
-			.vip {
-				padding-top: 40px;
-			}
-			.vip-box {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 45px;
-				align-items: center;
-				padding: 50px;
-				border-radius: 30px;
-				background: linear-gradient(135deg, #0b2c36, #081b2a);
-				border: 1px solid rgba(45, 212, 191, 0.28);
-			}
-			.vip-box h2 {
-				font-size: clamp(2rem, 4vw, 3.1rem);
-				line-height: 1.05;
-				margin-bottom: 15px;
-				letter-spacing: -1.5px;
-			}
-			.vip-box p {
-				color: var(--text);
-				margin-bottom: 20px;
-				line-height: 1.55;
-			}
-			.vip-list {
-				display: grid;
-				gap: 11px;
-				list-style: none;
-			}
-			.vip-list li {
-				color: var(--text);
-			}
-			.vip-list li::before {
-				content: "✓";
-				color: var(--primary);
-				font-weight: 900;
-				margin-right: 8px;
-			}
-			.faq {
-				max-width: 820px;
-				margin: auto;
-			}
-			details {
-				background: rgba(255, 255, 255, 0.035);
-				border: 1px solid var(--border);
-				border-radius: 14px;
-				margin-bottom: 10px;
-			}
-			summary {
-				cursor: pointer;
-				list-style: none;
-				padding: 19px 21px;
-				font-weight: 800;
-				font-size: 0.92rem;
-			}
-			summary::-webkit-details-marker {
-				display: none;
-			}
-			summary::after {
-				content: "+";
-				float: right;
-				color: var(--primary);
-				font-size: 1.2rem;
-			}
-			details[open] summary::after {
-				content: "−";
-			}
-			details p {
-				color: var(--muted);
-				padding: 0 21px 20px;
-				font-size: 1rem;
-				line-height: 1.55;
-			}
-			.cta {
-				text-align: center;
-				padding: 100px 0;
-			}
-			.cta h2 {
-				max-width: 800px;
-				margin: 0 auto 15px;
-				font-size: clamp(2.2rem, 4vw, 3.5rem);
-				line-height: 1.05;
-				letter-spacing: -1.7px;
-			}
-			.cta p {
-				color: var(--muted);
-				max-width: 650px;
-				margin: 0 auto 27px;
-				line-height: 1.55;
-			}
-			footer {
-				border-top: 1px solid var(--border);
-				padding: 30px 0;
-				color: var(--muted);
-				font-size: 0.8rem;
-			}
-			.footer-inner {
-				display: flex;
-				justify-content: space-between;
-				gap: 20px;
-			}
-			.float-whatsapp {
-				display: none;
-				position: fixed;
-				right: 18px;
-				bottom: 18px;
-				z-index: 900;
-				width: 58px;
-				height: 58px;
-				place-items: center;
-				border-radius: 50%;
-				background: var(--green);
-				color: white;
-				font-size: 1.5rem;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-			}
-			@media (max-width: 950px) {
-				.hero-grid,
-				.human-box,
-				.vip-box {
-					grid-template-columns: 1fr;
-				}
-				.problem-grid {
-					grid-template-columns: 1fr;
-				}
-				.steps {
-					grid-template-columns: repeat(2, 1fr);
-				}
-			}
-			@media (max-width: 650px) {
-				body {
-					font-size: 17px;
-				}
-				.container {
-					width: calc(100% - 28px);
-				}
-				section {
-					padding: 70px 0;
-				}
-				.hero {
-					padding-top: 60px;
-				}
-				h1 {
-					font-size: 2.85rem;
-					letter-spacing: -2.2px;
-				}
-				.nav-links {
-					display: none;
-				}
-				.nav-cta {
-					font-size: 0.72rem;
-					padding: 9px 12px;
-				}
-				.hero-actions {
-					flex-direction: column;
-				}
-				.hero-actions .btn {
-					width: 100%;
-				}
-				.trust {
-					display: grid;
-					gap: 7px;
-				}
-				.human-box,
-				.vip-box {
-					padding: 32px 23px;
-				}
-				.steps {
-					grid-template-columns: 1fr;
-				}
-				.float-whatsapp {
-					display: grid;
-				}
-				.footer-inner {
-					flex-direction: column;
-					text-align: center;
-				}
-			}
-		</style>
 	</head>
 	<body>
 		<header>
@@ -743,110 +67,73 @@ const mailContact = {
 		<main>
 			<section class="hero">
 				<div class="container hero-grid">
-					<div>
-						<div class="eyebrow">
-							<span class="dot"></span>
-							Protección digital personalizada
-						</div>
+					<div class="hero-grid__content">
+						<div class="eyebrow">Capacitación personalizada</div>
 
 						<h1>
-							Tu seguridad digital.
-							<span>Explicada por una persona.</span>
+							Tu seguridad digital. <span>Explicada por una persona.</span>
 						</h1>
 
 						<p class="hero-text">
 							No necesitás saber de informática para estar más seguro.
-
 							<strong> Hablá con una persona real de GQR Labs </strong>
-
-							y encontrá la forma de aprender y protegerte que mejor se adapte a
-							vos.
+							y encontrá la forma de aprender y protegerte que mejor se adapte a vos.
 						</p>
-
-						<div class="hero-actions">
-							<a
-								class="btn btn-primary"
-								target="_blank"
-								rel="noopener"
-								href="https://wa.me/598XXXXXXXX?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20GQR%20Labs%20y%20quiero%20hablar%20con%20una%20persona%20sobre%20mi%20seguridad%20digital."
-							>
-								💬 Quiero hablar con una persona
-							</a>
-
-							<a class="btn btn-secondary" href="#planes"> Ver las opciones </a>
-						</div>
-
-						<div class="trust">
-							<span>Sin tecnicismos</span>
-							<span>Atención 1:1</span>
-							<span>Adaptado a vos</span>
-						</div>
 					</div>
 
-					<div class="person-card">
-						<div class="photo">👤</div>
-
-						<h2>Hay una persona del otro lado.</h2>
-
-						<div class="role">GQR Labs · Protección Digital</div>
-
-						<p>
-							Podés contarme qué te preocupa con tus propias palabras. No
-							necesitás saber de tecnología para empezar.
-						</p>
-
-						<div class="person-points">
-							<div class="point">
-								👂
-								<span>Primero te escuchamos</span>
-							</div>
-
-							<div class="point">
-								🧭
-								<span>Entendemos tu situación</span>
-							</div>
-
-							<div class="point">
-								🛡️
-								<span>Te explicamos qué podés hacer</span>
-							</div>
-
-							<div class="point">
-								🤝
-								<span>Te acompañamos paso a paso</span>
-							</div>
+					<div class="person-points">
+						<div class="point">👂 <span>Primero te escuchamos</span></div>
+						<div class="point">🧭 <span>Entendemos tu situación</span></div>
+						<div class="point">
+							🛡️ <span>Te explicamos qué podés hacer</span>
 						</div>
+						<div class="point">🤝 <span>Te acompañamos paso a paso</span></div>
+					</div>
+
+					<a
+						class="btn btn-primary hero-grid__cta"
+						rel="noopener"
+						href="https://wa.me/598XXXXXXXX?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20GQR%20Labs%20y%20quiero%20hablar%20con%20una%20persona%20sobre%20mi%20seguridad%20digital."
+						>Me interesa
+					</a>
+
+					<div class="trust">
+						<span>Sin tecnicismos</span>
+						<span>Atención 1:1</span>
+						<span>Adaptado a vos</span>
 					</div>
 				</div>
 			</section>
 			<section>
 				<div class="container">
 					<div class="human-box">
-						<div>
+						<div class="human-box__content">
 							<div class="kicker">Una idea sencilla</div>
-
 							<h2>No necesitás entender de tecnología.</h2>
-						</div>
-
-						<div>
 							<p>
 								Necesitás tener a quién preguntarle cuando algo te genera dudas.
 							</p>
-
 							<p>
 								Un mensaje extraño, una llamada inesperada, una cuenta que
 								querés proteger o simplemente la sensación de que no sabés por
 								dónde empezar.
 							</p>
-
 							<div class="quote">
 								“No sé si esto es seguro.”
 								<br />
-								<span style="color:var(--primary)">
-									Preguntá antes de hacer clic.
-								</span>
+								<span class="quote__accent">Preguntá antes de hacer clic.</span>
 							</div>
 						</div>
+
+						<aside class="person-card" aria-labelledby="person-card-title">
+							<div class="photo">👤</div>
+							<h3 id="person-card-title">Hay una persona del otro lado.</h3>
+							<div class="role">GQR Labs · Protección Digital</div>
+							<p>
+								Podés contarme qué te preocupa con tus propias palabras. No
+								necesitás saber de tecnología para empezar.
+							</p>
+						</aside>
 					</div>
 				</div>
 			</section>
@@ -967,6 +254,43 @@ const mailContact = {
 							<p>Coordinamos y empezamos paso a paso.</p>
 						</div>
 					</div>
+
+					<div class="process-video">
+						<header class="process-video__header">
+							<p class="process-video__eyebrow">El proceso, en la práctica</p>
+
+							<h3 class="process-video__title" id="process-video-title">
+								Así se ve el acompañamiento.
+							</h3>
+
+							<p class="process-video__description">
+								Una muestra de cómo conversamos sobre tus dudas, entendemos tu
+								situación y definimos juntos pasos concretos para que puedas
+								avanzar con más seguridad.
+							</p>
+						</header>
+
+						<video
+							class="process-video__frame"
+							autoplay
+							muted
+							loop
+							playsinline
+							poster="/images/landing-video-poster.jpg"
+							aria-hidden="true"
+						>
+							<source
+								src={LandingVideoDesktop}
+								type="video/mp4"
+								media="(min-width: 768px)"
+							/>
+							<source src={LandingVideoMobile} type="video/mp4" />
+						</video>
+
+						<p class="process-video__caption">
+							Ejemplo del proceso de acompañamiento · GQR Labs
+						</p>
+					</div>
 				</div>
 			</section>
 			<section class="plans" id="planes">
@@ -1021,12 +345,15 @@ const mailContact = {
 
 							<p>
 								Un proceso diseñado a tu medida, adaptado a tus necesidades,
-								conocimientos y objetivos, con contenidos prácticos para aprender
-								de forma clara, flexible y con confianza a tu propio ritmo.
+								conocimientos y objetivos, con contenidos prácticos para
+								aprender de forma clara, flexible y con confianza a tu propio
+								ritmo.
 							</p>
 
 							<ul>
-								<li><strong>Programa diseñado según tus necesidades.</strong></li>
+								<li>
+									<strong>Programa diseñado según tus necesidades.</strong>
+								</li>
 								<li><strong>4 sesiones individuales.</strong></li>
 								<li>Acompañamiento durante todo el proceso.</li>
 								<li>Ejemplos y situaciones de la vida real.</li>
@@ -1057,7 +384,9 @@ const mailContact = {
 							</p>
 
 							<ul>
-								<li><strong>Programa diseñado según tus necesidades.</strong></li>
+								<li>
+									<strong>Programa diseñado según tus necesidades.</strong>
+								</li>
 								<li><strong>8 sesiones individuales.</strong></li>
 								<li>Acompañamiento durante todo el proceso.</li>
 								<li>Ejemplos y situaciones de la vida real.</li>
@@ -1074,7 +403,6 @@ const mailContact = {
 							</a>
 						</article>
 					</div>
-
 				</div>
 			</section>
 			<section class="vip">
@@ -1205,17 +533,820 @@ const mailContact = {
 		>
 			💬
 		</a>
-			<footer>
-				<div class="container footer-inner">
-					<div>
-						<strong style="color:white">
-							GQR<span style="color:var(--primary)">Labs</span>
-						</strong>
-						— Protección digital personalizada.
-					</div>
-
-					<div>© 2026 GQR Labs</div>
+		<footer class="footer">
+			<div class="container footer-inner">
+				<div>
+					<strong class="footer__brand">
+						GQR<span class="footer__accent">Labs</span>
+					</strong>
+					— Protección digital personalizada.
 				</div>
-			</footer>
+
+				<div>© 2026 GQR Labs</div>
+			</div>
+		</footer>
 	</body>
 </html>
+
+<style lang="scss">
+	@use "sass:color";
+	@use "../../sass/base/mixins" as mixin;
+
+	$bg: #111a20;
+	$bg2: #19252d;
+	$card: #22343e;
+	$primary: #c6a15b;
+	$primary2: #d8b978;
+	$blue: #7f9baa;
+	$white: #f5f1e8;
+	$text: #d9d5cc;
+	$muted: #a5aaa9;
+	$border: color.scale($white, $alpha: -88%);
+	$green: #4f9f76;
+	$max: 1180px;
+	$radius: 22px;
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	html {
+		scroll-behavior: smooth;
+	}
+	body {
+		font-family:
+			"Roboto Condensed",
+			-apple-system,
+			BlinkMacSystemFont,
+			"Segoe UI",
+			Arial,
+			sans-serif;
+		background:
+			radial-gradient(
+				circle at 85% 0%,
+				color.scale($primary, $alpha: -88%),
+				transparent 28%
+			),
+			radial-gradient(
+				circle at 0% 30%,
+				color.scale($blue, $alpha: -92%),
+				transparent 28%
+			),
+			$bg;
+		color: $white;
+		line-height: 1.6;
+		font-size: 17px;
+		font-weight: 400;
+	}
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+	h1,
+	h2,
+	h3,
+	.logo,
+	.nav-links,
+	.nav-cta,
+	.btn,
+	.eyebrow,
+	.kicker,
+	.badge,
+	.plan-number,
+	.price,
+	.step-number,
+	summary {
+		font-family:
+			"Plus Jakarta Sans",
+			-apple-system,
+			BlinkMacSystemFont,
+			"Segoe UI",
+			Arial,
+			sans-serif;
+	}
+	h1,
+	h2,
+	h3 {
+		font-weight: 800;
+	}
+
+	/* Text wrapping */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-wrap: balance;
+		overflow-wrap: break-word;
+	}
+
+	p {
+		text-wrap: pretty;
+		overflow-wrap: break-word;
+	}
+
+	button,
+	input,
+	textarea,
+	select {
+		font-family: inherit;
+	}
+	.container {
+		width: calc(100% - 28px);
+		margin: auto;
+	}
+	section {
+		padding: 70px 0;
+	}
+	header {
+		position: sticky;
+		top: 0;
+		z-index: 1000;
+		background: rgba(7, 19, 31, 0.88);
+		backdrop-filter: blur(16px);
+		border-bottom: 1px solid $border;
+	}
+	.nav {
+		min-height: 70px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.logo {
+		font-size: 1.4rem;
+		font-weight: 900;
+		letter-spacing: -0.5px;
+	}
+	.logo span {
+		color: $primary;
+	}
+	.nav-links {
+		display: none;
+		gap: 28px;
+	}
+	.nav-links a {
+		color: $text;
+		font-size: 0.88rem;
+		font-weight: 600;
+	}
+	.nav-links a:hover {
+		color: $primary;
+	}
+	.nav-cta {
+		padding: 9px 12px;
+		border-radius: 999px;
+		background: $primary;
+		color: #211b10;
+		font-size: 0.72rem;
+		font-weight: 800;
+	}
+	.btn {
+		min-height: 54px;
+		padding: 0 23px;
+		border-radius: 13px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		font-weight: 800;
+		font-size: 0.88rem;
+		transition: 0.2s ease;
+	}
+	.btn-primary {
+		background: $primary;
+		color: #211b10;
+		box-shadow: 0 12px 35px color.scale($primary, $alpha: -82%);
+	}
+	.btn-primary:hover {
+		background: $primary2;
+		transform: translateY(-2px);
+	}
+	.btn-secondary {
+		background: color.scale($white, $alpha: -96%);
+		border: 1px solid $border;
+	}
+	.btn-secondary:hover {
+		background: color.scale($white, $alpha: -92%);
+	}
+	.hero {
+		padding: 60px 0 80px;
+	}
+	.hero-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"content"
+			"points"
+			"trust"
+			"cta";
+		gap: 18px;
+	}
+	.hero-grid__content {
+		grid-area: content;
+	}
+	.hero-grid__cta {
+		grid-area: cta;
+		width: 100%;
+	}
+	.eyebrow {
+		display: inline-flex;
+		gap: 8px;
+		align-items: center;
+		padding: 7px 13px;
+		color: $primary;
+		border: 1px solid color.scale($primary, $alpha: -75%);
+		border-top: unset;
+		border-right: unset;
+		border-bottom: unset;
+		font-size: 0.72rem;
+		font-weight: 800;
+		margin-bottom: 22px;
+	}
+	h1 {
+		font-size: 2.85rem;
+		line-height: 0.98;
+		letter-spacing: -2.2px;
+		margin-bottom: 25px;
+	}
+	h1 span {
+		color: $primary;
+	}
+	.hero-text {
+		color: $text;
+		font-size: 1.12rem;
+		line-height: 1.55;
+		max-width: 650px;
+		margin-bottom: 28px;
+	}
+	.hero-text strong {
+		color: $white;
+		font-weight: 700;
+	}
+	.trust {
+		display: flex;
+		grid-area: trust;
+		gap: 10px;
+		color: $muted;
+		font-size: 0.85rem;
+
+		@include mixin.mq(md) {
+			display: grid;
+		}
+	}
+	.trust span::before {
+		content: "✓";
+		color: $primary;
+		font-weight: 900;
+		margin-right: 5px;
+	}
+	.person-card {
+		background: linear-gradient(145deg, $card, $bg2);
+		border: 1px solid $border;
+		border-radius: 28px;
+		padding: 32px;
+		box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+	}
+	.photo {
+		width: 145px;
+		height: 145px;
+		margin: 0 auto 20px;
+		border-radius: 50%;
+		display: grid;
+		place-items: center;
+		background: $bg2;
+		border: 4px solid color.scale($primary, $alpha: -60%);
+		color: $primary;
+		font-size: 2.7rem;
+		overflow: hidden;
+	}
+	.photo img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+	.person-card h3 {
+		text-align: center;
+		font-size: 1.45rem;
+		margin-bottom: 5px;
+		line-height: 1.2;
+	}
+	.role {
+		text-align: center;
+		color: $primary;
+		font-weight: 700;
+		font-size: 0.84rem;
+		margin-bottom: 15px;
+	}
+	.person-card p {
+		color: $muted;
+		text-align: center;
+		margin-bottom: 22px;
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+	.person-points {
+		display: grid;
+		grid-area: points;
+		gap: 9px;
+	}
+	.point {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 11px 13px;
+		border-radius: 11px;
+		background: color.scale($white, $alpha: -96%);
+		color: $text;
+		font-size: 0.95rem;
+	}
+	.kicker {
+		color: $primary;
+		text-transform: uppercase;
+		letter-spacing: 1.5px;
+		font-size: 0.7rem;
+		font-weight: 900;
+		margin-bottom: 9px;
+	}
+	.section-title {
+		font-size: clamp(2rem, 4vw, 3.2rem);
+		line-height: 1.07;
+		letter-spacing: -1.6px;
+		margin-bottom: 14px;
+	}
+	.section-intro {
+		color: $muted;
+		max-width: 720px;
+		font-size: 1rem;
+		line-height: 1.55;
+	}
+	.section-head {
+		margin-bottom: 43px;
+	}
+	.human-box {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 50px;
+		align-items: center;
+		padding: 32px 23px;
+		border-radius: 28px;
+		background: linear-gradient(
+			135deg,
+			color.scale($primary, $alpha: -92%),
+			color.scale($blue, $alpha: -96%)
+		);
+		border: 1px solid color.scale($primary, $alpha: -78%);
+	}
+	.human-box h2 {
+		font-size: clamp(2rem, 4vw, 3.1rem);
+		line-height: 1.05;
+		letter-spacing: -1.5px;
+	}
+	.human-box p {
+		color: $text;
+		margin-bottom: 15px;
+		line-height: 1.55;
+	}
+	.quote {
+		margin-top: 18px;
+		padding: 18px;
+		border-left: 3px solid $primary;
+		background: rgba(0, 0, 0, 0.14);
+		font-weight: 700;
+
+		&__accent {
+			color: $primary;
+		}
+	}
+	.problem-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 18px;
+	}
+	.card {
+		padding: 27px;
+		border-radius: $radius;
+		border: 1px solid $border;
+		background: color.scale($white, $alpha: -96.5%);
+	}
+	.icon {
+		width: 45px;
+		height: 45px;
+		display: grid;
+		place-items: center;
+		border-radius: 12px;
+		background: color.scale($primary, $alpha: -90%);
+		margin-bottom: 17px;
+		font-size: 1.25rem;
+	}
+	.card h3 {
+		margin-bottom: 7px;
+		font-size: 1.05rem;
+		line-height: 1.25;
+	}
+	.card p {
+		color: $muted;
+		font-size: 0.98rem;
+		line-height: 1.5;
+	}
+	.steps {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 17px;
+	}
+	.step-number {
+		width: 42px;
+		height: 42px;
+		display: grid;
+		place-items: center;
+		border-radius: 12px;
+		background: $primary;
+		color: #211b10;
+		font-weight: 900;
+		margin-bottom: 18px;
+	}
+	.plans {
+		background: linear-gradient(
+			180deg,
+			color.scale($card, $alpha: -55%),
+			transparent
+		);
+	}
+	.plans-head {
+		text-align: center;
+		max-width: 760px;
+		margin: 0 auto 45px;
+	}
+	.plans-head .section-intro {
+		margin: auto;
+	}
+	.plan-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+		align-items: stretch;
+	}
+	@include mixin.mq(md) {
+		.plan-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	.plan {
+		display: flex;
+		flex-direction: column;
+		padding: 30px;
+		border-radius: 24px;
+		background: linear-gradient(155deg, $card, $bg2);
+		border: 1px solid $border;
+	}
+	.plan.featured {
+		border: 2px solid $primary;
+		box-shadow: 0 25px 65px color.scale($primary, $alpha: -91%);
+	}
+	.badge {
+		align-self: flex-start;
+		padding: 6px 10px;
+		border-radius: 999px;
+		background: $primary;
+		color: #211b10;
+		text-transform: uppercase;
+		font-size: 0.63rem;
+		font-weight: 900;
+		margin-bottom: 16px;
+	}
+	.plan-number {
+		color: $primary;
+		font-size: 0.68rem;
+		font-weight: 900;
+		letter-spacing: 1.3px;
+		text-transform: uppercase;
+		margin-bottom: 8px;
+	}
+	.plan h3 {
+		font-size: 1.25rem;
+		margin-bottom: 9px;
+		line-height: 1.2;
+	}
+	.plan-subtitle {
+		color: $primary;
+		font-weight: 700;
+		margin-bottom: 15px;
+	}
+	.plan p {
+		color: $muted;
+		font-size: 0.98rem;
+		line-height: 1.5;
+		margin-bottom: 19px;
+	}
+	.plan ul {
+		list-style: none;
+		display: grid;
+		gap: 10px;
+		margin-bottom: 27px;
+	}
+	.plan li {
+		color: $text;
+		font-size: 0.95rem;
+	}
+	.plan li::before {
+		content: "✓";
+		color: $primary;
+		font-weight: 900;
+		margin-right: 8px;
+	}
+	.plan .btn {
+		width: 100%;
+		margin-top: auto;
+	}
+	.price {
+		font-size: 2rem;
+		font-weight: 900;
+		margin-bottom: 18px;
+	}
+	.price small {
+		color: $muted;
+		font-size: 0.7rem;
+		font-weight: 500;
+	}
+	.price-note {
+		text-align: center;
+		color: $muted;
+		font-size: 0.75rem;
+		margin-top: 19px;
+	}
+	.vip {
+		padding-top: 40px;
+	}
+	.vip-box {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 45px;
+		align-items: center;
+		padding: 32px 23px;
+		border-radius: 30px;
+		background: linear-gradient(135deg, $bg2, $bg);
+		border: 1px solid color.scale($primary, $alpha: -72%);
+	}
+	.vip-box h2 {
+		font-size: clamp(2rem, 4vw, 3.1rem);
+		line-height: 1.05;
+		margin-bottom: 15px;
+		letter-spacing: -1.5px;
+	}
+	.vip-box p {
+		color: $text;
+		margin-bottom: 20px;
+		line-height: 1.55;
+	}
+	.vip-list {
+		display: grid;
+		gap: 11px;
+		list-style: none;
+	}
+	.vip-list li {
+		color: $text;
+	}
+	.vip-list li::before {
+		content: "✓";
+		color: $primary;
+		font-weight: 900;
+		margin-right: 8px;
+	}
+	.faq {
+		max-width: 820px;
+		margin: auto;
+	}
+	details {
+		background: color.scale($white, $alpha: -96.5%);
+		border: 1px solid $border;
+		border-radius: 14px;
+		margin-bottom: 10px;
+	}
+	summary {
+		cursor: pointer;
+		list-style: none;
+		padding: 19px 21px;
+		font-weight: 800;
+		font-size: 0.92rem;
+	}
+	summary::-webkit-details-marker {
+		display: none;
+	}
+	summary::after {
+		content: "+";
+		float: right;
+		color: $primary;
+		font-size: 1.2rem;
+	}
+	details[open] summary::after {
+		content: "−";
+	}
+	details p {
+		color: $muted;
+		padding: 0 21px 20px;
+		font-size: 1rem;
+		line-height: 1.55;
+	}
+	.cta {
+		text-align: center;
+		padding: 100px 0;
+	}
+	.cta h2 {
+		max-width: 800px;
+		margin: 0 auto 15px;
+		font-size: clamp(2.2rem, 4vw, 3.5rem);
+		line-height: 1.05;
+		letter-spacing: -1.7px;
+	}
+	.cta p {
+		color: $muted;
+		max-width: 650px;
+		margin: 0 auto 27px;
+		line-height: 1.55;
+	}
+	.footer {
+		&__brand {
+			color: $white;
+		}
+
+		&__accent {
+			color: $primary;
+		}
+	}
+	footer {
+		border-top: 1px solid $border;
+		padding: 30px 0;
+		color: $muted;
+		font-size: 0.8rem;
+	}
+	.footer-inner {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		gap: 20px;
+	}
+	.float-whatsapp {
+		display: grid;
+		position: fixed;
+		right: 18px;
+		bottom: 18px;
+		z-index: 900;
+		width: 58px;
+		height: 58px;
+		place-items: center;
+		border-radius: 50%;
+		background: $green;
+		color: $white;
+		font-size: 1.5rem;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+	}
+	@include mixin.mq(sm) {
+		.container {
+			width: min($max, calc(100% - 36px));
+		}
+	}
+	@include mixin.mq(md) {
+		.hero-grid {
+			grid-template-areas:
+				"content"
+				"cta"
+				"trust"
+				"points";
+			row-gap: 18px;
+		}
+		body {
+			font-size: 18px;
+		}
+		section {
+			padding: 90px 0;
+		}
+		.hero {
+			padding: 95px 0 80px;
+		}
+		h1 {
+			font-size: clamp(2.8rem, 6vw, 5.3rem);
+			letter-spacing: -3.5px;
+		}
+		.nav-links {
+			display: flex;
+		}
+		.nav-cta {
+			font-size: 0.78rem;
+			padding: 10px 17px;
+		}
+		.hero-grid__cta {
+			justify-self: start;
+			width: auto;
+		}
+		.trust {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 17px;
+		}
+		.human-box {
+			padding: 52px;
+		}
+		.steps {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.float-whatsapp {
+			display: none;
+		}
+		.footer-inner {
+			flex-direction: row;
+			justify-content: space-between;
+			text-align: left;
+		}
+		.vip-box {
+			padding: 50px;
+		}
+	}
+	@include mixin.mq(md) {
+		.hero-grid {
+			grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+			grid-template-areas:
+				"content points"
+				"cta points"
+				"trust points";
+			column-gap: 65px;
+			row-gap: 18px;
+			align-items: center;
+		}
+		.human-box {
+			grid-template-columns: 0.8fr 1.2fr;
+		}
+		.problem-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+		.steps {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		.vip-box {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.process-video {
+		margin-top: 42px;
+
+		@include mixin.mq(md) {
+			margin-top: 52px;
+		}
+
+		&__header {
+			max-width: 760px;
+			margin: 0 auto 30px;
+			text-align: center;
+		}
+
+		&__eyebrow {
+			margin-bottom: 9px;
+			color: $primary;
+			font-family: "Plus Jakarta Sans", sans-serif;
+			font-size: 0.7rem;
+			font-weight: 900;
+			text-transform: uppercase;
+		}
+
+		&__title {
+			margin-bottom: 14px;
+			font-family: "Plus Jakarta Sans", sans-serif;
+			font-size: 1.7rem;
+			font-weight: 800;
+			line-height: 1.1;
+		}
+
+		&__description {
+			max-width: 720px;
+			margin-inline: auto;
+			color: $muted;
+			font-size: 1rem;
+			line-height: 1.55;
+		}
+
+		&__frame {
+			display: block;
+			width: min(100%, 360px);
+			aspect-ratio: 9 / 16;
+			margin-inline: auto;
+			background: linear-gradient(135deg, $card, $bg2);
+			border: 1px solid $border;
+			border-radius: 8px;
+			box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+			object-fit: contain;
+
+			@include mixin.mq(md) {
+				width: min(100%, 460px);
+				aspect-ratio: 43 / 36;
+			}
+		}
+
+		&__caption {
+			margin-top: 15px;
+			color: $muted;
+			font-size: 0.78rem;
+			text-align: center;
+		}
+	}
+</style>
