@@ -8,8 +8,8 @@
 .tech-section {
 	@include mixin.background-alt;
 	@include mixin.section;
-    min-height: unset;
-    padding-top: unset;
+	min-height: unset;
+	padding-top: unset;
 
 	@include mixin.mq(md) {
 		/* padding-bottom: variable.$section-bottom * 3; */
@@ -30,7 +30,7 @@
 	&__tech-wrapper {
 		position: relative;
 		overflow: hidden;
-		padding: 20px 0;
+		padding: variable.$space-5 0;
 
 		mask-image: linear-gradient(
 			to right,
@@ -51,18 +51,18 @@
 	&__tech-track {
 		display: flex;
 		width: max-content;
-		gap: 35px;
+		gap: variable.$space-9;
 		animation: technologyMove 28s linear infinite;
 
 		@include mixin.mq(md) {
-			gap: 55px;
+			gap: variable.$space-14;
 		}
 	}
 
 	&__tech {
 		display: flex;
 		align-items: center;
-		gap: 12px;
+		gap: variable.$space-3;
 		color: rgba(255, 255, 255, 0.7);
 		font-size: 14px;
 		font-weight: 600;

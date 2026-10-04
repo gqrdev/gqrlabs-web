@@ -20,7 +20,7 @@
 
 	&__container {
 		margin: 0 auto;
-		padding: variable.$padding-top-bottom-header variable.$general-padding;
+		padding: variable.$header-padding-y variable.$container-padding-mobile;
 
 		display: flex;
 		align-items: center;
@@ -29,6 +29,11 @@
 		@include mixin.mq(md) {
 			width: 100%;
 			max-width: variable.$max-width-header;
+			padding-inline: variable.$container-padding-tablet;
+		}
+
+		@include mixin.mq(lg) {
+			padding-inline: variable.$container-padding-desktop;
 		}
 	}
 
@@ -41,7 +46,7 @@
 
 		display: flex;
 		align-items: center;
-		gap: 10px;
+		gap: variable.$space-3;
 
 		color: variable.$white;
 		text-decoration: none;
@@ -90,11 +95,11 @@
 		top: 100%;
 		left: 0;
 		width: 100%;
-		padding: 8px 12px;
+		padding: variable.$space-2 variable.$space-3;
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
-		gap: 20px;
+		gap: variable.$space-5;
 		background-color: variable.$black-card;
 
 		opacity: 0;
@@ -109,13 +114,13 @@
 		a {
 			display: block;
 			width: 100%;
-			padding: 8px 0;
+			padding: variable.$space-2 0;
 			color: inherit;
 			text-decoration: none;
 			transition: color 0.25s ease;
 
 			position: relative;
-			padding-bottom: 4px;
+			padding-bottom: variable.$space-1;
 
 			&:hover {
 				color: variable.$white;
@@ -165,7 +170,7 @@
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-			gap: 30px;
+			gap: variable.$header-nav-gap;
 			background-color: transparent;
 			opacity: 1;
 			visibility: visible;

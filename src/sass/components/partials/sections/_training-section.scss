@@ -4,12 +4,19 @@
 
 @use "../../../base/variables" as variable;
 @use "../../../base/mixins" as mixin;
-@use "sass:math";
 
 .mentorships-section {
 	@include mixin.background-alt;
 	@include mixin.section;
-	padding-top: math.div(variable.$section-top, 2);
+	padding-top: variable.$hero-padding-top-mobile;
+
+	@include mixin.mq(md) {
+		padding-top: variable.$hero-padding-top-tablet;
+	}
+
+	@include mixin.mq(lg) {
+		padding-top: variable.$hero-padding-top-desktop;
+	}
 
 	/* Hero */
 	&__header {
@@ -31,7 +38,15 @@
 
 	&__description {
 		@include mixin.g-normal;
-		margin-bottom: variable.$section-bottom * 2;
+		margin-bottom: variable.$section-header-gap-mobile;
+
+		@include mixin.mq(md) {
+			margin-bottom: variable.$section-header-gap-tablet;
+		}
+
+		@include mixin.mq(lg) {
+			margin-bottom: variable.$section-header-gap-desktop;
+		}
 	}
 
 	&__topics-header {
@@ -48,11 +63,12 @@
 
 	&__topics-list {
 		@include mixin.grid;
-		row-gap: 18px;
+		grid-auto-rows: 1fr;
+		row-gap: variable.$grid-gap-small;
 
 		@include mixin.mq(md) {
-			grid-template-columns: repeat(3, 320px);
-			column-gap: 30px;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			column-gap: variable.$grid-gap;
 			justify-content: center;
 		}
 	}
@@ -60,8 +76,9 @@
 	&__topic {
 		position: relative;
 		display: flex;
-		gap: 8px;
-		padding: variable.$general-padding;
+		min-height: variable.$mentorship-topic-card-min-height;
+		gap: variable.$space-2;
+		@include mixin.card-padding;
 		overflow: hidden;
 		border: 1px solid variable.$border;
 		border-radius: 8px;
@@ -94,7 +111,7 @@
 
 	&__topic-title {
 		@include mixin.g-title-3;
-		margin-bottom: 10px;
+		margin-bottom: variable.$space-3;
 	}
 
 	&__topic-description {
@@ -111,7 +128,7 @@
 
 	&__plans-title {
 		@include mixin.g-title-2;
-		margin-bottom: 18px;
+		margin-bottom: variable.$space-5;
 		letter-spacing: -0.035em;
 	}
 
@@ -123,10 +140,14 @@
 	/* Plans */
 	&__plans {
 		@include mixin.grid;
-		grid-template-columns: repeat(3, 360px);
-		column-gap: 30px;
+		grid-auto-rows: 1fr;
+		column-gap: variable.$grid-gap;
 		justify-content: center;
 		align-items: stretch;
+
+		@include mixin.mq(md) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
 	}
 
 	/* CTA */
@@ -134,7 +155,7 @@
 		@include mixin.max-width;
 		position: relative;
 		overflow: hidden;
-		padding: variable.$space-8 variable.$general-padding;
+		@include mixin.card-padding;
 		border-radius: 10px;
 		box-shadow: 0 30px 80px rgba(variable.$blue-primary, 0.12);
 		margin-bottom: variable.$space-12;
@@ -150,7 +171,7 @@
 
 			@include mixin.mq(md) {
 				text-align: left;
-				margin-bottom: .4rem;
+				margin-bottom: variable.$space-2;
 			}
 		}
 
@@ -220,7 +241,7 @@
 		@include mixin.max-width;
 		position: relative;
 		overflow: hidden;
-		padding: variable.$space-8 variable.$general-padding;
+		@include mixin.card-padding;
 		border-radius: 10px;
 		box-shadow: 0 30px 80px rgba(variable.$blue-primary, 0.12);
 		margin-top: variable.$space-12;
@@ -339,8 +360,8 @@
 		justify-content: space-between;
 		cursor: pointer;
 		list-style: none;
-		gap: 10px;
-		padding: 10px variable.$space-1;
+		gap: variable.$space-2;
+		padding: variable.$space-3 variable.$space-1;
 		color: variable.$gray-light;
 		@include mixin.g-normal;
 		margin-bottom: unset;
@@ -395,13 +416,13 @@
 			overflow: hidden;
 			max-width: 760px;
 			margin: 0;
-			padding: 0 4px;
+			padding: 0 variable.$space-1;
 			color: variable.$gray;
 			font-size: 14px;
 			line-height: 1.8;
 
 			@include mixin.mq(md) {
-				padding-right: 60px;
+				padding-right: variable.$space-16;
 			}
 
 			strong {
@@ -418,7 +439,8 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	padding: variable.$general-padding;
+	min-height: variable.$mentorship-plan-card-min-height;
+	@include mixin.card-padding;
 	overflow: hidden;
 	border: 1px solid variable.$border;
 	border-radius: 10px;
@@ -440,9 +462,9 @@
 	/* Badge */
 	&__badge {
 		position: absolute;
-		top: 18px;
-		right: 22px;
-		padding: 5px 11px;
+		top: variable.$space-5;
+		right: variable.$space-6;
+		padding: variable.$space-1 variable.$space-3;
 		border: 1px solid variable.$border-blue;
 		border-radius: 8px;
 		color: variable.$blue-light;
@@ -473,7 +495,7 @@
 
 	&__name {
 		@include mixin.g-title-3;
-		margin-bottom: 15px;
+		margin-bottom: variable.$space-4;
 	}
 
 	&__description {
@@ -484,18 +506,21 @@
 	&__includes {
 		display: flex;
 		flex-direction: column;
-		gap: 10px;
-		margin-top: auto;
+		gap: variable.$space-2;
 		list-style: none;
-		padding: 30px 0 20px;
+		padding: variable.$space-8 0 variable.$space-5;
+
+		@include mixin.mq(md) {
+			margin-top: auto;
+		}
 	}
 
 	&__item {
 		position: relative;
-		padding-left: 28px;
+		padding-left: variable.$space-7;
 		color: variable.$gray-light;
-		font-size: 13px;
-		line-height: 1.5;
+		@include mixin.g-small;
+		margin-bottom: unset;
 
 		&::before {
 			content: "✓";
@@ -518,6 +543,7 @@
 	/* Plan CTA */
 	&__cta {
 		@include mixin.button-variant($variant: success);
+		margin-bottom: unset;
 		display: inline-block;
 		text-align: center;
 		text-transform: uppercase;

@@ -328,25 +328,33 @@ import Layout from "../../../layouts/Layout.astro";
 	.privacy {
 		max-width: 800px;
 		margin: 0 auto;
-		padding: variable.$space-8 variable.$general-padding;
+		padding: variable.$space-8 variable.$container-padding-mobile;
 		font-family: variable.$body-font;
 		line-height: 1.6;
+
+		@include mixin.mq(md) {
+			padding-inline: variable.$container-padding-tablet;
+		}
+
+		@include mixin.mq(lg) {
+			padding-inline: variable.$container-padding-desktop;
+		}
 	}
 
 	.privacy__header {
 		text-align: center;
-		margin-bottom: 2rem;
+		margin-bottom: variable.$section-header-gap-mobile;
 
 		.privacy__eyebrow {
 			display: block;
-			margin-bottom: 0.5rem;
+			margin-bottom: variable.$space-2;
 			color: #888;
 			font-size: 0.9rem;
 		}
 
 		h1 {
 			font-size: 2rem;
-			margin-bottom: 0.5rem;
+			margin-bottom: variable.$space-2;
 		}
 
 		.privacy__updated {
@@ -357,31 +365,31 @@ import Layout from "../../../layouts/Layout.astro";
 
 	.privacy__content {
 		section {
-			margin-bottom: 2rem;
+			margin-bottom: variable.$space-8;
 
 			h2 {
-				margin: 0 0 0.5rem;
+				margin: 0 0 variable.$space-2;
 				font-size: 1.5rem;
 				line-height: 1.3;
 			}
 
 			h3 {
-				margin: 1.5rem 0 0.5rem;
+				margin: variable.$space-6 0 variable.$space-2;
 				font-size: 1.1rem;
 				line-height: 1.4;
 			}
 
 			p {
-				margin: 0 0 1rem;
+				margin: 0 0 variable.$space-4;
 			}
 
 			ul {
-				margin: 0 0 1rem;
-				padding-left: 1.5rem;
+				margin: 0 0 variable.$space-4;
+				padding-left: variable.$space-6;
 			}
 
 			li {
-				margin-bottom: 0.6rem;
+				margin-bottom: variable.$space-3;
 			}
 
 			strong {
@@ -391,12 +399,12 @@ import Layout from "../../../layouts/Layout.astro";
 	}
 
 	.privacy__contact {
-		margin-top: 2.5rem;
+		margin-top: variable.$space-10;
 	}
 
 	@include mixin.mq(md) {
 		.privacy__header {
-			margin-bottom: 3rem;
+			margin-bottom: variable.$section-header-gap-tablet;
 
 			h1 {
 				font-size: 2.25rem;
@@ -407,7 +415,7 @@ import Layout from "../../../layouts/Layout.astro";
 			font-size: 1rem;
 
 			section {
-				margin-bottom: 2.5rem;
+				margin-bottom: variable.$space-10;
 
 				h2 {
 					font-size: 1.5rem;
@@ -418,7 +426,7 @@ import Layout from "../../../layouts/Layout.astro";
 
 	@include mixin.mq(lg) {
 		.privacy__header {
-			margin-bottom: 4rem;
+			margin-bottom: variable.$section-header-gap-desktop;
 
 			h1 {
 				font-size: 2.5rem;
@@ -429,15 +437,13 @@ import Layout from "../../../layouts/Layout.astro";
 			font-size: 1rem;
 
 			section {
-				margin-bottom: 3rem;
+				margin-bottom: variable.$space-12;
 			}
 		}
 	}
 
 	@include mixin.mq(xl) {
 		.privacy__header {
-			margin-bottom: 5rem;
-
 			h1 {
 				font-size: 2.75rem;
 			}

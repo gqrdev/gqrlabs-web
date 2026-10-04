@@ -273,29 +273,38 @@ import Layout from "../../../layouts/Layout.astro";
 
 <style lang="scss">
 	@use "../../../sass/base/variables" as variable;
+	@use "../../../sass/base/mixins" as mixin;
 
 	.terms {
 		max-width: 800px;
 		margin: 0 auto;
-		padding: variable.$space-8 variable.$general-padding;
+		padding: variable.$space-8 variable.$container-padding-mobile;
 		font-family: variable.$body-font;
 		line-height: 1.6;
+
+		@include mixin.mq(md) {
+			padding-inline: variable.$container-padding-tablet;
+		}
+
+		@include mixin.mq(lg) {
+			padding-inline: variable.$container-padding-desktop;
+		}
 	}
 
 	.terms__header {
 		text-align: center;
-		margin-bottom: 2rem;
+		margin-bottom: variable.$section-header-gap-mobile;
 
 		.terms__eyebrow {
 			display: block;
-			margin-bottom: 0.5rem;
+			margin-bottom: variable.$space-2;
 			color: #888;
 			font-size: 0.9rem;
 		}
 
 		h1 {
 			font-size: 2rem;
-			margin-bottom: 0.5rem;
+			margin-bottom: variable.$space-2;
 		}
 
 		.terms__updated {
@@ -306,16 +315,36 @@ import Layout from "../../../layouts/Layout.astro";
 
 	.terms__content {
 		section {
-			margin-bottom: 2rem;
+			margin-bottom: variable.$space-8;
 
 			h2 {
 				font-size: 1.5rem;
-				margin-bottom: 0.5rem;
+				margin-bottom: variable.$space-2;
 			}
 
 			p {
-				margin-bottom: 1rem;
+				margin-bottom: variable.$space-4;
 			}
+		}
+	}
+
+	@include mixin.mq(md) {
+		.terms__header {
+			margin-bottom: variable.$section-header-gap-tablet;
+		}
+
+		.terms__content section {
+			margin-bottom: variable.$space-10;
+		}
+	}
+
+	@include mixin.mq(lg) {
+		.terms__header {
+			margin-bottom: variable.$section-header-gap-desktop;
+		}
+
+		.terms__content section {
+			margin-bottom: variable.$space-12;
 		}
 	}
 </style>

@@ -10,8 +10,16 @@
 	min-height: unset;
 	background-color: variable.$footer-bg;
 	color: variable.$footer-text;
-	padding: variable.$padding-top-footer variable.$padding-inline-footer
-		variable.$padding-bottom-footer;
+	padding: variable.$footer-padding-top variable.$container-padding-mobile
+		variable.$footer-padding-bottom;
+
+	@include mixin.mq(md) {
+		padding-inline: variable.$container-padding-tablet;
+	}
+
+	@include mixin.mq(lg) {
+		padding-inline: variable.$container-padding-desktop;
+	}
 	
 	&__principal-container {
 		@include mixin.max-width;
@@ -22,7 +30,7 @@
 			"brand"
 			"legal"
 			"copyright";
-		row-gap: 18px;
+		row-gap: variable.$footer-columns-gap;
 
 		@include mixin.mq(md) {
 			grid-template-rows: repeat(2, auto);
@@ -37,13 +45,13 @@
 		grid-area: brand;
 		display: flex;
 		flex-direction: column;
-		row-gap: 10px;
+		row-gap: variable.$space-3;
 
 		@include mixin.mq(md) {
 			display: unset;
 			flex-direction: unset;
 			flex-direction: row;
-			column-gap: 16px;
+			column-gap: variable.$space-4;
 		}
 	}
 
@@ -67,11 +75,11 @@
 		color: inherit;
 		display: flex;
 		flex-direction: column;
-		row-gap: 8px;
+		row-gap: variable.$footer-links-gap;
 
 		@include mixin.mq(md) {
 			flex-direction: row;
-			column-gap: 16px;
+			column-gap: variable.$space-4;
 		}
 	}
 
@@ -95,11 +103,11 @@
 		grid-area: social;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		column-gap: 16px;
+		column-gap: variable.$space-4;
 		place-self: center;
 
 		@include mixin.mq(md) {
-			column-gap: 20px;
+			column-gap: variable.$space-5;
 			justify-self: end;
 		}
 	}

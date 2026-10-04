@@ -33,8 +33,11 @@
 
 	/* Description */
 	&__description {
-		@include mixin.g-small;
-		margin-bottom: 20px;
+		@include mixin.g-normal;
+
+		@include mixin.mq(md) {
+			margin-bottom: variable.$space-5;
+		}
 	}
 
 	/* Links Container */
@@ -54,7 +57,7 @@
 	&__button {
 		@include mixin.button-variant($variant: primary, $outline: true);
 		@include mixin.g-small;
-		margin-bottom: 0.6rem;
+		margin-bottom: variable.$space-3;
 		text-transform: uppercase;
 
 		span {

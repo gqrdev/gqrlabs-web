@@ -13,7 +13,9 @@
 		@media (min-width: $value) {
 			@content;
 		}
-	} @else {
+	}
+
+	@else {
 		@warn "El breakpoint `#{$breakpoint}` no esta definido.";
 	}
 }
@@ -27,7 +29,9 @@
 
 	@if $extrabold {
 		font-weight: 700;
-	} @else {
+	}
+
+	@else {
 		font-weight: 400;
 	}
 }
@@ -84,7 +88,9 @@
 
 	@if $extrabold {
 		font-weight: 700;
-	} @else {
+	}
+
+	@else {
 		font-weight: 400;
 	}
 }
@@ -128,6 +134,18 @@
 	padding: variable.$general-padding;
 }
 
+@mixin card-padding {
+	padding: variable.$card-padding-mobile;
+
+	@include mq(md) {
+		padding: variable.$card-padding-tablet;
+	}
+
+	@include mq(lg) {
+		padding: variable.$card-padding-desktop;
+	}
+}
+
 @mixin max-width {
 	width: 100%;
 	max-width: variable.$max-width;
@@ -141,17 +159,21 @@
 	$default-hover-bg: null;
 	$default-shadow: null;
 
-	@if $variant == primary {
+	@if $variant ==primary {
 		$default-bg: variable.$button-primary;
 		$default-text: variable.$button-text;
 		$default-hover-bg: variable.$button-primary-hover;
 		$default-shadow: variable.$button-shadow;
-	} @else if $variant == success {
+	}
+
+	@else if $variant ==success {
 		$default-bg: variable.$button-success;
 		$default-text: variable.$button-text;
 		$default-hover-bg: variable.$button-success-hover;
 		$default-shadow: variable.$button-shadow;
-	} @else if $variant == outline {
+	}
+
+	@else if $variant ==outline {
 		$default-bg: transparent;
 		$default-text: variable.$button-outline;
 		$default-hover-bg: variable.$button-outline-hover;
@@ -168,6 +190,7 @@
 	justify-content: center;
 
 	@include g-normal;
+
 	@include mq(md) {
 		transition:
 			transform 0.25s ease,
@@ -175,7 +198,7 @@
 			border-color 0.25s ease;
 	}
 
-	@if $variant == outline or $outline {
+	@if $variant ==outline or $outline {
 		background-color: transparent;
 		color: $default-text;
 		border-color: $default-bg;
@@ -188,7 +211,9 @@
 				color: $default-text;
 			}
 		}
-	} @else {
+	}
+
+	@else {
 		background-color: $default-bg;
 		color: $default-text;
 
@@ -220,7 +245,7 @@
 @mixin pretitle {
 	display: flex;
 	align-items: center;
-	gap: 12px;
+	gap: variable.$space-3;
 	@include g-normal;
 	margin-bottom: variable.$margin-bottom-pretitle;
 	text-transform: uppercase;
@@ -240,11 +265,15 @@
 @mixin section {
 	position: relative;
 	min-height: 90dvh;
-	padding: variable.$section-top variable.$general-padding
-		variable.$section-bottom variable.$general-padding;
+	padding: variable.$section-padding-y-mobile variable.$container-padding-mobile;
 
 	@include mq(md) {
 		min-height: unset;
+		padding: variable.$section-padding-y-tablet variable.$container-padding-tablet;
+	}
+
+	@include mq(lg) {
+		padding: variable.$section-padding-y-desktop variable.$container-padding-desktop;
 	}
 }
 
@@ -280,7 +309,7 @@
 	border-radius: 10px;
 	background: rgba(255, 255, 255, 0.04);
 	border: 1px solid rgba(255, 255, 255, 0.08);
-	margin-right: 16px;
+	margin-right: variable.$space-4;
 	position: relative;
 	flex-shrink: 0;
 }
@@ -289,12 +318,12 @@
 @mixin grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	row-gap: 20px;
-	margin-bottom: 3rem;
+	row-gap: variable.$grid-gap-small;
+	margin-bottom: variable.$space-12;
 
 	@include mq(md) {
 		grid-template-columns: repeat(3, 1fr);
-		column-gap: 36px;
+		column-gap: variable.$grid-gap;
 	}
 }
 
@@ -303,11 +332,11 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1.25rem;
+	gap: variable.$space-5;
 
 	@include mq(md) {
 		align-items: center;
-		gap: 2rem;
+		gap: variable.$space-8;
 	}
 }
 
@@ -316,4 +345,12 @@
 	text-transform: uppercase;
 	@include button-variant($variant: primary);
 	margin-bottom: unset;
+}
+
+@mixin cta-hint {
+	@include g-big;
+	margin-bottom: unset;
+	color: variable.$gray-light;
+	text-transform: uppercase;
+	text-align: center;
 }

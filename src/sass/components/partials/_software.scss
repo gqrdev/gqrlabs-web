@@ -32,23 +32,37 @@
 
 	/* Description */
 	&__description {
-		@include mixin.g-small;
-		margin-bottom: variable.$section-bottom;
+		@include mixin.g-normal;
+		margin-bottom: variable.$hero-description-gap;
 	}
 
 	&__grid {
 		@include mixin.grid;
-		margin-bottom: 0;
+		grid-auto-rows: 1fr;
+	}
+
+	&__actions {
+		@include mixin.actions;
+		margin-top: variable.$space-8;
+	}
+
+	&__hint {
+		@include mixin.cta-hint;
+	}
+
+	&__cta {
+		@include mixin.cta;
 	}
 
 	&__card {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		min-height: variable.$home-card-min-height;
 		background: variable.$background-card;
 		border: 1px solid rgba(255, 255, 255, 0.06);
 		border-radius: 8px;
-		padding: variable.$general-padding;
+		@include mixin.card-padding;
 		transition:
 			background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
 			transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
@@ -78,7 +92,7 @@
 		&-header {
 			display: flex;
 			align-items: center;
-			margin-bottom: 8px;
+			margin-bottom: variable.$space-2;
 		}
 
 		&-title {
@@ -162,7 +176,7 @@
 		.software__card:nth-child(3) & {
 			align-items: flex-end;
 			padding-bottom: 11px;
-			gap: 4px;
+			gap: variable.$space-1;
 
 			&::before {
 				content: "";

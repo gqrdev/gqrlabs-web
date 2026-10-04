@@ -41,9 +41,6 @@ $button-outline: #0d47a1;
 $button-outline-hover: #08306f;
 $button-text: #f8fafc;
 $button-shadow: #2563eb38;
-$button-content-gap: 10px;
-$button-padding-block: 10px;
-$button-padding-inline: 20px;
 $button-radius: 4px;
 
 /* Footer */
@@ -83,43 +80,117 @@ $breakpoints: (
 );
 
 /* Spacing scale */
+$space-0: 0px;
 $space-1: 4px;
 $space-2: 8px;
 $space-3: 12px;
 $space-4: 16px;
 $space-5: 20px;
 $space-6: 24px;
+$space-7: 28px;
 $space-8: 32px;
+$space-9: 36px;
 $space-10: 40px;
 $space-12: 48px;
+$space-14: 56px;
+$space-16: 64px;
+$space-18: 72px;
+$space-20: 80px;
+$space-24: 96px;
+$space-28: 112px;
+$space-32: 128px;
+
+$button-content-gap: $space-3;
+$button-padding-block: $space-3;
+$button-padding-inline: $space-5;
+
+/* Container spacing */
+$container-padding-desktop: $space-8;
+$container-padding-tablet: $space-6;
+$container-padding-mobile: $space-4;
+
+/* Header spacing */
+$header-padding-y: $space-5;
+$header-gap: $space-8;
+$header-nav-gap: $space-8;
+
+/* Hero spacing */
+$hero-padding-top-desktop: $space-24;
+$hero-padding-top-tablet: $space-18;
+$hero-padding-top-mobile: $space-14;
+$hero-padding-bottom-desktop: $space-28;
+$hero-padding-bottom-tablet: $space-20;
+$hero-padding-bottom-mobile: $space-16;
+$hero-columns-gap: $space-16;
+$hero-stacked-gap: $space-12;
+$hero-eyebrow-gap: $space-4;
+$hero-title-gap: $space-6;
+$hero-description-gap: $space-8;
+$hero-buttons-gap: $space-3;
+
+/* Section spacing */
+$section-padding-y-desktop: $space-28;
+$section-padding-y-tablet: $space-20;
+$section-padding-y-mobile: $space-16;
+$section-header-gap-desktop: $space-14;
+$section-header-gap-tablet: $space-12;
+$section-header-gap-mobile: $space-9;
+
+/* Grid spacing */
+$grid-gap: $space-6;
+$grid-gap-small: $space-4;
+$grid-gap-large: $space-8;
+
+/* Card spacing */
+$card-padding-desktop: $space-8;
+$card-padding-tablet: $space-7;
+$card-padding-mobile: $space-6;
+$card-content-gap: $space-5;
+$card-title-gap: $space-3;
+$card-description-gap: $space-6;
+$home-card-min-height: 190px;
+$mentorship-topic-card-min-height: 130px;
+$mentorship-plan-card-min-height: 560px;
+
+/* CTA spacing */
+$cta-padding-y: $space-24;
+$cta-gap: $space-8;
+
+/* Footer spacing */
+$footer-padding-top: $space-18;
+$footer-padding-bottom: $space-8;
+$footer-columns-gap: $space-12;
+$footer-links-gap: $space-3;
+$footer-bottom-margin: $space-12;
+$footer-bottom-padding: $space-6;
 
 /* General Layout */
-$page-bottom-margin: 30px;
-$general-padding: $space-4;
+$page-bottom-margin: $space-8;
+$general-padding: $container-padding-mobile;
 $max-width: 1280px;
 $max-width-header: $max-width;
 $max-width-footer: $max-width;
-$section-padding: 60px;
+$section-padding: $section-padding-y-desktop;
 
 /* Section - padding */
-$section-top: 80px;
-$padding-top-hero-section: 46px;
-$section-bottom: 30px;
+$section-top: $section-padding-y-tablet;
+$padding-top-hero-section: $hero-padding-top-mobile;
+$section-bottom: $space-8;
 
 /* Typography - margins */
-$margin-bottom-heading: 1.4rem;
-$margin-bottom-body: 1.4rem;
-$margin-bottom-pretitle: 0.8rem;
+$margin-bottom-heading: $space-5;
+$margin-bottom-body: $space-5;
+$margin-bottom-pretitle: $space-3;
 
 /* Header */
-$padding-top-bottom-header: 18px;
+$padding-top-bottom-header: $header-padding-y;
 
 /* Cards */
-$padding-top-card: 10px;
-$padding-bottom-card: 30px;
+$padding-top-card: $space-3;
+$padding-bottom-card: $space-8;
 $background-card: $black-card;
 
-/* Footer */
-$padding-top-footer: 50px;
-$padding-inline-footer: 20px;
-$padding-bottom-footer: 20px;
+/* Footer aliases */
+$padding-top-footer: $footer-padding-top;
+$padding-inline-footer: $container-padding-desktop;
+$padding-bottom-footer: $footer-padding-bottom;

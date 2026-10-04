@@ -9,9 +9,20 @@
 .hero {
 	@include mixin.background;
 	@include mixin.section;
-	padding-top: variable.$padding-top-hero-section;
+	padding-top: variable.$hero-padding-top-mobile;
+	padding-bottom: variable.$hero-padding-bottom-mobile;
 	position: relative;
 	overflow: hidden;
+
+	@include mixin.mq(md) {
+		padding-top: variable.$hero-padding-top-tablet;
+		padding-bottom: variable.$hero-padding-bottom-tablet;
+	}
+
+	@include mixin.mq(lg) {
+		padding-top: variable.$hero-padding-top-desktop;
+		padding-bottom: variable.$hero-padding-bottom-desktop;
+	}
 
 	/* Overlay */
 	&::before {
@@ -90,7 +101,7 @@
 
 	/* Actions */
 	&__actions {
-		margin-bottom: 2rem;
+		margin-bottom: variable.$hero-description-gap;
 	}
 
 	&__button {
@@ -110,7 +121,7 @@
 		margin-bottom: unset;
 		&-link {
 			display: flex;
-			column-gap: 8px;
+			column-gap: variable.$space-2;
 		}
 	}
 
