@@ -140,3 +140,6 @@ AGENTS.md
 
 /.wrangler/
 /src/pages/landing/
+/public/images/landing-video-poster.jpg
+/src/assets/videos/landing-video.mp4
+/src/assets/videos/landing-video-mobile.mp4
