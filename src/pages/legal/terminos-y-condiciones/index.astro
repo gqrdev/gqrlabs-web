@@ -278,73 +278,72 @@ import Layout from "../../../layouts/Layout.astro";
 	.terms {
 		max-width: 800px;
 		margin: 0 auto;
-		padding: variable.$space-8 variable.$container-padding-mobile;
+		padding: variable.$section-padding-y-mobile variable.$container-padding-mobile;
 		font-family: variable.$body-font;
-		line-height: 1.6;
+		line-height: variable.$body-line-height;
 
 		@include mixin.mq(md) {
-			padding-inline: variable.$container-padding-tablet;
+			padding: variable.$section-padding-y-tablet variable.$container-padding-tablet;
 		}
 
 		@include mixin.mq(lg) {
-			padding-inline: variable.$container-padding-desktop;
-		}
-	}
-
-	.terms__header {
-		text-align: center;
-		margin-bottom: variable.$section-header-gap-mobile;
-
-		.terms__eyebrow {
-			display: block;
-			margin-bottom: variable.$space-2;
-			color: #888;
-			font-size: 0.9rem;
+			padding: variable.$section-padding-y-desktop variable.$container-padding-desktop;
 		}
 
-		h1 {
-			font-size: 2rem;
-			margin-bottom: variable.$space-2;
-		}
+		&__header {
+			text-align: center;
+			margin-bottom: variable.$section-header-gap-mobile;
 
-		.terms__updated {
-			font-size: 0.8rem;
-			color: #aaa;
-		}
-	}
+			@include mixin.mq(md) {
+				margin-bottom: variable.$section-header-gap-tablet;
+			}
 
-	.terms__content {
-		section {
-			margin-bottom: variable.$space-8;
+			@include mixin.mq(lg) {
+				margin-bottom: variable.$section-header-gap-desktop;
+			}
 
-			h2 {
-				font-size: 1.5rem;
+			.terms__eyebrow {
+				display: block;
 				margin-bottom: variable.$space-2;
+				color: variable.$blue-light;
+				font-size: variable.$small-font-size;
 			}
 
-			p {
-				margin-bottom: variable.$space-4;
+			h1 {
+				margin-bottom: variable.$space-2;
+				font-size: variable.$h1-font-size;
+				line-height: variable.$heading-line-height;
+
+				@include mixin.mq(md) {
+					font-size: variable.$h1-font-size-md;
+				}
+			}
+
+			.terms__updated {
+				font-size: variable.$smaller-font-size;
+				color: variable.$gray;
 			}
 		}
-	}
 
-	@include mixin.mq(md) {
-		.terms__header {
-			margin-bottom: variable.$section-header-gap-tablet;
-		}
+		&__content {
+			section {
+				margin-bottom: variable.$space-8;
 
-		.terms__content section {
-			margin-bottom: variable.$space-10;
-		}
-	}
+				& + section {
+					padding-top: variable.$space-6;
+					border-top: 1px solid variable.$border-light;
+				}
 
-	@include mixin.mq(lg) {
-		.terms__header {
-			margin-bottom: variable.$section-header-gap-desktop;
-		}
+				h2 {
+					font-size: variable.$h2-font-size;
+					line-height: variable.$heading-line-height;
+					margin-bottom: variable.$space-2;
+				}
 
-		.terms__content section {
-			margin-bottom: variable.$space-12;
+				p {
+					margin-bottom: variable.$space-4;
+				}
+			}
 		}
 	}
 </style>

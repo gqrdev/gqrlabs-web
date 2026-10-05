@@ -49,6 +49,10 @@
 @mixin g-title-1 {
 	@include heading-font(true);
 	font-size: variable.$h1-font-size;
+
+	@include mq(md) {
+		font-size: variable.$h1-font-size-md;
+	}
 }
 
 @mixin g-title-2 {
@@ -175,7 +179,7 @@
 
 	@else if $variant ==outline {
 		$default-bg: transparent;
-		$default-text: variable.$button-outline;
+		$default-text: variable.$blue-light;
 		$default-hover-bg: variable.$button-outline-hover;
 		$default-shadow: variable.$button-shadow;
 	}
@@ -188,27 +192,29 @@
 	border-radius: variable.$button-radius;
 	border: 1px solid transparent;
 	justify-content: center;
+	box-shadow: variable.$shadow-sm;
 
 	@include g-normal;
 
 	@include mq(md) {
 		transition:
-			transform 0.25s ease,
-			background-color 0.25s ease,
-			border-color 0.25s ease;
+			transform variable.$motion-duration variable.$motion-ease,
+			background-color variable.$motion-duration variable.$motion-ease,
+			border-color variable.$motion-duration variable.$motion-ease,
+			box-shadow variable.$motion-duration variable.$motion-ease;
 	}
 
 	@if $variant ==outline or $outline {
 		background-color: transparent;
 		color: $default-text;
-		border-color: $default-bg;
+		border-color: variable.$button-outline;
 
 		@include mq(md) {
 			&:hover {
 				transform: translateY(-2px);
 				background-color: $default-hover-bg;
-				border-color: transparent;
-				color: $default-text;
+				border-color: variable.$button-outline-hover;
+				color: variable.$button-text;
 			}
 		}
 	}
@@ -227,8 +233,9 @@
 	}
 
 	&:focus-visible {
-		outline: 2px solid rgba(255, 255, 255, 0.06);
+		outline: 2px solid variable.$blue-light;
 		outline-offset: 2px;
+		box-shadow: 0 0 0 4px rgba(variable.$blue-light, 0.18);
 	}
 
 	&:disabled,
@@ -239,6 +246,13 @@
 		pointer-events: none;
 		box-shadow: none;
 	}
+}
+
+@mixin card-surface {
+	background: variable.$black-card;
+	border: 1px solid variable.$border;
+	border-radius: variable.$radius;
+	box-shadow: variable.$shadow-sm;
 }
 
 /* Pretitle */

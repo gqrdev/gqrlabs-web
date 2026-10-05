@@ -78,11 +78,9 @@
 		display: flex;
 		min-height: variable.$mentorship-topic-card-min-height;
 		gap: variable.$space-2;
+		@include mixin.card-surface;
 		@include mixin.card-padding;
 		overflow: hidden;
-		border: 1px solid variable.$border;
-		border-radius: 8px;
-		background: variable.$black-card;
 
 		@include mixin.mq(md) {
 			transition:
@@ -129,7 +127,6 @@
 	&__plans-title {
 		@include mixin.g-title-2;
 		margin-bottom: variable.$space-5;
-		letter-spacing: -0.035em;
 	}
 
 	&__plans-description {
@@ -156,7 +153,7 @@
 		position: relative;
 		overflow: hidden;
 		@include mixin.card-padding;
-		border-radius: 10px;
+		border-radius: variable.$radius-lg;
 		box-shadow: 0 30px 80px rgba(variable.$blue-primary, 0.12);
 		margin-bottom: variable.$space-12;
 
@@ -242,7 +239,7 @@
 		position: relative;
 		overflow: hidden;
 		@include mixin.card-padding;
-		border-radius: 10px;
+		border-radius: variable.$radius-lg;
 		box-shadow: 0 30px 80px rgba(variable.$blue-primary, 0.12);
 		margin-top: variable.$space-12;
 		margin-bottom: 0;
@@ -400,7 +397,7 @@
 		}
 
 		&:focus-visible {
-			outline: 2px solid variable.$blue-primary;
+			outline: 2px solid variable.$blue-light;
 			outline-offset: 4px;
 			border-radius: 4px;
 		}
@@ -442,20 +439,19 @@
 	min-height: variable.$mentorship-plan-card-min-height;
 	@include mixin.card-padding;
 	overflow: hidden;
-	border: 1px solid variable.$border;
-	border-radius: 10px;
-	background: variable.$black-card;
+	@include mixin.card-surface;
 
 	@include mixin.mq(md) {
 		transition:
-			transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-			border-color 0.3s ease,
-			box-shadow 0.3s ease;
+			background-color variable.$motion-duration variable.$motion-ease,
+			transform variable.$motion-duration variable.$motion-ease,
+			border-color variable.$motion-duration variable.$motion-ease,
+			box-shadow variable.$motion-duration variable.$motion-ease;
 
 		&:hover {
 			border-color: rgba(148, 163, 184, 0.25);
 			transform: translateY(-5px);
-			box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+			box-shadow: variable.$shadow-lg;
 		}
 	}
 
@@ -466,7 +462,7 @@
 		right: variable.$space-6;
 		padding: variable.$space-1 variable.$space-3;
 		border: 1px solid variable.$border-blue;
-		border-radius: 8px;
+		border-radius: variable.$radius-sm;
 		color: variable.$blue-light;
 		@include mixin.g-smaller;
 	}

@@ -59,14 +59,13 @@
 		flex-direction: column;
 		justify-content: space-between;
 		min-height: variable.$home-card-min-height;
-		background: variable.$background-card;
-		border: 1px solid rgba(255, 255, 255, 0.06);
-		border-radius: 8px;
+		@include mixin.card-surface;
 		@include mixin.card-padding;
 		transition:
-			background 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-			transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-			border-color 0.3s ease;
+			background-color variable.$motion-duration variable.$motion-ease,
+			border-color variable.$motion-duration variable.$motion-ease,
+			box-shadow variable.$motion-duration variable.$motion-ease,
+			transform variable.$motion-duration variable.$motion-ease;
 
 		&-body {
 			display: flex;
@@ -75,8 +74,9 @@
 
 		&:hover {
 			@include mixin.mq(md) {
-				background: rgba(255, 255, 255, 0.035);
-				border-color: rgba(255, 255, 255, 0.12);
+				background: variable.$black-card-hover;
+				border-color: variable.$border-blue;
+				box-shadow: variable.$shadow;
 				transform: translateY(-4px);
 
 				.software__code-badge {

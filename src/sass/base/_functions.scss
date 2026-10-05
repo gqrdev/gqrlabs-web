@@ -2,15 +2,16 @@
 // Base: Functions
 // =========================================================
 
+@use "sass:color";
 @use "./variables" as variables;
 
 @function brand-color-primary($variant, $alpha) {
 	$base: variables.$blue-primary;
 
 	@if $variant == light {
-		$base: lighten($base, 15%);
+		$base: color.scale($base, $lightness: 15%);
 	} @else if $variant == dark {
-		$base: darken($base, 10%);
+		$base: color.scale($base, $lightness: -10%);
 	}
 
 	@return rgba($base, $alpha);

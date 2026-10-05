@@ -328,129 +328,92 @@ import Layout from "../../../layouts/Layout.astro";
 	.privacy {
 		max-width: 800px;
 		margin: 0 auto;
-		padding: variable.$space-8 variable.$container-padding-mobile;
+		padding: variable.$section-padding-y-mobile variable.$container-padding-mobile;
 		font-family: variable.$body-font;
-		line-height: 1.6;
+		line-height: variable.$body-line-height;
 
 		@include mixin.mq(md) {
-			padding-inline: variable.$container-padding-tablet;
+			padding: variable.$section-padding-y-tablet variable.$container-padding-tablet;
 		}
 
 		@include mixin.mq(lg) {
-			padding-inline: variable.$container-padding-desktop;
-		}
-	}
-
-	.privacy__header {
-		text-align: center;
-		margin-bottom: variable.$section-header-gap-mobile;
-
-		.privacy__eyebrow {
-			display: block;
-			margin-bottom: variable.$space-2;
-			color: #888;
-			font-size: 0.9rem;
+			padding: variable.$section-padding-y-desktop variable.$container-padding-desktop;
 		}
 
-		h1 {
-			font-size: 2rem;
-			margin-bottom: variable.$space-2;
-		}
+		&__header {
+			text-align: center;
+			margin-bottom: variable.$section-header-gap-mobile;
 
-		.privacy__updated {
-			font-size: 0.8rem;
-			color: #aaa;
-		}
-	}
-
-	.privacy__content {
-		section {
-			margin-bottom: variable.$space-8;
-
-			h2 {
-				margin: 0 0 variable.$space-2;
-				font-size: 1.5rem;
-				line-height: 1.3;
+			@include mixin.mq(md) {
+				margin-bottom: variable.$section-header-gap-tablet;
 			}
 
-			h3 {
-				margin: variable.$space-6 0 variable.$space-2;
-				font-size: 1.1rem;
-				line-height: 1.4;
+			@include mixin.mq(lg) {
+				margin-bottom: variable.$section-header-gap-desktop;
 			}
 
-			p {
-				margin: 0 0 variable.$space-4;
+			.privacy__eyebrow {
+				display: block;
+				margin-bottom: variable.$space-2;
+				color: variable.$blue-light;
+				font-size: variable.$small-font-size;
 			}
-
-			ul {
-				margin: 0 0 variable.$space-4;
-				padding-left: variable.$space-6;
-			}
-
-			li {
-				margin-bottom: variable.$space-3;
-			}
-
-			strong {
-				font-weight: 600;
-			}
-		}
-	}
-
-	.privacy__contact {
-		margin-top: variable.$space-10;
-	}
-
-	@include mixin.mq(md) {
-		.privacy__header {
-			margin-bottom: variable.$section-header-gap-tablet;
 
 			h1 {
-				font-size: 2.25rem;
-			}
-		}
+				margin-bottom: variable.$space-2;
+				font-size: variable.$h1-font-size;
+				line-height: variable.$heading-line-height;
 
-		.privacy__content {
-			font-size: 1rem;
-
-			section {
-				margin-bottom: variable.$space-10;
-
-				h2 {
-					font-size: 1.5rem;
+				@include mixin.mq(md) {
+					font-size: variable.$h1-font-size-md;
 				}
 			}
-		}
-	}
 
-	@include mixin.mq(lg) {
-		.privacy__header {
-			margin-bottom: variable.$section-header-gap-desktop;
-
-			h1 {
-				font-size: 2.5rem;
+			.privacy__updated {
+				font-size: variable.$smaller-font-size;
+				color: variable.$gray;
 			}
 		}
 
-		.privacy__content {
-			font-size: 1rem;
-
+		&__content {
 			section {
-				margin-bottom: variable.$space-12;
-			}
-		}
-	}
+				margin-bottom: variable.$space-8;
 
-	@include mixin.mq(xl) {
-		.privacy__header {
-			h1 {
-				font-size: 2.75rem;
-			}
-		}
+				& + section {
+					padding-top: variable.$space-6;
+					border-top: 1px solid variable.$border-light;
+				}
 
-		.privacy__content {
-			font-size: 1.05rem;
+				h2 {
+					margin: 0 0 variable.$space-2;
+					font-size: variable.$h2-font-size;
+					line-height: variable.$heading-line-height;
+				}
+
+				h3 {
+					margin: variable.$space-6 0 variable.$space-2;
+					font-size: variable.$h3-font-size;
+					line-height: variable.$heading-line-height;
+				}
+
+				p {
+					margin: 0 0 variable.$space-4;
+				}
+
+				ul {
+					margin: 0 0 variable.$space-4;
+					padding-left: variable.$space-6;
+					list-style: disc;
+				}
+
+				li {
+					margin-bottom: variable.$space-3;
+				}
+
+				strong {
+					font-weight: 600;
+				}
+			}
 		}
 	}
 </style>

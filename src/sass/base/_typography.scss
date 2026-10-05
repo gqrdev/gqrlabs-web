@@ -9,12 +9,20 @@
 body {
 	background-color: variables.$background-section;
 	@include mixins.g-normal;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 /* Links */
 a {
 	text-decoration: none;
 	color: inherit;
+
+	&:focus-visible {
+		outline: 2px solid variables.$blue-light;
+		outline-offset: 3px;
+		border-radius: variables.$radius-sm;
+	}
 
 	&:hover {
 		@include mixins.mq(lg) {
