@@ -4,10 +4,10 @@ allowBuilds:
   workerd: true
 minimumReleaseAgeExclude:
   - sass@1.103.1 || 1.104.0 || 1.104.1
-  - '@astrojs/markdown-satteri@0.3.8 || 0.4.0'
-  - astro@7.2.6 || 7.2.7 || 7.2.9 || 7.2.10 || 7.3.1 || 7.3.5
-  - '@astrojs/cloudflare@14.2.6 || 14.3.0'
-  - '@astrojs/internal-helpers@0.11.0'
+  - '@astrojs/markdown-satteri@0.3.8 || 0.4.0 || 0.4.3'
+  - astro@7.2.6 || 7.2.7 || 7.2.9 || 7.2.10 || 7.3.1 || 7.3.5 || 7.3.6
+  - '@astrojs/cloudflare@14.2.6 || 14.3.0 || 14.3.4'
+  - '@astrojs/internal-helpers@0.11.0 || 0.12.0'
   - miniflare@5.20260831.0-alpha || 5.20260903.0-alpha || 5.20260907.0-alpha || 5.20260911.1-alpha || 5.20260923.0-alpha || 5.20260925.0-alpha
   - wrangler@4.128.0 || 4.129.0 || 4.129.1 || 4.131.2 || 4.139.0 || 4.141.0
   - '@cloudflare/workerd-darwin-64@1.20260907.1'

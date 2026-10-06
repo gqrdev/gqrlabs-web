@@ -13,15 +13,15 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"astro": "^7.3.5",
+		"astro": "^7.3.6",
 		"astro-microsoft-clarity-integration": "^1.1.7"
 	},
 	"devDependencies": {
-		"@astrojs/cloudflare": "^14.3.3",
+		"@astrojs/cloudflare": "^14.3.4",
 		"lightningcss": "^1.33.0",
 		"sass": "^1.105.1",
 		"sharp": "^0.35.5",
 		"wrangler": "^4.147.0"
 	},
-	"packageManager": "pnpm@12.8.1"
+	"packageManager": "pnpm@12.9.1"
 }
