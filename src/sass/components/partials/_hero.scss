@@ -142,6 +142,7 @@
 
 	&__place {
 		@include mixin.g-smaller;
+		display: block;
 		color: variable.$gray-light;
 	}
 

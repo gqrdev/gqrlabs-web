@@ -34,20 +34,20 @@ import HeroVideoMobile from "../../assets/videos/home-video-mobile.mp4";
 			<!-- Description -->
 			<p class="hero__description">
 				En GQR Labs convertimos ideas y desafíos en soluciones de software que
-				generan valor real. Ayudamos a transformar cada necesidad en una solución
-				tecnológica simple, segura y eficiente.
+				generan valor real. Entendemos que cada proyecto busca optimizar
+				procesos, ahorrar tiempo, mejorar experiencias o hacer crecer un
+				negocio.
 			</p>
 			<p class="hero__description">
-				Entendemos que detrás de cada proyecto hay un objetivo concreto: optimizar
-				procesos, ahorrar tiempo, mejorar experiencias o hacer crecer un negocio.
-				Por eso, trabajamos para crear soluciones pensadas para funcionar y
-				adaptarse a cada necesidad.
+				Por eso, desarrollamos soluciones adaptadas a cada necesidad y
+				acompañamos cada proyecto de principio a fin, con foco en la calidad,
+				comunicación clara y orientación a resultados.
 			</p>
-			<p class="hero__description">
+			<!-- <p class="hero__description">
 				Acompañamos cada desarrollo de principio a fin, con comunicación clara,
 				foco en la calidad y orientación a resultados. Nuestro objetivo es que la
 				tecnología sea una herramienta para hacer que las cosas funcionen mejor.
-			</p>
+			</p> -->
 
 			<div class="hero__actions">
 				<a href="#software" class="hero__button">
@@ -86,43 +86,63 @@ import HeroVideoMobile from "../../assets/videos/home-video-mobile.mp4";
 					<span class="hero__terminal-command">start project</span>
 				</div>
 				<div class="hero__terminal-line">
-					<span class="hero__terminal-label hero__terminal-label--process">[INIT]</span>
+					<span class="hero__terminal-label hero__terminal-label--process"
+						>[INIT]</span
+					>
 					GQR Labs — soluciones tecnológicas
 				</div>
 				<div class="hero__terminal-line">
-					<span class="hero__terminal-label hero__terminal-label--process">[ANALYSIS]</span>
+					<span class="hero__terminal-label hero__terminal-label--process"
+						>[ANALYSIS]</span
+					>
 					Analizando necesidades y objetivos
 				</div>
 				<div class="hero__terminal-line">
-					<span class="hero__terminal-label hero__terminal-label--info">[PLANNING]</span>
+					<span class="hero__terminal-label hero__terminal-label--info"
+						>[PLANNING]</span
+					>
 					Diseñando una solución a medida
 				</div>
 				<div class="hero__terminal-line">
-					<span class="hero__terminal-label hero__terminal-label--process">[SOFTWARE]</span>
+					<span class="hero__terminal-label hero__terminal-label--process"
+						>[SOFTWARE]</span
+					>
 					Sistemas internos y aplicaciones web
 				</div>
 				<div class="hero__terminal-line">
-					<span class="hero__terminal-label hero__terminal-label--process">[INFRA]</span>
+					<span class="hero__terminal-label hero__terminal-label--process"
+						>[INFRA]</span
+					>
 					Configurando infraestructura segura
 				</div>
 				<div class="hero__terminal-line">
-					<span class="hero__terminal-label hero__terminal-label--warning">[SECURITY]</span>
+					<span class="hero__terminal-label hero__terminal-label--warning"
+						>[SECURITY]</span
+					>
 					Priorizando seguridad y buenas prácticas
 				</div>
 				<div class="hero__terminal-line">
-					<span class="hero__terminal-label hero__terminal-label--success">[BUILD]</span>
+					<span class="hero__terminal-label hero__terminal-label--success"
+						>[BUILD]</span
+					>
 					Desarrollando la solución
 				</div>
 				<div class="hero__terminal-line">
-					<span class="hero__terminal-label hero__terminal-label--success">[DELIVERY]</span>
+					<span class="hero__terminal-label hero__terminal-label--success"
+						>[DELIVERY]</span
+					>
 					Implementación y acompañamiento
 				</div>
 				<div class="hero__terminal-line">
-					<span class="hero__terminal-label hero__terminal-label--info">[TRAINING]</span>
+					<span class="hero__terminal-label hero__terminal-label--info"
+						>[TRAINING]</span
+					>
 					Capacitación en seguridad digital
 				</div>
 				<div class="hero__terminal-line">
-					<span class="hero__terminal-label hero__terminal-label--success">[STATUS]</span>
+					<span class="hero__terminal-label hero__terminal-label--success"
+						>[STATUS]</span
+					>
 					Proyecto listo para evolucionar
 				</div>
 				<div class="hero__terminal-line">
@@ -138,9 +158,7 @@ import HeroVideoMobile from "../../assets/videos/home-video-mobile.mp4";
 	const terminal = document.querySelector(".hero__terminal");
 
 	if (terminal) {
-		const lines = Array.from(
-			terminal.querySelectorAll(".hero__terminal-line"),
-		);
+		const lines = Array.from(terminal.querySelectorAll(".hero__terminal-line"));
 		let timer: ReturnType<typeof setTimeout> | undefined;
 		let index = 0;
 		let cycleStartedAt = 0;
@@ -180,7 +198,7 @@ import HeroVideoMobile from "../../assets/videos/home-video-mobile.mp4";
 			() => {
 				if (timer) clearTimeout(timer);
 			},
-			{ once: true },
+			{once: true},
 		);
 	}
 </script>
