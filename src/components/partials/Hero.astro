@@ -30,33 +30,33 @@ import HeroVideoMobile from "../../assets/videos/home-video-mobile.mp4";
 			</h1>
 		</div>
 
-		<!-- Description -->
-		<p class="hero__description">
-			En GQR Labs convertimos ideas y desafíos en soluciones de software que
-			generan valor real. ¿Tenés una idea o un desafío que quieras transformar?
-			En GQR Labs podemos ayudarte a llevarlo a la realidad.
-		</p>
-		<p class="hero__description">
-			Entendemos que detrás de cada proyecto hay una necesidad concreta:
-			optimizar un proceso, ahorrar tiempo, mejorar una experiencia, hacer
-			crecer un negocio o simplemente encontrar una forma más eficiente de hacer
-			las cosas. Por eso, trabajamos para entender lo que cada proyecto necesita
-			y transformarlo en una solución tecnológica simple, segura y pensada para
-			funcionar.
-		</p>
-		<p class="hero__description">
-			Acompañamos cada desarrollo de principio a fin, con comunicación clara,
-			foco en la calidad y una visión orientada a resultados. Nuestro objetivo
-			es que la tecnología no sea solo una herramienta, sino una forma de hacer
-			que las cosas funcionen mejor.
-		</p>
+		<div class="hero__copy">
+			<!-- Description -->
+			<p class="hero__description">
+				En GQR Labs convertimos ideas y desafíos en soluciones de software que
+				generan valor real. Ayudamos a transformar cada necesidad en una solución
+				tecnológica simple, segura y eficiente.
+			</p>
+			<p class="hero__description">
+				Entendemos que detrás de cada proyecto hay un objetivo concreto: optimizar
+				procesos, ahorrar tiempo, mejorar experiencias o hacer crecer un negocio.
+				Por eso, trabajamos para crear soluciones pensadas para funcionar y
+				adaptarse a cada necesidad.
+			</p>
+			<p class="hero__description">
+				Acompañamos cada desarrollo de principio a fin, con comunicación clara,
+				foco en la calidad y orientación a resultados. Nuestro objetivo es que la
+				tecnología sea una herramienta para hacer que las cosas funcionen mejor.
+			</p>
 
-		<div class="hero__actions">
-			<a href="#software" class="hero__button"> Conoce como podemos ayudarte </a>
-		</div>
+			<div class="hero__actions">
+				<a href="#software" class="hero__button">
+					Conoce como podemos ayudarte
+				</a>
+			</div>
 
-		<!-- Author -->
-		<!-- <div class="hero__author" aria-label="Información de contacto y ubicación">
+			<!-- Author -->
+			<!-- <div class="hero__author" aria-label="Información de contacto y ubicación">
 			<a
 				href="https://linkedin.com/in/facundogqr/"
 				class="hero__author-link"
@@ -73,6 +73,114 @@ import HeroVideoMobile from "../../assets/videos/home-video-mobile.mp4";
 				/>
 			</a>
 		</div> -->
-		<span class="hero__place"> Montevideo · Uruguay </span>
+			<span class="hero__place"> Montevideo · Uruguay </span>
+		</div>
+
+		<div class="hero__terminal" aria-hidden="true">
+			<div class="hero__terminal-titlebar">
+				gqr-labs // software &amp; cybersecurity
+			</div>
+			<div class="hero__terminal-screen">
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-prompt">gqr</span>:~$
+					<span class="hero__terminal-command">start project</span>
+				</div>
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-label hero__terminal-label--process">[INIT]</span>
+					GQR Labs — soluciones tecnológicas
+				</div>
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-label hero__terminal-label--process">[ANALYSIS]</span>
+					Analizando necesidades y objetivos
+				</div>
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-label hero__terminal-label--info">[PLANNING]</span>
+					Diseñando una solución a medida
+				</div>
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-label hero__terminal-label--process">[SOFTWARE]</span>
+					Sistemas internos y aplicaciones web
+				</div>
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-label hero__terminal-label--process">[INFRA]</span>
+					Configurando infraestructura segura
+				</div>
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-label hero__terminal-label--warning">[SECURITY]</span>
+					Priorizando seguridad y buenas prácticas
+				</div>
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-label hero__terminal-label--success">[BUILD]</span>
+					Desarrollando la solución
+				</div>
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-label hero__terminal-label--success">[DELIVERY]</span>
+					Implementación y acompañamiento
+				</div>
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-label hero__terminal-label--info">[TRAINING]</span>
+					Capacitación en seguridad digital
+				</div>
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-label hero__terminal-label--success">[STATUS]</span>
+					Proyecto listo para evolucionar
+				</div>
+				<div class="hero__terminal-line">
+					<span class="hero__terminal-prompt">gqr</span>:~$
+					<span class="hero__terminal-cursor"></span>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
+
+<script>
+	const terminal = document.querySelector(".hero__terminal");
+
+	if (terminal) {
+		const lines = Array.from(
+			terminal.querySelectorAll(".hero__terminal-line"),
+		);
+		let timer: ReturnType<typeof setTimeout> | undefined;
+		let index = 0;
+		let cycleStartedAt = 0;
+
+		const schedule = (callback: () => void, delay: number) => {
+			if (timer) clearTimeout(timer);
+			timer = setTimeout(callback, delay);
+		};
+
+		const startCycle = () => {
+			lines.forEach((line) =>
+				line.classList.remove("hero__terminal-line--visible"),
+			);
+			index = 0;
+			cycleStartedAt = Date.now();
+			printNextLine();
+		};
+
+		const printNextLine = () => {
+			if (index >= lines.length) {
+				schedule(
+					startCycle,
+					Math.max(0, 11000 - (Date.now() - cycleStartedAt)),
+				);
+				return;
+			}
+
+			lines[index].classList.add("hero__terminal-line--visible");
+			index += 1;
+			schedule(printNextLine, index === 1 ? 700 : 430);
+		};
+
+		terminal.classList.add("hero__terminal--animated");
+		startCycle();
+		document.addEventListener(
+			"astro:before-swap",
+			() => {
+				if (timer) clearTimeout(timer);
+			},
+			{ once: true },
+		);
+	}
+</script>
