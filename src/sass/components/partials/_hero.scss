@@ -56,8 +56,6 @@
 	&__content {
 		@include mixin.max-width;
 		display: grid;
-		grid-template-columns: minmax(0, 1fr);
-		row-gap: variable.$hero-stacked-gap;
 
 		@include mixin.mq(md) {
 			grid-template-columns: 1fr auto;
