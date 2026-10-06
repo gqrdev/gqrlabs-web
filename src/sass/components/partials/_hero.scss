@@ -135,6 +135,7 @@
 	&__author {
 		@include mixin.g-smaller;
 		margin-bottom: unset;
+
 		&-link {
 			display: flex;
 			column-gap: variable.$space-2;
@@ -148,34 +149,31 @@
 
 	/* Terminal */
 	&__terminal {
-		align-self: center;
+		align-self: start;
 		max-width: 100%;
 		overflow: hidden;
-		border: 1px solid color.change(variable.$gray-light, $alpha: 0.2);
+		border: 1px solid color.change(variable.$gray-light, $alpha: 0.04);
 		border-radius: variable.$radius-sm;
-		background-color: color.change(variable.$background-section, $alpha: 0.48);
 		box-shadow: variable.$shadow;
 		color: #b8ffc5;
-		font-family: "SFMono-Regular", "Liberation Mono", monospace;
-		font-size: 0.6875rem;
-		line-height: 1.8;
-
+		@include mixin.g-smaller;
+		font-family: variable.$terminal-font;
 
 		@include mixin.mq(md) {
 			font-size: 0.75rem;
 		}
-	}
 
-	&__terminal-titlebar {
-		display: flex;
-		min-height: 32px;
-		align-items: center;
-		justify-content: center;
-		border-bottom: 1px solid color.change(#50ff78, $alpha: 0.12);
-		background-color: color.change(variable.$white, $alpha: 0.02);
-		color: color.change(#b8ffc5, $alpha: 0.55);
-		@include mixin.g-smaller;
-		text-align: center;
+		&-titlebar {
+			display: flex;
+			min-height: 32px;
+			align-items: center;
+			justify-content: center;
+			border-bottom: 1px solid color.change(#50ff78, $alpha: 0.12);
+			background-color: color.change(variable.$black-soft, $alpha: .8);
+			color: color.change(#b8ffc5, $alpha: 0.55);
+			@include mixin.g-smaller;
+			margin-bottom: unset;
+		}
 	}
 
 	&__terminal-screen {
@@ -191,12 +189,10 @@
 		&::after {
 			position: absolute;
 			inset: 0;
-			background: repeating-linear-gradient(
-				to bottom,
-				transparent 0,
-				transparent 3px,
-				rgba(255, 255, 255, 0.008) 4px
-			);
+			background: repeating-linear-gradient(to bottom,
+					transparent 0,
+					transparent 3px,
+					rgba(255, 255, 255, 0.008) 4px);
 			content: "";
 			pointer-events: none;
 		}
@@ -204,7 +200,6 @@
 
 	&__terminal-line {
 		min-height: 1.8em;
-		white-space: nowrap;
 	}
 
 	&__terminal--animated &__terminal-line {
@@ -255,6 +250,7 @@
 }
 
 @keyframes hero-terminal-blink {
+
 	0%,
 	45% {
 		opacity: 1;
