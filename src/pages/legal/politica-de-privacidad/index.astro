@@ -353,25 +353,21 @@ import Layout from "../../../layouts/Layout.astro";
 			}
 
 			.privacy__eyebrow {
+				@include mixin.g-small;
 				display: block;
 				margin-bottom: variable.$space-2;
 				color: variable.$blue-light;
-				font-size: variable.$small-font-size;
 			}
 
 			h1 {
+				@include mixin.g-title-1;
 				margin-bottom: variable.$space-2;
-				font-size: variable.$h1-font-size;
-				line-height: variable.$heading-line-height;
-
-				@include mixin.mq(md) {
-					font-size: variable.$h1-font-size-md;
-				}
 			}
 
 			.privacy__updated {
-				font-size: variable.$smaller-font-size;
+				@include mixin.g-smaller;
 				color: variable.$gray;
+				margin-bottom: unset;
 			}
 		}
 
@@ -385,15 +381,13 @@ import Layout from "../../../layouts/Layout.astro";
 				}
 
 				h2 {
+					@include mixin.g-title-2;
 					margin: 0 0 variable.$space-2;
-					font-size: variable.$h2-font-size;
-					line-height: variable.$heading-line-height;
 				}
 
 				h3 {
+					@include mixin.g-title-3;
 					margin: variable.$space-6 0 variable.$space-2;
-					font-size: variable.$h3-font-size;
-					line-height: variable.$heading-line-height;
 				}
 
 				p {

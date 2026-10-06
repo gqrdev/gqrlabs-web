@@ -72,8 +72,8 @@
 			height: 2px;
 			background-color: variable.$white;
 			transition:
-				transform 0.25s ease,
-				opacity 0.25s ease;
+				transform variable.$motion-duration variable.$motion-ease,
+				opacity variable.$motion-duration variable.$motion-ease;
 		}
 
 		&[aria-expanded="true"] {
@@ -109,9 +109,9 @@
 		transform: translateY(-10px);
 
 		transition:
-			opacity 0.25s ease,
-			visibility 0.25s ease,
-			transform 0.25s ease;
+			opacity variable.$motion-duration variable.$motion-ease,
+			visibility variable.$motion-duration variable.$motion-ease,
+			transform variable.$motion-duration variable.$motion-ease;
 
 		a {
 			display: block;
@@ -144,7 +144,7 @@
 
 					transform: scaleX(0);
 					transform-origin: center;
-					transition: transform 0.2s ease;
+					transition: transform variable.$motion-duration variable.$motion-ease;
 				}
 			}
 

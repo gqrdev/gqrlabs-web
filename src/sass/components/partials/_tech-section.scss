@@ -63,23 +63,24 @@
 		display: flex;
 		align-items: center;
 		gap: variable.$space-3;
+		@include mixin.g-small;
 		color: rgba(255, 255, 255, 0.7);
-		font-size: 14px;
 		font-weight: 600;
+		margin-bottom: unset;
 		white-space: nowrap;
 
 		@include mixin.mq(md) {
 			transition:
-				color 0.3s ease,
-				transform 0.3s ease;
+				color variable.$motion-duration variable.$motion-ease,
+				transform variable.$motion-duration variable.$motion-ease;
 		}
 
 		&-icon {
 			object-fit: contain;
 			@include mixin.mq(md) {
 				transition:
-					filter 0.3s ease,
-					transform 0.3s ease;
+					filter variable.$motion-duration variable.$motion-ease,
+					transform variable.$motion-duration variable.$motion-ease;
 			}
 		}
 

@@ -85,8 +85,8 @@
 		@include mixin.mq(md) {
 			transition:
 				transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-				border-color 0.3s ease,
-				box-shadow 0.3s ease;
+				border-color variable.$motion-duration variable.$motion-ease,
+				box-shadow variable.$motion-duration variable.$motion-ease;
 		}
 
 		@include mixin.mq(md) {
@@ -113,9 +113,9 @@
 	}
 
 	&__topic-description {
+		@include mixin.g-small;
 		margin: 0;
 		color: variable.$gray;
-		font-size: 14px;
 		line-height: 1.7;
 	}
 
@@ -383,7 +383,7 @@
 			line-height: 1;
 			transition:
 				transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-				color 0.25s ease;
+				color variable.$motion-duration variable.$motion-ease;
 		}
 
 		@include mixin.mq(md) {
@@ -414,8 +414,8 @@
 			max-width: 760px;
 			margin: 0;
 			padding: 0 variable.$space-1;
+			@include mixin.g-small;
 			color: variable.$gray;
-			font-size: 14px;
 			line-height: 1.8;
 
 			@include mixin.mq(md) {
@@ -479,8 +479,9 @@
 		border-radius: 50%;
 		background: variable.$blue-bg;
 		color: variable.$blue-light;
-		font-size: 12px;
+		@include mixin.g-smaller;
 		font-weight: 800;
+		margin-bottom: variable.$space-6;
 	}
 
 	/* Header */

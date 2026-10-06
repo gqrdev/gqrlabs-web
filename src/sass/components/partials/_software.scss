@@ -4,7 +4,6 @@
 
 @use "../../base/variables" as variable;
 @use "../../base/mixins" as mixin;
-@use "sass:math";
 
 .software {
 	@include mixin.background-alt;
@@ -100,21 +99,21 @@
 			margin-bottom: unset;
 
 			@include mixin.mq(md) {
-				transition: color 0.3s ease;
+				transition: color variable.$motion-duration variable.$motion-ease;
 			}
 		}
 
 		&-description {
+			@include mixin.g-small;
 			color: variable.$gray;
-			font-size: 14px;
+			margin-bottom: unset;
 		}
 	}
 
 	&__code-badge {
 		@include mixin.icon-badge-code;
 
-		// Item 1:
-		.software__card:nth-child(1) & {
+		&--systems {
 			&::before {
 				content: "";
 				position: absolute;
@@ -140,8 +139,7 @@
 			}
 		}
 
-		// Item 2:
-		.software__card:nth-child(2) & {
+		&--applications {
 			&::before {
 				content: "";
 				position: absolute;
@@ -172,8 +170,7 @@
 			}
 		}
 
-		// Item 3:
-		.software__card:nth-child(3) & {
+		&--infrastructure {
 			align-items: flex-end;
 			padding-bottom: 11px;
 			gap: variable.$space-1;

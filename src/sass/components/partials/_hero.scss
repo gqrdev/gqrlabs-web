@@ -157,10 +157,6 @@
 		@include mixin.g-smaller;
 		font-family: variable.$terminal-font;
 
-		@include mixin.mq(md) {
-			font-size: 0.75rem;
-		}
-
 		&-titlebar {
 			display: flex;
 			min-height: 32px;

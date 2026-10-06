@@ -63,7 +63,7 @@
 		span {
 			color: variable.$blue-light;
 			font-size: 18px;
-			transition: transform 0.25s ease;
+			transition: transform variable.$motion-duration variable.$motion-ease;
 		}
 
 		@include mixin.mq(md) {

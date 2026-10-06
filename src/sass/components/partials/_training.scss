@@ -134,9 +134,9 @@
 
 		@include mixin.mq(md) {
 			transition:
-				background 0.3s ease,
-				transform 0.3s ease,
-				box-shadow 0.3s ease;
+				background variable.$motion-duration variable.$motion-ease,
+				transform variable.$motion-duration variable.$motion-ease,
+				box-shadow variable.$motion-duration variable.$motion-ease;
 
 			align-self: center;
 			margin: 0;
