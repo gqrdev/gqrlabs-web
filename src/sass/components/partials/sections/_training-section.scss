@@ -6,7 +6,6 @@
 @use "../../../base/mixins" as mixin;
 
 .mentorships-section {
-	@include mixin.background-alt;
 	@include mixin.section;
 	padding-top: variable.$hero-padding-top-mobile;
 
@@ -460,6 +459,9 @@
 		position: absolute;
 		top: variable.$space-5;
 		right: variable.$space-6;
+		display: flex;
+		align-items: center;
+		gap: variable.$space-1;
 		padding: variable.$space-1 variable.$space-3;
 		border: 1px solid variable.$border-blue;
 		border-radius: variable.$radius-sm;

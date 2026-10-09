@@ -2,6 +2,7 @@
 import "../../../sass/components/partials/sections/_training-section.scss";
 import {Image} from "astro:assets";
 import CalendarIcon from "../../../assets/icons/calendar-icon.png";
+import ChampionIcon from "../../../assets/icons/champion.png";
 
 const mailContact = {
 	oneToOne: `mailto:gqrlabs@gmail.com?subject=${encodeURIComponent(
@@ -107,7 +108,7 @@ const mailContact = {
 			<!-- Plans -->
 			<div class="mentorships-section__plans-header">
 				<h2 class="mentorships-section__plans-title">
-					Elegí cómo querés empezar.
+					Elegí cómo querés empezar
 				</h2>
 
 				<p class="mentorships-section__plans-description">
@@ -161,12 +162,15 @@ const mailContact = {
 
 				<!-- Plan 02 -->
 				<article class="mentorship-plan mentorship-plan--featured">
-					<span class="mentorship-plan__badge"> Más elegido </span>
+					<span class="mentorship-plan__badge">
+						Más elegido
+						<Image src={ChampionIcon} alt="Champion Icon" width={30} height={30} />
+					</span>
 
 					<div class="mentorship-plan__number">02</div>
 
 					<div class="mentorship-plan__header">
-						<h3 class="mentorship-plan__name">Acompañamiento personalizado</h3>
+						<h3 class="mentorship-plan__name">Acompañamiento</h3>
 
 						<p class="mentorship-plan__description">
 							Un proceso diseñado a tu medida, adaptado a tus necesidades,
@@ -177,7 +181,7 @@ const mailContact = {
 
 					<ul class="mentorship-plan__includes">
 						<li class="mentorship-plan__item">
-							<strong>Programa diseñado según tus necesidades.</strong>
+							<strong>Diseñado según tus necesidades.</strong>
 						</li>
 
 						<li class="mentorship-plan__item">
@@ -185,7 +189,7 @@ const mailContact = {
 						</li>
 
 						<li class="mentorship-plan__item">
-							Acompañamiento durante todo el proceso.
+							Acompañamiento continuo.
 						</li>
 
 						<li class="mentorship-plan__item">
@@ -193,7 +197,7 @@ const mailContact = {
 						</li>
 
 						<li class="mentorship-plan__item">
-							Material práctico para continuar aprendiendo.
+							Material práctico de aprendizaje.
 						</li>
 					</ul>
 
@@ -225,7 +229,7 @@ const mailContact = {
 
 					<ul class="mentorship-plan__includes">
 						<li class="mentorship-plan__item">
-							<strong>Programa diseñado según tus necesidades.</strong>
+							<strong>Diseñado según tus necesidades.</strong>
 						</li>
 
 						<li class="mentorship-plan__item">
@@ -233,7 +237,7 @@ const mailContact = {
 						</li>
 
 						<li class="mentorship-plan__item">
-							Acompañamiento durante todo el proceso.
+							Acompañamiento continuo.
 						</li>
 
 						<li class="mentorship-plan__item">
@@ -241,7 +245,7 @@ const mailContact = {
 						</li>
 
 						<li class="mentorship-plan__item">
-							Material práctico para continuar aprendiendo.
+							Material práctico de aprendizaje.
 						</li>
 					</ul>
 
@@ -280,7 +284,6 @@ const mailContact = {
 						alt="Calendar Icon"
 						width="30"
 						height="30"
-						class="mentorships-section__cta-calendar-icon"
 					/>
 				</a>
 			</div>
