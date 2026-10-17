@@ -1,12 +1,19 @@
 # GQR Labs
 
-> GQR Labs es una empresa con base en Uruguay especializada en desarrollo de software, ciberseguridad, soluciones tecnológicas a medida y mentorías personalizadas. Potenciamos proyectos y equipos mediante asesoramiento técnico de alta calidad, desarrollo robusto y ciberseguridad práctica y accesible.
+> GQR Labs es una empresa uruguaya que desarrolla soluciones de software a medida y ofrece capacitación personalizada en seguridad y tecnología. Crea sistemas internos, aplicaciones web e infraestructura segura, y acompaña a personas y equipos con mentorías prácticas adaptadas a sus necesidades.
 
-## Secciones Principales
+## Servicios
 
-- [Inicio](https://gqrlabs.com/): Página principal de GQR Labs, con una visión general de nuestros servicios de desarrollo, ciberseguridad y consultoría tecnológica.
-- [Capacitación](https://gqrlabs.com/capacitacion): Programas de formación, mentorías 1:1 y acompañamiento personalizado enfocados en la resolución de problemas técnicos, ciberseguridad digital y adopción de hábitos seguros tanto a nivel profesional como cotidiano.
-- [Política de Privacidad](https://gqrlabs.com/legal/politica-de-privacidad): Marco legal, manejo responsable de datos y políticas de privacidad de los servicios ofrecidos por GQR Labs.
+- [Desarrollo de software](https://gqrlabs.com/): Sistemas internos, aplicaciones web e infraestructura cloud segura, con automatización y gestión de datos según las necesidades de cada proyecto.
+- [Capacitación personalizada](https://gqrlabs.com/capacitacion/): Mentorías 1:1 y acompañamiento en seguridad digital, privacidad y tecnología aplicada, adaptados a los conocimientos y objetivos de cada persona.
 
-## Recursos y Contacto
-- [Contacto](https://gqrlabs.com/#contacto): Canales directos de comunicación para solicitar asesoramiento a medida, auditorías técnicas o presupuestos corporativos.
+## Contacto
+
+- [Sección de contacto](https://gqrlabs.com/#contacto): Consulta sobre proyectos, soluciones digitales o mentorías.
+- [Correo electrónico](mailto:gqrlabs@gmail.com): Contacto directo con GQR Labs.
+- [LinkedIn](https://linkedin.com/company/gqrlabs/): Perfil profesional de GQR Labs.
+
+## Recursos legales
+
+- [Política de privacidad](https://gqrlabs.com/legal/politica-de-privacidad/): Información sobre privacidad y tratamiento de datos.
+- [Términos y condiciones](https://gqrlabs.com/legal/terminos-y-condiciones/): Términos que rigen el uso de los servicios de GQR Labs.
