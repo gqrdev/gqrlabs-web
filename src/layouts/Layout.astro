@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../layouts/Footer.astro";
 
 const {title, description} = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 ---
 
 <!doctype html>
@@ -27,7 +28,7 @@ const {title, description} = Astro.props;
 				"Desarrollo de software, ciberseguridad y soluciones tecnológicas a medida. Consultoría y mentorías para potenciar proyectos y equipos desde Uruguay."}
 		/>
 		<meta name="robots" content="index, follow" />
-		<link rel="canonical" href="https://gqrlabs.com/" />
+		<link rel="canonical" href={canonicalUrl.href} />
 
 		<!-- Fonts -->
 		<link
@@ -60,12 +61,16 @@ const {title, description} = Astro.props;
 		/>
 
 		<!-- Poster -->
-		<link
-			rel="preload"
-			as="image"
-			href="/images/home-video-poster.jpg"
-			fetchpriority="high"
-		/>
+		{
+			Astro.url.pathname === "/" && (
+				<link
+					rel="preload"
+					as="image"
+					href="/images/home-video-poster.jpg"
+					fetchpriority="high"
+				/>
+			)
+		}
 
 		<!-- Open Graph -->
 		<meta property="og:title" content={title ?? "GQR Labs"} />
@@ -75,7 +80,7 @@ const {title, description} = Astro.props;
 				"Desarrollo de software y formación en ciberseguridad. Montevideo, Uruguay."}
 		/>
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://gqrlabs.com/" />
+		<meta property="og:url" content={canonicalUrl.href} />
 		<meta property="og:image" content="https://gqrlabs.com/og-image.png" />
 		<meta
 			property="og:image:alt"
