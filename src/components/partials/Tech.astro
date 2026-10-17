@@ -1,59 +1,103 @@
 ---
 import "../../sass/components/partials/_tech-section.scss";
-import { Image } from "astro:assets";
+import {Image} from "astro:assets";
 import RobotImage from "../../assets/technologies/robot.png";
 import AWSImage from "../../assets/technologies/aws.png";
 import DataImage from "../../assets/technologies/data.png";
 ---
 
 <!-- Technologies -->
-<div class="tech-section">
-	<!-- <div class="tech-section__title">
+<div class="software__technology">
+	<!-- <div class="software__technology-title">
 		Algunas de las tecnologías que utilizamos
 	</div> -->
 
-	<div class="tech-section__diagram">
-		<div class="tech-section__node tech-section__node--chatbot">
-			<Image src={RobotImage} alt="Asistente de chatbot AI" width={96} height={96} fit="contain" class="tech-section__icon" />
-			<p class="tech-section__label">CHATBOT AI</p>
-			<p class="tech-section__description">Atención inteligente y automática</p>
-			<ul class="tech-section__items">
-				<li class="tech-section__item">Respuestas automáticas</li>
-				<li class="tech-section__item">Atención 24/7</li>
-				<li class="tech-section__item">Consultas simplificadas</li>
+	<div class="software__technology-diagram">
+		<!-- ASISTENTE VIRTUAL -->
+		<div class="software__technology-node software__technology-node--chatbot">
+			<Image
+				src={RobotImage}
+				alt="Asistente virtual de inteligencia artificial"
+				width={96}
+				height={96}
+				fit="contain"
+				class="software__technology-icon"
+			/>
+
+			<p class="software__technology-label">ASISTENTE AI</p>
+
+			<p class="software__technology-description">
+				Un asistente virtual adaptado a tu negocio
+			</p>
+
+			<ul class="software__technology-items">
+				<li class="software__technology-item">Atención automatizada 24/7</li>
+				<li class="software__technology-item">Respuestas según tus necesidades</li>
+				<li class="software__technology-item">Experiencia personalizada</li>
 			</ul>
 		</div>
 
-		<span class="tech-section__link tech-section__link--chatbot" aria-hidden="true">
-			<span class="tech-section__pulse"></span>
+		<span
+			class="software__technology-link software__technology-link--chatbot"
+			aria-hidden="true"
+		>
+			<span class="software__technology-pulse"></span>
 		</span>
 
-		<div class="tech-section__node tech-section__node--aws">
-			<Image src={AWSImage} alt="Logo de AWS" width={96} height={96} fit="contain" class="tech-section__icon" />
-			<p class="tech-section__label">AWS</p>
-			<p class="tech-section__description">Infraestructura cloud segura y escalable</p>
-			<ul class="tech-section__items">
-				<li class="tech-section__item">Infraestructura segura</li>
-				<li class="tech-section__item">Escalabilidad bajo demanda</li>
-				<li class="tech-section__item">Alta disponibilidad</li>
+		<!-- INFRAESTRUCTURA AWS -->
+		<div class="software__technology-node software__technology-node--aws">
+			<Image
+				src={AWSImage}
+				alt="Infraestructura cloud de AWS"
+				width={96}
+				height={96}
+				fit="contain"
+				class="software__technology-icon"
+			/>
+
+			<p class="software__technology-label">AWS</p>
+
+			<p class="software__technology-description">
+				Infraestructura segura y escalable
+			</p>
+
+			<ul class="software__technology-items">
+				<li class="software__technology-item">
+					Arquitectura segura
+				</li>
+				<li class="software__technology-item">Escalabilidad según la demanda</li>
+				<li class="software__technology-item">Alta disponibilidad</li>
 			</ul>
 		</div>
 
-		<span class="tech-section__link tech-section__link--aws" aria-hidden="true">
-			<span class="tech-section__pulse"></span>
+		<span class="software__technology-link software__technology-link--aws" aria-hidden="true">
+			<span class="software__technology-pulse"></span>
 		</span>
 
-		<div class="tech-section__node tech-section__node--client">
-			<Image src={DataImage} alt="Ilustración de datos" width={96} height={96} fit="contain" class="tech-section__icon" />
-			<p class="tech-section__label">CLIENTE</p>
-			<p class="tech-section__description">Acceso personalizado a la información</p>
-			<ul class="tech-section__items">
-				<li class="tech-section__item">Información relevante</li>
-				<li class="tech-section__item">Consultas simplificadas</li>
-				<li class="tech-section__item">Atención personalizada</li>
+		<!-- INFORMACIÓN DEL CLIENTE -->
+		<div class="software__technology-node software__technology-node--client">
+			<Image
+				src={DataImage}
+				alt="Protección y gestión segura de datos"
+				width={96}
+				height={96}
+				fit="contain"
+				class="software__technology-icon"
+			/>
+
+			<p class="software__technology-label">DATOS SEGUROS</p>
+
+			<p class="software__technology-description">
+				Información protegida y acceso controlado
+			</p>
+
+			<ul class="software__technology-items">
+				<li class="software__technology-item">Protección de la información</li>
+				<li class="software__technology-item">Acceso según permisos</li>
+				<li class="software__technology-item">Datos relevantes para cada consulta</li>
 			</ul>
 		</div>
 	</div>
 
-	<div class="tech-section__tech-line"></div>
+	<div class="software__technology-line"></div>
 </div>

@@ -1,5 +1,6 @@
 ---
 import "../../sass/components/partials/_software.scss";
+import Tech from "./Tech.astro";
 ---
 
 <section class="software" id="software">
@@ -27,7 +28,8 @@ import "../../sass/components/partials/_software.scss";
 			<article class="software__card">
 				<div class="software__card-body">
 					<div class="software__item-header">
-						<span class="software__code-badge software__code-badge--systems"></span>
+						<span class="software__code-badge software__code-badge--systems"
+						></span>
 						<h3 class="software__item-title">Sistemas internos</h3>
 					</div>
 					<p class="software__item-description">
@@ -41,7 +43,9 @@ import "../../sass/components/partials/_software.scss";
 			<article class="software__card">
 				<div class="software__card-body">
 					<div class="software__item-header">
-						<span class="software__code-badge software__code-badge--applications"></span>
+						<span
+							class="software__code-badge software__code-badge--applications"
+						></span>
 						<h3 class="software__item-title">Aplicaciones web</h3>
 					</div>
 					<p class="software__item-description">
@@ -56,7 +60,9 @@ import "../../sass/components/partials/_software.scss";
 			<article class="software__card">
 				<div class="software__card-body">
 					<div class="software__item-header">
-						<span class="software__code-badge software__code-badge--infrastructure"></span>
+						<span
+							class="software__code-badge software__code-badge--infrastructure"
+						></span>
 						<h3 class="software__item-title">Infraestructura segura</h3>
 					</div>
 					<p class="software__item-description">
@@ -68,10 +74,12 @@ import "../../sass/components/partials/_software.scss";
 				</div>
 			</article>
 		</div>
+
+		<!-- Tech Section -->
+		<Tech />
+
 		<div class="software__actions">
-			<p class="software__hint">
-				¿Buscás una solución para tu negocio?
-			</p>
+			<p class="software__hint">¿Buscás una solución para tu negocio?</p>
 			<a href="#contacto" class="software__cta">Hablemos de tu proyecto</a>
 		</div>
 	</div>
