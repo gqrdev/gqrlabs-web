@@ -1,12 +1,9 @@
 ---
 import "../../sass/components/partials/_tech-section.scss";
-
-import {Image} from "astro:assets";
-import AWSLogo from "../../assets/technologies/aws-logo.png";
-import GoogleCloudLogo from "../../assets/technologies/google-cloud-logo.png";
-import DigitalOceanLogo from "../../assets/technologies/digital-ocean-logo.png";
-import LaravelLogo from "../../assets/technologies/laravel-logo.png";
-import PythonLogo from "../../assets/technologies/python-logo.png";
+import { Image } from "astro:assets";
+import RobotImage from "../../assets/technologies/robot.png";
+import AWSImage from "../../assets/technologies/aws.png";
+import DataImage from "../../assets/technologies/data.png";
 ---
 
 <!-- Technologies -->
@@ -15,133 +12,46 @@ import PythonLogo from "../../assets/technologies/python-logo.png";
 		Algunas de las tecnologías que utilizamos
 	</div> -->
 
-	<div class="tech-section__tech-wrapper">
-		<div class="tech-section__tech-track">
-			<!-- Group 1 -->
-			<div class="tech-section__tech">
-				<Image
-					src={AWSLogo}
-					alt="AWS Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={GoogleCloudLogo}
-					alt="Google Cloud Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={DigitalOceanLogo}
-					alt="DigitalOcean Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={LaravelLogo}
-					alt="Laravel Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={PythonLogo}
-					alt="Python Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
+	<div class="tech-section__diagram">
+		<div class="tech-section__node tech-section__node--chatbot">
+			<Image src={RobotImage} alt="Asistente de chatbot AI" width={96} height={96} fit="contain" class="tech-section__icon" />
+			<p class="tech-section__label">CHATBOT AI</p>
+			<p class="tech-section__description">Atención inteligente y automática</p>
+			<ul class="tech-section__items">
+				<li class="tech-section__item">Respuestas automáticas</li>
+				<li class="tech-section__item">Atención 24/7</li>
+				<li class="tech-section__item">Consultas simplificadas</li>
+			</ul>
+		</div>
 
-			<!-- Group 2 -->
-			<div class="tech-section__tech">
-				<Image
-					src={AWSLogo}
-					alt="AWS Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={GoogleCloudLogo}
-					alt="Google Cloud Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={DigitalOceanLogo}
-					alt="DigitalOcean Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={LaravelLogo}
-					alt="Laravel Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={PythonLogo}
-					alt="Python Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
+		<span class="tech-section__link tech-section__link--chatbot" aria-hidden="true">
+			<span class="tech-section__pulse"></span>
+		</span>
 
-			<!-- Group 3 -->
-			<div class="tech-section__tech">
-				<Image
-					src={AWSLogo}
-					alt="AWS Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={GoogleCloudLogo}
-					alt="Google Cloud Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={DigitalOceanLogo}
-					alt="DigitalOcean Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={LaravelLogo}
-					alt="Laravel Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
-			<div class="tech-section__tech">
-				<Image
-					src={PythonLogo}
-					alt="Python Logo"
-					width="128"
-					class="tech-section__tech-icon"
-				/>
-			</div>
+		<div class="tech-section__node tech-section__node--aws">
+			<Image src={AWSImage} alt="Logo de AWS" width={96} height={96} fit="contain" class="tech-section__icon" />
+			<p class="tech-section__label">AWS</p>
+			<p class="tech-section__description">Infraestructura cloud segura y escalable</p>
+			<ul class="tech-section__items">
+				<li class="tech-section__item">Infraestructura segura</li>
+				<li class="tech-section__item">Escalabilidad bajo demanda</li>
+				<li class="tech-section__item">Alta disponibilidad</li>
+			</ul>
+		</div>
+
+		<span class="tech-section__link tech-section__link--aws" aria-hidden="true">
+			<span class="tech-section__pulse"></span>
+		</span>
+
+		<div class="tech-section__node tech-section__node--client">
+			<Image src={DataImage} alt="Ilustración de datos" width={96} height={96} fit="contain" class="tech-section__icon" />
+			<p class="tech-section__label">CLIENTE</p>
+			<p class="tech-section__description">Acceso personalizado a la información</p>
+			<ul class="tech-section__items">
+				<li class="tech-section__item">Información relevante</li>
+				<li class="tech-section__item">Consultas simplificadas</li>
+				<li class="tech-section__item">Atención personalizada</li>
+			</ul>
 		</div>
 	</div>
 
