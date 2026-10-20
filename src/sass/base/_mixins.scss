@@ -57,19 +57,19 @@
 
 @mixin g-title-2 {
 	@include heading-font(true);
-	font-weight: 500;
+	font-weight: 400;
 	font-size: variable.$h2-font-size;
 }
 
 @mixin g-title-3 {
 	@include heading-font;
-	font-weight: 500;
+	font-weight: 400;
 	font-size: variable.$h3-font-size;
 }
 
 @mixin g-title-4 {
 	@include heading-font;
-	font-weight: 500;
+	font-weight: 400;
 	font-size: variable.$normal-font-size;
 }
 

@@ -15,7 +15,8 @@
 			color: variable.$gray;
 
 			@include mixin.mq(md) {
-				@include mixin.g-title-3;
+				@include mixin.g-title-2;
+				margin-bottom: unset;
 			}
 		}
 
@@ -84,7 +85,7 @@
 
 		&-description {
 			@include mixin.g-title-4;
-			margin-bottom: unset;
+			margin-bottom: 5px;
 			color: variable.$gray;
 		}
 

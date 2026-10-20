@@ -13,6 +13,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#0b0f14" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<title>
@@ -29,14 +30,14 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 		<!-- Fonts -->
 		<link
 			rel="preload"
-			href="/fonts/exo-2-v26-latin-regular.woff2"
+			href="/fonts/space-grotesk-v22-latin-regular.woff2"
 			as="font"
 			type="font/woff2"
 			crossorigin
 		/>
 		<link
 			rel="preload"
-			href="/fonts/exo-2-v26-latin-700.woff2"
+			href="/fonts/space-grotesk-v22-latin-700.woff2"
 			as="font"
 			type="font/woff2"
 			crossorigin
@@ -91,10 +92,29 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "WebSite",
-				"name": "GQR Labs",
-				"alternateName": ["GQRLabs"],
-				"url": "https://gqrlabs.com"
+				"@graph": [
+					{
+						"@type": "Organization",
+						"@id": "https://gqrlabs.com/#organization",
+						"name": "GQR Labs",
+						"url": "https://gqrlabs.com/",
+						"logo": {
+							"@type": "ImageObject",
+							"url": "https://gqrlabs.com/icons/logo-gqrlabs.png"
+						},
+						"sameAs": ["https://linkedin.com/company/gqrlabs/"]
+					},
+					{
+						"@type": "WebSite",
+						"@id": "https://gqrlabs.com/#website",
+						"name": "GQR Labs",
+						"alternateName": ["GQRLabs"],
+						"url": "https://gqrlabs.com/",
+						"publisher": {
+							"@id": "https://gqrlabs.com/#organization"
+						}
+					}
+				]
 			}
 		</script>
 	</head>
@@ -124,22 +144,22 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url);
 		src: url("/fonts/noto-sans-display-v30-latin-700.woff2") format("woff2");
 	}
 
-	/* exo-2-regular - latin */
+	/* space-grotesk-regular - latin */
 	@font-face {
 		font-display: swap;
-		font-family: "Exo 2";
+		font-family: "Space Grotesk";
 		font-style: normal;
 		font-weight: 400;
-		src: url("/fonts/exo-2-v26-latin-regular.woff2") format("woff2");
+		src: url("/fonts/space-grotesk-v22-latin-regular.woff2") format("woff2");
 	}
 
-	/* exo-2-700 - latin */
+	/* space-grotesk-700 - latin */
 	@font-face {
 		font-display: swap;
-		font-family: "Exo 2";
+		font-family: "Space Grotesk";
 		font-style: normal;
 		font-weight: 700;
-		src: url("/fonts/exo-2-v26-latin-700.woff2") format("woff2");
+		src: url("/fonts/space-grotesk-v22-latin-700.woff2") format("woff2");
 	}
 
 	/* fira-code-regular - latin */
