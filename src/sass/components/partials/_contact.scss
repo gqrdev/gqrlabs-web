@@ -36,7 +36,7 @@
 		@include mixin.g-normal;
 
 		@include mixin.mq(md) {
-			margin-bottom: variable.$space-5;
+			margin-bottom: variable.$space-md;
 		}
 	}
 

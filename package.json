@@ -21,7 +21,7 @@
 		"lightningcss": "^1.33.0",
 		"sass": "^1.105.2",
 		"sharp": "^0.35.5",
-		"wrangler": "^4.151.2"
+		"wrangler": "^4.151.3"
 	},
 	"packageManager": "pnpm@12.14.0"
 }

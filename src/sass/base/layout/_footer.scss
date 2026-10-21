@@ -85,13 +85,13 @@
 	}
 
 	&__legal-link {
-		@include mixin.g-smaller;
+		@include mixin.g-small;
 		color: inherit;
 		margin-bottom: unset;
 	}
 
 	&__legal-copyright {
-		@include mixin.g-smaller;
+		@include mixin.g-small;
 		color: inherit;
 		margin-bottom: unset;
 
@@ -108,7 +108,7 @@
 		place-self: center;
 
 		@include mixin.mq(md) {
-			column-gap: variable.$space-5;
+			column-gap: variable.$space-md;
 			justify-self: end;
 		}
 	}

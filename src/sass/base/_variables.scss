@@ -95,7 +95,7 @@ $body-line-height: 1.6;
 $small-line-height: 1.45;
 
 /* Breakpoints */
-$bp-mobile: 480px;
+$bp-mobile: 640px;
 $bp-tablet: 768px;
 $bp-laptop: 1024px;
 $bp-desktop: 1280px;
@@ -113,41 +113,53 @@ $space-1: 4px;
 $space-2: 8px;
 $space-3: 12px;
 $space-4: 16px;
-$space-5: 20px;
+$space-5: 24px;
 $space-6: 24px;
-$space-7: 28px;
+$space-7: 24px;
 $space-8: 32px;
-$space-9: 36px;
-$space-10: 40px;
+$space-9: 32px;
+$space-10: 32px;
 $space-12: 48px;
-$space-14: 56px;
+$space-14: 48px;
 $space-16: 64px;
-$space-18: 72px;
-$space-20: 80px;
+$space-18: 64px;
+$space-20: 64px;
 $space-24: 96px;
-$space-28: 112px;
+$space-28: 96px;
 $space-32: 128px;
+
+/* Semantic spacing scale */
+$space-3xs: $space-1;
+$space-2xs: $space-2;
+$space-xs: $space-3;
+$space-sm: $space-4;
+$space-md: $space-6;
+$space-lg: $space-8;
+$space-xl: $space-12;
+$space-2xl: $space-16;
+$space-3xl: $space-24;
+$space-4xl: $space-32;
 
 $button-content-gap: $space-3;
 $button-padding-block: $space-3;
-$button-padding-inline: $space-5;
+$button-padding-inline: $space-sm;
 
 /* Container spacing */
-$container-padding-desktop: $space-8;
-$container-padding-tablet: $space-6;
-$container-padding-mobile: $space-4;
+$container-padding-desktop: $space-md;
+$container-padding-tablet: $space-md;
+$container-padding-mobile: $space-md;
 
 /* Header spacing */
-$header-padding-y: $space-5;
+$header-padding-y: $space-sm;
 $header-gap: $space-8;
 $header-nav-gap: $space-8;
 
 /* Hero spacing */
-$hero-padding-top-desktop: $space-24;
-$hero-padding-top-tablet: $space-18;
-$hero-padding-top-mobile: $space-14;
-$hero-padding-bottom-desktop: $space-28;
-$hero-padding-bottom-tablet: $space-20;
+$hero-padding-top-desktop: $space-3xl;
+$hero-padding-top-tablet: $space-2xl;
+$hero-padding-top-mobile: $space-xl;
+$hero-padding-bottom-desktop: $space-3xl;
+$hero-padding-bottom-tablet: $space-2xl;
 $hero-padding-bottom-mobile: $space-16;
 $hero-columns-gap: $space-16;
 $hero-stacked-gap: $space-12;
@@ -157,12 +169,12 @@ $hero-description-gap: $space-8;
 $hero-buttons-gap: $space-3;
 
 /* Section spacing */
-$section-padding-y-desktop: $space-28;
-$section-padding-y-tablet: $space-20;
-$section-padding-y-mobile: $space-16;
-$section-header-gap-desktop: $space-14;
-$section-header-gap-tablet: $space-12;
-$section-header-gap-mobile: $space-9;
+$section-padding-y-desktop: $space-3xl;
+$section-padding-y-tablet: $space-2xl;
+$section-padding-y-mobile: $space-2xl;
+$section-header-gap-desktop: $space-xl;
+$section-header-gap-tablet: $space-xl;
+$section-header-gap-mobile: $space-lg;
 
 /* Grid spacing */
 $grid-gap: $space-6;
@@ -171,9 +183,9 @@ $grid-gap-large: $space-8;
 
 /* Card spacing */
 $card-padding-desktop: $space-8;
-$card-padding-tablet: $space-7;
+$card-padding-tablet: $space-md;
 $card-padding-mobile: $space-6;
-$card-content-gap: $space-5;
+$card-content-gap: $space-sm;
 $card-title-gap: $space-3;
 $card-description-gap: $space-6;
 $home-card-min-height: 190px;
@@ -185,7 +197,7 @@ $cta-padding-y: $space-24;
 $cta-gap: $space-8;
 
 /* Footer spacing */
-$footer-padding-top: $space-18;
+$footer-padding-top: $space-2xl;
 $footer-padding-bottom: $space-8;
 $footer-columns-gap: $space-12;
 $footer-links-gap: $space-3;
@@ -195,7 +207,7 @@ $footer-bottom-padding: $space-6;
 /* General Layout */
 $page-bottom-margin: $space-8;
 $general-padding: $container-padding-mobile;
-$max-width: 1120px;
+$max-width: 1280px;
 $max-width-header: $max-width;
 $max-width-footer: $max-width;
 $section-padding: $section-padding-y-desktop;
@@ -206,8 +218,8 @@ $padding-top-hero-section: $hero-padding-top-mobile;
 $section-bottom: $space-8;
 
 /* Typography - margins */
-$margin-bottom-heading: $space-5;
-$margin-bottom-body: $space-5;
+$margin-bottom-heading: $space-md;
+$margin-bottom-body: $space-sm;
 $margin-bottom-pretitle: $space-3;
 
 /* Header */

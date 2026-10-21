@@ -125,7 +125,7 @@
 
 	&__plans-title {
 		@include mixin.g-title-2;
-		margin-bottom: variable.$space-5;
+		margin-bottom: variable.$space-md;
 	}
 
 	&__plans-description {
@@ -157,7 +157,7 @@
 		margin-bottom: variable.$space-12;
 
 		@include mixin.mq(md) {
-			padding: variable.$space-10;
+			padding: variable.$space-lg;
 		}
 
 		&-label {
@@ -208,7 +208,7 @@
 			position: relative;
 			z-index: 1;
 			display: grid;
-			gap: variable.$space-5;
+			gap: variable.$space-md;
 			margin: 0 auto;
 
 			@include mixin.mq(md) {
@@ -244,7 +244,7 @@
 		margin-bottom: 0;
 
 		@include mixin.mq(md) {
-			padding: variable.$space-10;
+			padding: variable.$space-lg;
 		}
 
 		&::before,
@@ -275,7 +275,7 @@
 		position: relative;
 		z-index: 1;
 		display: grid;
-		gap: variable.$space-5;
+		gap: variable.$space-md;
 		margin: 0 auto;
 
 		@include mixin.mq(md) {
@@ -457,7 +457,7 @@
 	/* Badge */
 	&__badge {
 		position: absolute;
-		top: variable.$space-5;
+		top: variable.$space-sm;
 		right: variable.$space-6;
 		display: flex;
 		align-items: center;
@@ -507,7 +507,7 @@
 		flex-direction: column;
 		gap: variable.$space-2;
 		list-style: none;
-		padding: variable.$space-8 0 variable.$space-5;
+		padding: variable.$space-lg 0 variable.$space-md;
 
 		@include mixin.mq(md) {
 			margin-top: auto;
@@ -516,7 +516,7 @@
 
 	&__item {
 		position: relative;
-		padding-left: variable.$space-7;
+		padding-left: variable.$space-md;
 		color: variable.$gray-light;
 		@include mixin.g-small;
 		margin-bottom: unset;
