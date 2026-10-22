@@ -58,7 +58,7 @@
 		display: grid;
 
 		@include mixin.mq(md) {
-			grid-template-columns: 1fr auto;
+			grid-template-columns: 1fr 300px;
 			column-gap: variable.$space-8;
 		}
 	}
